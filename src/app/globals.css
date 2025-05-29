@@ -1,11 +1,11 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe; 
+  --color-primary-100: #dbeafe;
   --color-primary-200: #bfdbfe;
   --color-primary-300: #93c5fd;
   --color-primary-400: #60a5fa;
@@ -56,13 +56,23 @@
   --animate-slide-up: slideUp 0.3s ease-out;
 
   @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   @keyframes slideUp {
-    0% { transform: translateY(10px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
 
@@ -118,31 +128,31 @@ body {
 /* Custom component classes */
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply bg-primary-600 hover:bg-primary-700 active:bg-primary-800 focus:ring-primary-500 rounded-lg px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:outline-none;
   }
 
   .btn-secondary {
-    @apply bg-secondary-100 hover:bg-secondary-200 active:bg-secondary-300 text-secondary-700 font-medium py-2.5 px-4 rounded-lg transition-all duration-200 border border-secondary-300 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+    @apply bg-secondary-100 hover:bg-secondary-200 active:bg-secondary-300 text-secondary-700 border-secondary-300 focus:ring-secondary-500 rounded-lg border px-4 py-2.5 font-medium transition-all duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none;
   }
 
   .btn-success {
-    @apply bg-success-600 hover:bg-success-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+    @apply bg-success-600 hover:bg-success-700 rounded-lg px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:shadow-md;
   }
 
   .btn-warning {
-    @apply bg-warning-600 hover:bg-warning-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+    @apply bg-warning-600 hover:bg-warning-700 rounded-lg px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:shadow-md;
   }
 
   .btn-error {
-    @apply bg-error-600 hover:bg-error-700 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+    @apply bg-error-600 hover:bg-error-700 rounded-lg px-4 py-2.5 font-medium text-white shadow-sm transition-all duration-200 hover:shadow-md;
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-sm border border-secondary-200 p-6;
+    @apply border-secondary-200 rounded-lg border bg-white p-6 shadow-sm;
   }
 
   .input-field {
-    @apply w-full px-3 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+    @apply border-secondary-300 focus:ring-primary-500 w-full rounded-lg border px-3 py-2 transition-all duration-200 focus:border-transparent focus:ring-2 focus:outline-none;
   }
 }
 
@@ -225,4 +235,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-} 
+}
