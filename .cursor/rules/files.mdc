@@ -1,0 +1,25 @@
+---
+description: File Upload Handling
+globs: 
+alwaysApply: false
+---
+###Client-Side
+
+// Use react-dropzone for file uploads
+const { getRootProps, getInputProps } = useDropzone({
+  accept: {
+    'application/pdf': ['.pdf'],
+    'image/*': ['.png', '.jpg', '.jpeg']
+  },
+  maxSize: 50 * 1024 * 1024, // 50MB
+  onDrop: async (acceptedFiles) => {
+    // Validate and upload
+  }
+})
+
+Server-Side
+
+Validate file types and sizes
+Scan for malicious content
+Generate unique file names
+Store in Supabase Storage with proper access controls

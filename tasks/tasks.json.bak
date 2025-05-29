@@ -1,0 +1,2651 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Project Setup and Repository Configuration",
+      "description": "Initialize the Next.js 14+ project with App Router, configure Tailwind CSS, Shadcn/UI, and set up the development environment.",
+      "details": "1. Create a new Next.js 14+ project using `npx create-next-app@latest` with TypeScript\n2. Configure Tailwind CSS with the project's color palette\n3. Set up Shadcn/UI components library (v0.4.0+)\n4. Configure ESLint and Prettier for code quality\n5. Set up Git repository with proper branching strategy\n6. Create development, staging, and production environments\n7. Configure environment variables for different environments\n8. Set up Husky for pre-commit hooks\n9. Install React Hook Form (v7.45+) and Zod (v3.22+) for form validation\n10. Configure Zustand (v4.4+) for state management alongside React Context",
+      "testStrategy": "Verify project structure is correct, ensure all dependencies install without conflicts, confirm build process works without errors, and validate that the development server starts correctly.",
+      "priority": "high",
+      "dependencies": [],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Initialize Next.js 14+ Project with App Router and TypeScript",
+          "description": "Create a new Next.js 14+ project using create-next-app, enabling TypeScript, App Router, and src directory structure.",
+          "dependencies": [],
+          "details": "Run `npx create-next-app@latest` and select options for TypeScript, App Router, and src directory. Verify project structure and initial run.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Configure Tailwind CSS",
+          "description": "Set up Tailwind CSS in the Next.js project, including configuration files and initial styles.",
+          "dependencies": [
+            1
+          ],
+          "details": "Install Tailwind CSS, initialize tailwind.config.js and postcss.config.js, and add Tailwind directives to global styles. Test with a sample component.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Integrate Shadcn/UI Component Library",
+          "description": "Install and configure Shadcn/UI for use with Tailwind CSS and Next.js.",
+          "dependencies": [
+            2
+          ],
+          "details": "Follow Shadcn/UI installation steps, configure theme if needed, and verify integration by rendering a sample Shadcn component.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Set Up ESLint for Code Quality",
+          "description": "Configure ESLint with recommended rules for Next.js, TypeScript, and Tailwind CSS.",
+          "dependencies": [
+            1
+          ],
+          "details": "Install ESLint, extend with Next.js and TypeScript plugins, and add Tailwind CSS linting rules. Ensure linting works on sample files.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Configure Prettier for Code Formatting",
+          "description": "Install and set up Prettier, ensuring compatibility with ESLint and project conventions.",
+          "dependencies": [
+            4
+          ],
+          "details": "Install Prettier and related plugins, create .prettierrc, and configure ESLint-Prettier integration. Test formatting on sample files.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Initialize Git Repository and Define Branching Strategy",
+          "description": "Initialize a Git repository, create .gitignore, and document the branching strategy (e.g., main, develop, feature branches).",
+          "dependencies": [
+            1
+          ],
+          "details": "Run `git init`, add .gitignore, make initial commit, and create documentation for branching workflow in README or CONTRIBUTING.md.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Create Environment Configuration Files",
+          "description": "Set up .env files for different environments (development, production, test) and document environment variable usage.",
+          "dependencies": [
+            1
+          ],
+          "details": "Create .env.local, .env.production, and .env.example. Add sample variables and update documentation for environment management.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Set Up Husky for Git Hooks",
+          "description": "Install and configure Husky to enforce pre-commit and pre-push hooks for linting and formatting.",
+          "dependencies": [
+            6,
+            5
+          ],
+          "details": "Install Husky, add hooks to run ESLint and Prettier before commits, and verify hooks trigger as expected.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Install and Configure React Hook Form, Zod, and Zustand",
+          "description": "Add React Hook Form for forms, Zod for schema validation, and Zustand for state management. Verify integration with sample usage.",
+          "dependencies": [
+            1
+          ],
+          "details": "Install packages, create example form using React Hook Form and Zod, and set up a Zustand store. Document usage patterns.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Verify Project Setup and Document Onboarding Steps",
+          "description": "Test the full setup by running the app, checking code quality tools, and updating documentation for onboarding new developers.",
+          "dependencies": [
+            2,
+            3,
+            5,
+            7,
+            8,
+            9
+          ],
+          "details": "Run the development server, ensure all tools work as expected, and update README with setup, scripts, and contribution guidelines.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Authentication System Integration with Clerk",
+      "description": "Implement user authentication using Clerk, including email/password login, social authentication, MFA, and session management.",
+      "details": "1. Install Clerk SDK (`@clerk/nextjs` v4.25+)\n2. Configure Clerk provider in the application root\n3. Implement sign-up flow with email verification\n4. Set up login with email/password\n5. Configure social authentication with Google and Microsoft\n6. Implement multi-factor authentication\n7. Set up password reset functionality\n8. Configure session management with appropriate timeouts\n9. Create protected routes using Clerk middleware\n10. Implement user profile data synchronization with Supabase\n11. Add sign-out functionality\n12. Create auth-related UI components (SignIn, SignUp, UserButton)",
+      "testStrategy": "Test all authentication flows (signup, login, logout, password reset), verify social authentication providers work correctly, ensure protected routes redirect unauthenticated users, and validate session persistence and timeout behavior.",
+      "priority": "high",
+      "dependencies": [
+        1
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Install Clerk SDK",
+          "description": "Add the Clerk SDK to the project using the appropriate package manager and verify installation.",
+          "dependencies": [],
+          "details": "Run the installation command (e.g., npm install @clerk/clerk-react) and confirm the package is listed in dependencies.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Initialize Clerk in Application",
+          "description": "Configure Clerk provider at the root of the application and set up environment variables.",
+          "dependencies": [
+            1
+          ],
+          "details": "Wrap the app with ClerkProvider, set Clerk frontend API key, and verify Clerk loads in development.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Configure Authentication Providers",
+          "description": "Enable and configure desired social authentication providers (e.g., Google, GitHub) in the Clerk dashboard.",
+          "dependencies": [
+            2
+          ],
+          "details": "Access Clerk dashboard, enable providers, input required credentials, and test provider availability in the UI.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Implement Sign-Up Flow",
+          "description": "Develop and test the user sign-up flow using Clerk's prebuilt or custom components.",
+          "dependencies": [
+            2
+          ],
+          "details": "Integrate <SignUp /> component, handle form submission, and verify user creation in Clerk dashboard.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Implement Login Flow",
+          "description": "Develop and test the user login flow using Clerk's prebuilt or custom components.",
+          "dependencies": [
+            2
+          ],
+          "details": "Integrate <SignIn /> component, handle authentication, and verify session creation.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Integrate Social Authentication",
+          "description": "Enable and test social login flows for each configured provider.",
+          "dependencies": [
+            3,
+            4,
+            5
+          ],
+          "details": "Verify OAuth redirects, successful sign-in, and user profile creation for each provider.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Multi-Factor Authentication (MFA)",
+          "description": "Enable MFA in Clerk dashboard and integrate MFA setup and verification flows in the UI.",
+          "dependencies": [
+            2,
+            4,
+            5
+          ],
+          "details": "Configure MFA options (e.g., SMS, authenticator app), test enrollment, and verify challenge during login.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Implement Password Reset Flow",
+          "description": "Add password reset functionality using Clerk's components and test end-to-end recovery.",
+          "dependencies": [
+            2,
+            4,
+            5
+          ],
+          "details": "Integrate <ForgotPassword /> or equivalent, verify email delivery, and ensure password update works.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Session Management and Validation",
+          "description": "Implement session management, including token validation and session persistence.",
+          "dependencies": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "details": "Use Clerk's session hooks or backend SDK to check authentication state and handle session expiration.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Protect Application Routes",
+          "description": "Restrict access to protected routes based on authentication state using Clerk's utilities.",
+          "dependencies": [],
+          "details": "Wrap protected routes with authentication checks and redirect unauthenticated users to login.",
+          "status": "pending"
+        },
+        {
+          "id": 11,
+          "title": "Synchronize Clerk with Supabase",
+          "description": "Integrate Clerk authentication with Supabase backend, configure JWT templates, and update RLS policies.",
+          "dependencies": [],
+          "details": "Set Supabase JWT secret in Clerk, update Supabase client to accept Clerk tokens, and test user data sync.",
+          "status": "pending"
+        },
+        {
+          "id": 12,
+          "title": "Implement Sign-Out and Authentication UI Components",
+          "description": "Add sign-out functionality and build or customize authentication-related UI components.",
+          "dependencies": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "details": "Integrate <SignOutButton />, ensure session termination, and polish UI for all auth flows.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Database Schema Design and Supabase Integration",
+      "description": "Design and implement the database schema in Supabase PostgreSQL according to the requirements, including user accounts, exams, submissions, and credit management.",
+      "details": "1. Install Supabase client (`@supabase/supabase-js` v2.38+)\n2. Create the following tables in Supabase:\n   - users (synced with Clerk)\n   - exams (metadata, status, creation date)\n   - questions (linked to exams)\n   - student_submissions (file references, status)\n   - grades (per question and overall)\n   - feedback (AI-generated and teacher edits)\n   - credits (balance, transactions)\n   - subscriptions (tier, status)\n3. Set up foreign key relationships between tables\n4. Configure RLS (Row Level Security) policies\n5. Create database indexes for performance\n6. Set up database triggers for automatic updates\n7. Configure Supabase Storage buckets for file storage\n8. Create database migration scripts\n9. Implement database backup strategy\n10. Set up TypeScript types for database schema",
+      "testStrategy": "Validate schema design with test data, verify foreign key constraints work correctly, test RLS policies to ensure proper data access control, benchmark query performance, and ensure data integrity across related tables.",
+      "priority": "high",
+      "dependencies": [
+        1
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Initialize Supabase Project and Client Setup",
+          "description": "Create a new Supabase project, obtain API keys, and configure the Supabase client in the application codebase.",
+          "dependencies": [],
+          "details": "Sign up or log in to Supabase, create a new project, set a strong database password, and integrate the Supabase client library into your codebase with the correct environment variables.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Design and Create Database Tables",
+          "description": "Define a normalized schema and create tables according to the application's data model and user stories.",
+          "dependencies": [
+            1
+          ],
+          "details": "Use the Supabase dashboard or SQL editor to create tables with appropriate columns, data types, and constraints. Ensure the schema supports all required features and relationships.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Define Table Relationships and Foreign Keys",
+          "description": "Establish relationships between tables using foreign keys to enforce data integrity.",
+          "dependencies": [
+            2
+          ],
+          "details": "Identify one-to-many, many-to-many, and one-to-one relationships. Add foreign key constraints and document the relationships for future reference.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Enable and Configure Row-Level Security (RLS) Policies",
+          "description": "Enable RLS on relevant tables and write policies to enforce access control based on user roles and requirements.",
+          "dependencies": [
+            2
+          ],
+          "details": "Enable RLS for each table in the Supabase dashboard or via SQL. Write and test policies to restrict data access according to the PRD's security requirements.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Create Indexes for Performance Optimization",
+          "description": "Analyze query patterns and add indexes to frequently queried columns to improve database performance.",
+          "dependencies": [
+            2
+          ],
+          "details": "Identify columns used in WHERE clauses, JOINs, and ORDER BY statements. Create appropriate indexes and verify their effectiveness using query analysis tools.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement Database Triggers for Business Logic",
+          "description": "Write triggers to automate business logic such as auditing, cascading updates, or data validation.",
+          "dependencies": [
+            2
+          ],
+          "details": "Define trigger functions in SQL and attach them to relevant tables for actions like insert, update, or delete. Test triggers to ensure correct behavior.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Configure Supabase Storage for File Handling",
+          "description": "Set up Supabase Storage buckets and permissions for handling user-uploaded files or media assets.",
+          "dependencies": [
+            1
+          ],
+          "details": "Create storage buckets, define access rules, and integrate storage operations into the application as needed.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Set Up Database Migrations Workflow",
+          "description": "Establish a repeatable process for managing schema changes using migration scripts or tools.",
+          "dependencies": [
+            2
+          ],
+          "details": "Choose a migration tool (e.g., Supabase CLI, SQL files), write initial migration scripts, and document the workflow for applying and rolling back changes.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Define and Document Database Backup Strategy",
+          "description": "Plan and document a backup and restore strategy to ensure data durability and disaster recovery.",
+          "dependencies": [
+            1
+          ],
+          "details": "Review Supabase's automated backup features, determine backup frequency, retention policies, and test the restore process. Document procedures for compliance and operational readiness.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Generate and Integrate TypeScript Types from Database Schema",
+          "description": "Automatically generate TypeScript types from the database schema and integrate them into the codebase for type safety.",
+          "dependencies": [
+            2
+          ],
+          "details": "Use tools like Supabase's codegen or openapi-typegen to generate types, ensure they are up-to-date with schema changes, and use them throughout the application for type-safe database access.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "User Profile Management System",
+      "description": "Implement the user profile management functionality allowing users to edit personal information, set language preferences, manage notification settings, and delete their accounts.",
+      "details": "1. Create user profile page with editable fields\n2. Implement form for personal information editing using React Hook Form\n3. Add language preference selector with options for multiple languages\n4. Create notification preferences panel with toggles for different notification types\n5. Implement account deletion flow with confirmation\n6. Add profile picture upload and management\n7. Create API endpoints for profile updates\n8. Implement data synchronization between Clerk and Supabase\n9. Add form validation using Zod\n10. Create success/error notifications for profile actions\n11. Implement responsive design for mobile compatibility",
+      "testStrategy": "Test all profile editing functions, verify data persistence after updates, ensure language changes affect the UI correctly, validate notification preference changes are saved, and test the account deletion process thoroughly including data cleanup.",
+      "priority": "medium",
+      "dependencies": [
+        2,
+        3
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Profile Page UI",
+          "description": "Create the visual layout and components for the user profile management page",
+          "dependencies": [],
+          "details": "Design a responsive profile page with sections for personal information, preferences, and account settings. Include mockups for both desktop and mobile views. Ensure accessibility standards are met.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Profile Form Components",
+          "description": "Develop reusable form components for profile data entry and editing",
+          "dependencies": [
+            1
+          ],
+          "details": "Create form components for user details, including input validation, error handling, and state management. Build components for text inputs, dropdowns, toggles, and buttons needed across profile sections.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Build Language and Notification Preferences",
+          "description": "Implement UI and logic for managing user language and notification settings",
+          "dependencies": [
+            2
+          ],
+          "details": "Create toggles for notification types (email, push, in-app). Implement language selection dropdown with localization support. Add save/cancel functionality with appropriate feedback.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Develop Profile Picture Upload",
+          "description": "Create functionality for users to upload, crop, and manage profile pictures",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement file upload with drag-and-drop support, image preview, and cropping tool. Add validation for file types, size limits, and error handling. Include options to remove or replace existing images.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Create Account Deletion Flow",
+          "description": "Implement secure account deletion process with confirmation steps",
+          "dependencies": [
+            2
+          ],
+          "details": "Design multi-step confirmation process with warnings about data loss. Implement temporary deactivation option. Create feedback mechanisms and follow-up communications for deleted accounts.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Develop API Endpoints for Profile Management",
+          "description": "Create backend API endpoints to handle all profile operations",
+          "dependencies": [],
+          "details": "Design and implement RESTful API endpoints for retrieving, updating, and deleting profile data. Include proper authentication, error handling, and response formatting. Document API for frontend integration.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Clerk/Supabase Synchronization",
+          "description": "Create system to keep user data synchronized between Clerk and Supabase",
+          "dependencies": [
+            6
+          ],
+          "details": "Develop bidirectional sync mechanism for user profile changes. Implement webhooks for real-time updates. Create conflict resolution strategy and error handling for failed syncs.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Add Validation and Notifications",
+          "description": "Implement comprehensive validation and user notifications for profile actions",
+          "dependencies": [
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          "details": "Create client and server-side validation for all form inputs. Implement toast notifications for success/error states. Add confirmation dialogs for critical actions. Ensure consistent error messaging across the profile management experience.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Main Dashboard and Navigation Implementation",
+      "description": "Develop the main dashboard with exam list view, filtering capabilities, status updates, and sidebar navigation according to the design specifications.",
+      "details": "1. Create responsive dashboard layout with fixed header and collapsible sidebar (240px expanded)\n2. Implement exam list view with sorting and pagination\n3. Add comprehensive filtering system by status, subject, and date\n4. Create real-time status update indicators\n5. Implement quick access section for recent exams\n6. Add performance metrics overview cards\n7. Display credit balance prominently\n8. Create collapsible sidebar navigation with all required sections\n9. Add user profile quick access in header\n10. Implement responsive design for mobile and tablet\n11. Add skeleton loading states for better UX\n12. Create empty states for new users",
+      "testStrategy": "Test dashboard loading performance, verify all filters work correctly, ensure responsive behavior on different screen sizes, validate navigation paths work as expected, and test real-time updates of exam status.",
+      "priority": "high",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Define Dashboard Layout Structure",
+          "description": "Create the overall layout framework for the dashboard including grid system, component placement, and responsive breakpoints",
+          "dependencies": [],
+          "details": "Design the dashboard's main container, grid system, and spacing guidelines. Include specifications for header, main content area, sidebar, and footer. Create wireframes showing component placement at different screen sizes. Define the responsive behavior for all layout elements.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Exam List Component",
+          "description": "Develop the exam list component with sorting, pagination, and item display",
+          "dependencies": [
+            1
+          ],
+          "details": "Create the exam list table/grid with columns for exam name, date, status, and score. Implement sorting functionality for each column. Add pagination controls with configurable items per page. Design individual exam item cards with appropriate visual indicators for status. Include empty state design for when no exams are available.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Build Advanced Filtering System",
+          "description": "Create a comprehensive filtering system for the exam list with multiple filter types and saved filters",
+          "dependencies": [
+            2
+          ],
+          "details": "Implement filter controls for date ranges, exam types, status, and scores. Create UI for filter selection, application, and clearing. Add functionality for saving and loading custom filter combinations. Ensure filters work with pagination and sorting. Design mobile-friendly filter UI that collapses appropriately.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Develop Real-time Update Mechanism",
+          "description": "Implement the system for real-time data updates throughout the dashboard",
+          "dependencies": [
+            1
+          ],
+          "details": "Set up WebSocket or polling connection for real-time data. Create data refresh strategy with configurable intervals. Implement visual indicators for when data is refreshing. Add notification system for important real-time changes. Ensure updates don't disrupt user interactions or reset filters/sorting.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Create Quick Access Shortcuts",
+          "description": "Design and implement quick access shortcuts for frequently used dashboard functions",
+          "dependencies": [
+            1
+          ],
+          "details": "Identify key dashboard functions for quick access. Design shortcut UI elements (buttons, icons, cards). Implement keyboard shortcuts for power users. Create customization options for users to set their preferred shortcuts. Ensure shortcuts are accessible and follow WCAG guidelines.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement Performance Metrics Display",
+          "description": "Build visualizations and displays for key performance metrics",
+          "dependencies": [
+            1,
+            4
+          ],
+          "details": "Design charts and graphs for exam scores, progress, and comparison metrics. Implement data visualization components with appropriate libraries. Create summary cards for key statistics. Add tooltips and explanations for complex metrics. Ensure all visualizations are responsive and accessible.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Develop Credit Display System",
+          "description": "Create the component for displaying user credits and credit-related actions",
+          "dependencies": [
+            1
+          ],
+          "details": "Design credit balance display with visual indicators for low balance. Implement credit history view with transaction details. Add credit purchase flow integration points. Create notifications for credit-related events. Ensure secure display of sensitive credit information.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Build Sidebar Navigation Component",
+          "description": "Implement the sidebar navigation with collapsible sections and responsive behavior",
+          "dependencies": [
+            1
+          ],
+          "details": "Design navigation menu structure with main and sub-items. Implement collapsible/expandable sections. Create active state indicators for current page/section. Add responsive behavior for mobile views (hamburger menu). Ensure keyboard navigation works properly throughout the sidebar.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Implement User Profile Access",
+          "description": "Create the user profile section with account information and settings",
+          "dependencies": [
+            1,
+            8
+          ],
+          "details": "Design profile dropdown or dedicated profile page. Implement user information display (name, email, avatar). Add links to account settings, preferences, and logout. Create edit functionality for updatable profile fields. Ensure proper security measures for sensitive information.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Develop Loading and Empty States",
+          "description": "Design and implement loading indicators and empty states for all dashboard components",
+          "dependencies": [
+            2,
+            3,
+            4,
+            6,
+            7
+          ],
+          "details": "Create skeleton loaders for initial page load and data fetching. Design empty states for lists, metrics, and other components when no data is available. Implement error states for failed data loads or operations. Add appropriate messaging and actions for each state. Ensure consistent visual language across all states.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Credit System Backend Implementation",
+      "description": "Develop the backend for the credit-based system, including credit balance tracking, consumption history, alerts, and purchase options.",
+      "details": "1. Create credit balance table in database\n2. Implement credit transaction logging system\n3. Develop API endpoints for credit balance retrieval\n4. Create credit consumption history API\n5. Implement credit deduction logic for exam processing\n6. Add low credit alert system (trigger at 10 credits)\n7. Create credit allocation system for different subscription tiers\n8. Implement credit expiration logic if needed\n9. Add credit refund functionality for failed operations\n10. Create admin panel for manual credit adjustments\n11. Implement credit usage analytics\n12. Set up automated monthly credit renewal for subscriptions",
+      "testStrategy": "Test credit deduction for various operations, verify transaction logging works correctly, ensure low credit alerts trigger appropriately, validate credit balance updates in real-time, and test credit renewal process for different subscription tiers.",
+      "priority": "high",
+      "dependencies": [
+        3
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Database Schema for Credit System",
+          "description": "Define and create normalized database tables for users, credits, transactions, allocations, expirations, refunds, and audit logs. Ensure referential integrity and scalability.",
+          "dependencies": [],
+          "details": "Tables should include primary keys, foreign keys, indexes, and constraints. Document ER diagrams and table relationships.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Transaction Logging Mechanism",
+          "description": "Develop a robust transaction logging system to record all credit-related activities, including allocations, deductions, refunds, and expirations.",
+          "dependencies": [
+            1
+          ],
+          "details": "Ensure logs are immutable, timestamped, and support querying for audits and analytics. Integrate with the main ledger.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Develop API Endpoints for Credit Operations",
+          "description": "Create RESTful API endpoints for credit allocation, deduction, refund, balance inquiry, and transaction history retrieval.",
+          "dependencies": [
+            1,
+            2
+          ],
+          "details": "Endpoints must be secure, follow REST conventions, and include input validation and error handling. Document with OpenAPI/Swagger.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Implement Credit Deduction Logic",
+          "description": "Develop backend logic to deduct credits atomically, ensuring consistency and handling edge cases such as insufficient balance or concurrent requests.",
+          "dependencies": [
+            1,
+            2,
+            3
+          ],
+          "details": "Include rollback mechanisms and idempotency to prevent double deductions. Unit test for race conditions.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Set Up Credit Allocation and Expiration Processes",
+          "description": "Build logic for allocating credits to users (manual, promotional, or automated) and scheduling expirations based on business rules.",
+          "dependencies": [
+            1,
+            2,
+            3
+          ],
+          "details": "Implement background jobs for expiration and notifications. Ensure expired credits are marked and cannot be used.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Develop Refund and Reversal Mechanisms",
+          "description": "Implement processes to refund credits to users, including partial and full refunds, and handle transaction reversals with proper logging.",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "details": "Ensure refunds update balances and logs correctly, and are traceable for audits.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Integrate Alerts and Notification System",
+          "description": "Set up real-time alerts for critical events such as low balance, credit expiration, failed deductions, and suspicious activities.",
+          "dependencies": [
+            2,
+            4,
+            5
+          ],
+          "details": "Integrate with email/SMS/push notification services. Allow user preferences for alert types.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Build Admin Panel for Credit Management",
+          "description": "Develop a secure admin interface for managing user credits, viewing logs, issuing manual adjustments, and monitoring system health.",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "details": "Include role-based access control, audit trails, and search/filter capabilities.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Implement Analytics and Reporting Module",
+          "description": "Create analytics dashboards and reports for credit usage, allocation trends, refunds, expirations, and system performance.",
+          "dependencies": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          "details": "Support export to CSV/Excel and scheduled report generation. Ensure data privacy compliance.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Automate Credit Renewal and Subscription Integration",
+          "description": "Develop automated workflows for credit renewal based on subscription status, including proration, renewal reminders, and integration with payment systems.",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "details": "Ensure seamless user experience and accurate credit balance updates upon renewal.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Stripe Integration for Subscription Management",
+      "description": "Integrate Stripe for handling subscription tiers (Free, Standard, Plus, Full) and payment processing for additional credit purchases.",
+      "details": "1. Install Stripe SDK (`stripe` v13.0+, `@stripe/stripe-js` v2.1+)\n2. Configure Stripe webhook endpoints\n3. Create subscription products and price plans in Stripe dashboard\n4. Implement subscription checkout flow\n5. Create payment processing for additional credit purchases\n6. Implement subscription upgrade/downgrade logic\n7. Add subscription cancellation handling\n8. Create webhook handlers for subscription events\n9. Implement subscription status synchronization with database\n10. Add receipt generation and emailing via Resend\n11. Implement subscription renewal handling\n12. Create subscription management UI for users\n13. Add proper error handling for payment failures",
+      "testStrategy": "Test complete subscription flow using Stripe test mode, verify webhooks process events correctly, ensure subscription changes reflect in user's credit allocation, test payment processing for additional credits, and validate receipt generation and delivery.",
+      "priority": "high",
+      "dependencies": [
+        6
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Set up Stripe SDK and API Keys",
+          "description": "Install and configure the appropriate Stripe server-side SDK based on your backend technology stack and set up API keys for different environments.",
+          "dependencies": [],
+          "details": "Choose the appropriate server-side SDK from Stripe's offerings based on your backend language. Install the SDK using your package manager. Create Stripe accounts for development, testing, and production environments. Generate and securely store API keys for each environment. Configure the SDK with the appropriate API keys based on the current environment.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Webhook Configuration and Security",
+          "description": "Set up webhook endpoints, implement signature verification, and configure event handling for Stripe events.",
+          "dependencies": [
+            1
+          ],
+          "details": "Create webhook endpoint(s) in your backend application. Implement Stripe signature verification to ensure webhook security. Register the webhook URL in the Stripe dashboard for all required events. Set up logging for webhook events. Implement retry logic for failed webhook processing. Test webhook functionality using Stripe's webhook testing tools.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Create Products and Pricing Plans in Stripe",
+          "description": "Define and set up subscription products, pricing plans, and trial periods in the Stripe dashboard or via API.",
+          "dependencies": [
+            1
+          ],
+          "details": "Define product offerings and their features. Create products in Stripe via API or dashboard. Set up pricing plans for each product (monthly, annual, etc.). Configure trial periods if applicable. Set up metadata for products and plans to track additional information. Implement a synchronization mechanism to keep your database in sync with Stripe products.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Implement Customer Creation and Management",
+          "description": "Create and manage Stripe customers, link them to your application users, and handle customer metadata.",
+          "dependencies": [
+            1
+          ],
+          "details": "Create a Stripe customer when a user signs up or initiates their first purchase. Store the Stripe customer ID in your user database. Implement functionality to update customer information in Stripe when it changes in your application. Handle customer metadata to store additional information. Implement customer retrieval and listing functionality for admin purposes.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Develop Checkout Flow with Payment Element",
+          "description": "Implement a secure checkout flow using Stripe's Payment Element for collecting payment information.",
+          "dependencies": [
+            1,
+            3,
+            4
+          ],
+          "details": "Integrate Stripe's Payment Element into your frontend. Create a checkout page with product selection and payment form. Implement dynamic payment method display based on customer location and eligibility. Handle form validation and submission. Create server-side endpoints to create payment intents or setup intents. Implement success and error handling for the checkout process.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement Subscription Creation and Payment Processing",
+          "description": "Process payments and create subscriptions based on customer selections and handle initial payment confirmation.",
+          "dependencies": [
+            3,
+            4,
+            5
+          ],
+          "details": "Create a subscription object in Stripe when a customer completes checkout. Handle initial payment processing and confirmation. Store subscription details in your database. Implement error handling for failed payments. Set up automatic retries for failed payments. Create a confirmation page showing subscription details after successful payment.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Develop Subscription Upgrade and Downgrade Flows",
+          "description": "Implement functionality for customers to change their subscription plan, handling proration and billing adjustments.",
+          "dependencies": [
+            6
+          ],
+          "details": "Create UI for customers to view and select different plans. Implement backend logic to handle subscription updates. Configure proration settings for upgrades and downgrades. Handle immediate vs. end-of-billing-period changes. Update local database with new subscription details. Send confirmation emails for plan changes.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Implement Subscription Cancellation Flow",
+          "description": "Create functionality for customers to cancel subscriptions with options for immediate or end-of-period cancellation.",
+          "dependencies": [
+            6
+          ],
+          "details": "Develop UI for subscription cancellation with confirmation dialog. Implement backend endpoints to process cancellation requests. Configure cancellation options (immediate vs. end of billing period). Update subscription status in your database. Implement feedback collection during cancellation. Send cancellation confirmation emails.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Develop Webhook Event Handlers",
+          "description": "Implement handlers for all relevant Stripe webhook events to keep your application in sync with Stripe.",
+          "dependencies": [
+            2,
+            6
+          ],
+          "details": "Create handlers for payment_intent events (succeeded, failed, etc.). Implement handlers for subscription events (created, updated, deleted, etc.). Develop handlers for invoice events (created, paid, payment_failed, etc.). Set up customer.subscription.updated event handling for subscription changes. Implement idempotency to prevent duplicate processing of events. Create comprehensive logging for webhook processing.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Implement Subscription Status Synchronization",
+          "description": "Ensure subscription status is always in sync between your application and Stripe through webhooks and periodic reconciliation.",
+          "dependencies": [
+            6,
+            9
+          ],
+          "details": "Update local subscription status based on webhook events. Implement a periodic reconciliation job to catch any missed updates. Create admin tools to manually sync subscription status. Implement status change notifications for customers. Handle edge cases like failed payments, past due status, and cancellations. Create comprehensive logging for status changes.",
+          "status": "pending"
+        },
+        {
+          "id": 11,
+          "title": "Set up Receipt and Invoice Emailing",
+          "description": "Configure automatic sending of receipts and invoices to customers for payments and subscription renewals.",
+          "dependencies": [
+            6,
+            9
+          ],
+          "details": "Configure Stripe to send automatic receipts or implement custom receipt generation. Create email templates for receipts and invoices. Set up webhook handlers to trigger custom emails when invoices are created or paid. Implement functionality to allow customers to download past invoices. Create an invoice history view in the customer dashboard.",
+          "status": "pending"
+        },
+        {
+          "id": 12,
+          "title": "Implement Comprehensive Error Handling and Monitoring",
+          "description": "Develop robust error handling for all Stripe operations and set up monitoring and alerting for payment issues.",
+          "dependencies": [
+            5,
+            6,
+            9
+          ],
+          "details": "Implement try-catch blocks around all Stripe API calls with specific error handling. Create user-friendly error messages for common payment issues. Set up logging for all Stripe-related errors. Configure alerts for critical payment failures. Implement a dashboard for monitoring payment success rates and issues. Create a process for handling and resolving payment disputes.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Credit System Frontend Implementation",
+      "description": "Develop the frontend components for displaying credit balance, purchase options, subscription management, and transaction history.",
+      "details": "1. Create credit balance display component for dashboard\n2. Implement credit purchase modal with Stripe Elements\n3. Develop subscription tier comparison UI\n4. Create subscription management page\n5. Implement credit transaction history table with filtering\n6. Add low credit warning notifications\n7. Create credit usage visualization charts\n8. Implement subscription upgrade flow UI\n9. Add receipt download functionality\n10. Create responsive design for all credit-related components\n11. Implement loading and error states\n12. Add tooltips explaining credit usage",
+      "testStrategy": "Test credit display updates in real-time, verify purchase flow works correctly, ensure subscription tier comparison is clear and accurate, validate transaction history displays all relevant information, and test responsive behavior on different devices.",
+      "priority": "medium",
+      "dependencies": [
+        5,
+        6,
+        7
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Credit Balance Display Component",
+          "description": "Develop a user-friendly component to display current credit balance, usage statistics, and account status",
+          "dependencies": [],
+          "details": "Create a responsive component that prominently shows the user's current credit balance with visual indicators for low balance states. Include usage trends and implement real-time updates when credits are used or purchased. Ensure compatibility with the design system and implement proper error handling for failed balance retrieval.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Credit Purchase Modal",
+          "description": "Build an interactive modal for purchasing additional credits with integrated payment processing",
+          "dependencies": [
+            1
+          ],
+          "details": "Develop a multi-step purchase flow with package selection, payment method input, and confirmation screens. Implement form validation for payment details following PCI-DSS compliance standards. Include order summary, pricing information, and integrate with the payment gateway API. Add loading states and success/error messaging for transaction feedback.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Tier Comparison Interface",
+          "description": "Create an interactive comparison tool for different credit tier options",
+          "dependencies": [
+            1
+          ],
+          "details": "Design and implement a comparative view of available credit tiers with feature highlights, pricing information, and best-value indicators. Include interactive elements to help users understand the benefits of each tier. Ensure the comparison is visually clear with consistent styling and responsive layout for all device sizes.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Credit Management Dashboard",
+          "description": "Develop a comprehensive dashboard for managing credit settings and preferences",
+          "dependencies": [
+            1,
+            2
+          ],
+          "details": "Build a centralized interface for credit-related settings including auto-renewal options, usage limits, and notification preferences. Implement toggles for feature enablement and create interfaces for setting spending thresholds. Include user permission handling for team accounts and ensure all changes persist properly to the backend.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Transaction History Component",
+          "description": "Create a detailed transaction history view with filtering and export capabilities",
+          "dependencies": [
+            1,
+            4
+          ],
+          "details": "Develop a paginated transaction log showing credit purchases, usage, and adjustments with timestamps and reference IDs. Implement filtering by date range, transaction type, and amount. Add CSV/PDF export functionality and ensure proper handling of large transaction datasets with virtualized scrolling for performance.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Low Credit Warning System",
+          "description": "Implement a notification system for low credit balance warnings",
+          "dependencies": [
+            1
+          ],
+          "details": "Create toast notifications and in-app alerts that trigger when credit balance falls below configurable thresholds. Implement dismissible warnings with options to snooze or disable. Add visual indicators throughout the application when credits are running low and ensure notifications are not excessively frequent.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Credit Usage Analytics Charts",
+          "description": "Develop interactive data visualizations for credit usage patterns",
+          "dependencies": [
+            1,
+            5
+          ],
+          "details": "Implement various chart types (line, bar, pie) to visualize credit consumption over time, by feature, and compared to previous periods. Add interactive elements like tooltips, zooming, and date range selection. Ensure charts are accessible with proper ARIA attributes and keyboard navigation. Optimize rendering performance for large datasets.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Responsive Design Implementation",
+          "description": "Ensure all credit system components are fully responsive across devices",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "details": "Audit and optimize all credit system UI components for various screen sizes from mobile to desktop. Implement appropriate layout changes, touch-friendly controls for mobile, and ensure text readability at all breakpoints. Test thoroughly on multiple devices and browsers, fixing any responsive design issues that emerge.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Exam Creation Wizard - Step 1 & 2 (Subject Selection and Reference Upload)",
+      "description": "Implement the first two steps of the exam creation wizard: subject/level selection and reference exam upload with AI parsing.",
+      "details": "1. Create multi-step wizard component with progress indicator\n2. Implement subject and level selection form with predefined options\n3. Add exam metadata input fields (name, date, class)\n4. Create file upload component using React Dropzone for reference exam\n5. Implement file validation for PDF and image formats (JPG, PNG)\n6. Add file size limit validation (max 50MB)\n7. Create upload progress indicator\n8. Implement backend API for file storage in AWS S3 via Supabase Storage\n9. Add AI parsing status indicator\n10. Implement auto-save functionality\n11. Create navigation between wizard steps\n12. Add help tooltips for complex fields",
+      "testStrategy": "Test file upload with various formats and sizes, verify subject selection works correctly, ensure progress is saved between steps, validate file validation prevents invalid uploads, and test the auto-save functionality.",
+      "priority": "high",
+      "dependencies": [
+        3,
+        5
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Wizard UI Framework",
+          "description": "Create the base UI framework for the exam wizard with progress indicators and navigation controls",
+          "dependencies": [],
+          "details": "Implement a clear, numbered step indicator showing the user's current position in the wizard flow. Keep the total number of steps between 3-8 to avoid user fatigue. Design a consistent header that clearly indicates the wizard's purpose on every screen. Remove unnecessary interface elements to help users focus on the task.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Subject/Level Selection Step",
+          "description": "Create the first step of the wizard for selecting exam subject and difficulty level",
+          "dependencies": [
+            1
+          ],
+          "details": "Design a clean interface with dropdown menus or card-based selection for subjects and levels. Include clear labels and brief descriptions for each option. Set appropriate default values based on user history if available. Ensure this step is self-sufficient with all necessary information for users to make informed choices.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Develop Metadata Input Form",
+          "description": "Build the form for collecting exam metadata such as title, description, and tags",
+          "dependencies": [
+            1
+          ],
+          "details": "Create form fields with clear labels and validation rules. Include helpful placeholder text and tooltips explaining the purpose of each field. Mark required fields clearly and provide immediate validation feedback. Keep the form concise by only requesting essential information and making non-critical fields optional.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Create File Upload Component",
+          "description": "Develop the file upload interface with drag-and-drop functionality and file type validation",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement a drag-and-drop zone with clear visual feedback. Add file type restrictions and size limits with user-friendly error messages. Show upload progress indicators and preview capabilities where appropriate. Include fallback button for traditional file selection.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Build Validation System",
+          "description": "Implement client-side and server-side validation for all user inputs and uploaded files",
+          "dependencies": [
+            2,
+            3,
+            4
+          ],
+          "details": "Create validation rules for all form fields with clear, actionable error messages. Implement file format and content validation. Highlight errors directly at the step where they occur rather than delaying feedback. Ensure validation messages are specific about what went wrong and how to fix it.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Develop Progress Tracking System",
+          "description": "Create a system to track and display user progress through the wizard",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement a visual progress indicator showing completed, current, and upcoming steps. Store progress data to enable resuming the wizard later. Add visual cues for successfully completed steps. Design a final completion message with results summary.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Backend API Integration",
+          "description": "Develop API endpoints for handling data submission and processing from each wizard step",
+          "dependencies": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "details": "Create RESTful API endpoints for each wizard step. Implement proper error handling and status codes. Design the API to support partial submissions for auto-save functionality. Ensure secure file handling and data validation on the server side.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Create AI Processing Status Indicator",
+          "description": "Develop a component to show the status of AI parsing for uploaded exam files",
+          "dependencies": [
+            4,
+            7
+          ],
+          "details": "Design an animated loading indicator for when AI is processing files. Create clear status messages explaining the current processing stage. Implement error handling for AI processing failures with retry options. Add estimated time remaining where possible.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Implement Auto-Save Functionality",
+          "description": "Create a system to automatically save user progress at each step",
+          "dependencies": [
+            5,
+            7
+          ],
+          "details": "Implement periodic auto-saving of form data. Add visual indicators when auto-save occurs. Create a system to restore saved data when users return to the wizard. Handle edge cases like network failures during auto-save operations.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Develop Summary and Review Step",
+          "description": "Create a final step showing a summary of all user inputs for review before submission",
+          "dependencies": [
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          "details": "Design a comprehensive summary page showing all user selections and inputs. Allow users to navigate back to specific steps to make changes if needed. Include a clear final submission button. Provide confirmation feedback after successful submission.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Exam Creation Wizard - Step 3 & 4 (AI Parsing and Student Upload)",
+      "description": "Complete the exam creation wizard with AI parsing of reference exam and student submission batch upload functionality.",
+      "details": "1. Implement AI parsing review interface for reference exam\n2. Create editable marking scheme component\n3. Add expected answer modification capability\n4. Implement batch file upload for student submissions\n5. Create multi-file selection and upload component\n6. Add individual upload progress indicators\n7. Implement failed upload retry functionality\n8. Create student name/ID input mechanism\n9. Add validation for student submission files\n10. Implement exam creation completion and submission\n11. Create credit deduction confirmation\n12. Add exam creation success notification",
+      "testStrategy": "Test AI parsing review interface with various exam formats, verify marking scheme editing works correctly, ensure batch upload handles multiple files properly, validate retry functionality for failed uploads, and test the complete exam creation flow end-to-end.",
+      "priority": "high",
+      "dependencies": [
+        9
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Implement AI Parsing Review Step",
+          "description": "Develop the UI and backend logic for reviewing parsed answers using AI, including displaying AI suggestions and allowing human validation.",
+          "dependencies": [],
+          "details": "Ensure the system supports human-in-the-loop review, displays actionable AI feedback, and tracks which suggestions are accepted or rejected for continuous improvement.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Design and Edit Marking Scheme Interface",
+          "description": "Create an interface for educators to view, edit, and approve the marking scheme generated or suggested by AI.",
+          "dependencies": [
+            1
+          ],
+          "details": "Allow for manual overrides, versioning, and validation of marking criteria. Ensure changes are tracked and auditable.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Enable Answer Modification Workflow",
+          "description": "Allow users to modify parsed answers before final submission, with clear UI for editing and validation.",
+          "dependencies": [
+            1
+          ],
+          "details": "Support inline editing, change tracking, and validation checks to ensure answer integrity.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Develop Batch Upload Functionality",
+          "description": "Implement backend and UI for uploading multiple answer sheets or documents in a single operation.",
+          "dependencies": [
+            1
+          ],
+          "details": "Support file validation, progress tracking, error reporting, and efficient handling of large volumes.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Integrate Progress Indicators",
+          "description": "Add real-time progress indicators for each wizard step, especially for parsing, batch uploads, and review processes.",
+          "dependencies": [
+            4
+          ],
+          "details": "Display granular progress (e.g., per file, per answer) and handle edge cases like network interruptions.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement Retry Logic for Failed Operations",
+          "description": "Develop robust retry mechanisms for failed parsing, uploads, or submissions, with clear user feedback.",
+          "dependencies": [
+            4,
+            5
+          ],
+          "details": "Allow users to retry failed steps individually or in bulk, and log errors for diagnostics.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Build Student Information Input and Validation",
+          "description": "Create forms and backend logic for entering and validating student information associated with each answer sheet.",
+          "dependencies": [
+            4
+          ],
+          "details": "Ensure data integrity, prevent duplicates, and support bulk student info import if needed.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Develop Comprehensive Validation Checks",
+          "description": "Implement validation logic for all user inputs, parsed data, marking schemes, and uploads.",
+          "dependencies": [
+            2,
+            3,
+            4,
+            7
+          ],
+          "details": "Ensure all data meets required formats, completeness, and consistency before allowing progression.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Handle Completion and Credit Deduction Logic",
+          "description": "Implement transactional logic to finalize the wizard, deduct credits, and lock submissions upon successful completion.",
+          "dependencies": [],
+          "details": "Ensure atomicity, handle edge cases (e.g., insufficient credits), and provide clear user feedback.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Configure Notifications and User Feedback",
+          "description": "Set up notifications for key events (e.g., completion, errors, retries needed) via UI and/or email.",
+          "dependencies": [
+            6,
+            9
+          ],
+          "details": "Ensure timely, actionable, and clear notifications for all relevant stakeholders.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "OpenAI Integration for Exam Processing",
+      "description": "Integrate OpenAI's GPT-4 Vision API for processing exam papers, including handwriting recognition, question parsing, and answer evaluation.",
+      "details": "1. Install OpenAI SDK (`openai` v4.0+)\n2. Create API wrapper for GPT-4 Vision interactions\n3. Implement prompt engineering for exam processing\n4. Create handwriting recognition and transcription flow\n5. Implement question parsing and mapping to reference\n6. Develop answer evaluation against reference solutions\n7. Create grade calculation with justification\n8. Implement feedback generation in teacher's tone\n9. Add LaTeX expression recognition capability\n10. Implement graphical content analysis\n11. Create processing queue for batch handling\n12. Add error handling and fallback mechanisms\n13. Implement processing status tracking\n14. Create logging for AI interactions for debugging",
+      "testStrategy": "Test AI processing with various handwriting samples, verify LaTeX expression recognition accuracy, ensure question mapping works correctly, validate grade calculation against manual grading, and test the system with edge cases like poor image quality or unusual answers.",
+      "priority": "high",
+      "dependencies": [
+        3,
+        10
+      ],
+      "status": "pending",
+      "subtasks": []
+    },
+    {
+      "id": 12,
+      "title": "Background Job Processing System",
+      "description": "Implement a background job processing system using Vercel Cron Jobs for handling exam processing tasks asynchronously.",
+      "details": "1. Set up Vercel Cron Jobs for scheduled tasks\n2. Create job queue table in database\n3. Implement job creation, updating, and tracking\n4. Create job processor for exam processing\n5. Implement retry logic for failed jobs\n6. Add job prioritization based on user tier\n7. Create job status monitoring dashboard\n8. Implement email notifications for job completion\n9. Add error handling and reporting\n10. Create job cancellation functionality\n11. Implement job progress tracking\n12. Add logging for debugging purposes",
+      "testStrategy": "Test job queue processing with various load scenarios, verify retry logic works for failed jobs, ensure email notifications are sent correctly, validate job prioritization works as expected, and test the system under high load conditions.",
+      "priority": "high",
+      "dependencies": [
+        11
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Set up Vercel Cron configuration",
+          "description": "Create and configure the vercel.json file with appropriate cron job schedules",
+          "dependencies": [],
+          "details": "Create a vercel.json file in the project root directory and define cron job configurations with appropriate paths and schedules. Use the '0 5 * * *' syntax for daily jobs at 5am UTC or customize as needed for your background processing requirements.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement API endpoint for cron job execution",
+          "description": "Create a serverless function that will be triggered by the Vercel cron job",
+          "dependencies": [
+            1
+          ],
+          "details": "Develop a serverless or edge function at the path specified in your vercel.json (e.g., /api/cron) that will be called when the cron job executes. This function should initialize the job queue processing and handle authentication to ensure only Vercel can trigger it.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Design job queue data structure",
+          "description": "Create a database schema for storing job information and status",
+          "dependencies": [],
+          "details": "Design a database schema to store job information including job type, status, priority, creation time, execution time, retry count, and related metadata. Consider using a NoSQL database for flexibility or a relational database for complex queries.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Implement job queue management system",
+          "description": "Create functions to add, retrieve, and update jobs in the queue",
+          "dependencies": [
+            3
+          ],
+          "details": "Develop functions to enqueue new jobs, dequeue jobs for processing, update job status, and manage job lifecycle. Implement prioritization logic to ensure high-priority jobs are processed first.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Build job processor with retry logic",
+          "description": "Create a system to process jobs and handle failures with retry capability",
+          "dependencies": [
+            2,
+            4
+          ],
+          "details": "Implement a job processor that executes jobs from the queue, handles failures gracefully, and implements exponential backoff retry logic. Set maximum retry attempts and track retry counts for each job.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement comprehensive error handling",
+          "description": "Create error handling mechanisms for different types of job failures",
+          "dependencies": [
+            5
+          ],
+          "details": "Develop error handling strategies for different failure scenarios (temporary vs. permanent failures). Implement dead letter queues for jobs that consistently fail after maximum retries. Create detailed error logging with contextual information.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Develop job monitoring dashboard",
+          "description": "Create a UI for monitoring job status, history, and performance",
+          "dependencies": [
+            4,
+            5
+          ],
+          "details": "Build a dashboard UI that displays current job queue status, historical job execution data, success/failure rates, and performance metrics. Include filtering and search capabilities for job analysis.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Implement notification system",
+          "description": "Create a system to send notifications for job status changes and failures",
+          "dependencies": [
+            6
+          ],
+          "details": "Develop a notification system that can send alerts via email, Slack, or other channels when critical jobs fail or when system-wide issues are detected. Allow configuration of notification preferences based on job types and severity.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Create job cancellation and progress tracking",
+          "description": "Implement functionality to cancel jobs and track progress of long-running jobs",
+          "dependencies": [
+            4,
+            5
+          ],
+          "details": "Build mechanisms to safely cancel jobs that are queued or in progress. Implement progress tracking for long-running jobs with percentage completion and estimated time remaining calculations.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Set up comprehensive logging system",
+          "description": "Implement detailed logging for all job processing activities",
+          "dependencies": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "details": "Create a structured logging system that captures detailed information about job execution, including timing data, input parameters, output results, errors, and system state. Implement log rotation and retention policies for efficient storage.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Real-time Processing Status Updates",
+      "description": "Implement real-time status updates for exam processing using WebSockets or polling to keep users informed of progress.",
+      "details": "1. Implement polling mechanism for processing status updates\n2. Create processing status UI components\n3. Add estimated completion time calculation\n4. Implement progress bar for overall processing\n5. Create individual paper processing status indicators\n6. Add real-time error notifications\n7. Implement completion notifications\n8. Create email notification system using Resend\n9. Add browser notifications for completion\n10. Implement partial results access during processing\n11. Create processing log viewer\n12. Add retry functionality for failed papers",
+      "testStrategy": "Test real-time updates with various processing durations, verify estimated completion time accuracy, ensure notifications are delivered correctly, validate partial results access works as expected, and test the system with network interruptions.",
+      "priority": "medium",
+      "dependencies": [
+        12
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Implement Real-Time Backend Infrastructure (Polling/WebSocket)",
+          "description": "Set up backend endpoints and logic to support both polling and WebSocket connections for real-time status updates.",
+          "dependencies": [],
+          "details": "Develop REST API endpoints for polling and configure WebSocket server (e.g., using socket.io or native WebSocket) to broadcast status changes. Ensure scalability and reliability for concurrent connections.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Develop Frontend Real-Time Data Handling",
+          "description": "Create frontend logic to connect to backend via polling and WebSocket, handle incoming status updates, and manage connection lifecycle.",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement setInterval-based polling and WebSocket client logic. Handle reconnection, error states, and fallback between polling and WebSocket as needed.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Design and Build Status UI Components",
+          "description": "Develop UI components to display real-time status updates, including overall status, progress, and individual indicators.",
+          "dependencies": [
+            2
+          ],
+          "details": "Create modular React/Vue components for status display, ensuring accessibility and responsiveness. Integrate with real-time data handlers.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Implement Estimated Time Calculation Logic",
+          "description": "Develop backend and frontend logic to calculate and display estimated time remaining for ongoing processes.",
+          "dependencies": [
+            1,
+            3
+          ],
+          "details": "Use historical data or progress metrics to estimate time remaining. Display estimates in the UI and update them in real time.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Create Progress Bars and Individual Status Indicators",
+          "description": "Build visual progress bars and per-task indicators reflecting real-time progress and status.",
+          "dependencies": [
+            3,
+            4
+          ],
+          "details": "Implement animated progress bars and icons for each tracked item. Ensure updates are smooth and reflect backend state accurately.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Integrate Notification Systems (Email/Browser)",
+          "description": "Set up backend and frontend logic to send notifications via email and browser when status changes or completes.",
+          "dependencies": [
+            1,
+            3
+          ],
+          "details": "Configure email service (e.g., SMTP, SendGrid) and browser notification APIs. Allow users to opt-in/out and customize notification preferences.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Display Partial Results and Log Viewer",
+          "description": "Enable UI to show partial results as they become available and provide a real-time log viewer for process output.",
+          "dependencies": [
+            3,
+            5
+          ],
+          "details": "Stream partial results and logs from backend to frontend. Implement a scrollable, filterable log viewer component.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Add Retry Functionality for Failed Updates",
+          "description": "Implement logic to detect failed status updates and allow users to retry operations or re-establish connections.",
+          "dependencies": [
+            2,
+            3
+          ],
+          "details": "Provide UI controls for retrying failed tasks or reconnecting to the server. Handle retries gracefully and update status accordingly.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Exam Results and Analytics Dashboard",
+      "description": "Develop the exam results dashboard with comprehensive analytics, including grade distribution, question difficulty analysis, and student performance trends.",
+      "details": "1. Create exam results overview page\n2. Implement grade distribution chart using Recharts\n3. Add question difficulty analysis visualization\n4. Create common mistake patterns display\n5. Implement student performance trends over time\n6. Add comparative class analysis charts\n7. Create tab-based navigation for different views\n8. Implement data filtering capabilities\n9. Add data export functionality\n10. Create printable reports generation\n11. Implement responsive design for all charts\n12. Add tooltips and explanations for analytics",
+      "testStrategy": "Test analytics calculations for accuracy, verify chart rendering with various data sets, ensure filtering works correctly, validate export functionality produces correct data, and test responsive behavior of charts on different screen sizes.",
+      "priority": "high",
+      "dependencies": [
+        11,
+        13
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Dashboard Overview Page",
+          "description": "Create a clean, minimalist overview page that follows the 5-second rule for immediate comprehension",
+          "dependencies": [],
+          "details": "Design a logical layout using the inverted pyramid principle, placing the most important metrics at the top. Limit to 2-3 key visualizations that provide immediate insights into overall performance. Include clear section labels and use consistent color coding to define different areas.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Grade Distribution Visualization",
+          "description": "Develop interactive charts showing grade distribution across different parameters",
+          "dependencies": [
+            1
+          ],
+          "details": "Create visualizations (bar charts, histograms) that display grade distributions. Include filtering options by time period, subject, and student groups. Ensure the visualization follows dashboard design principles with clear labels and a logical layout that helps users quickly understand grade patterns.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Build Difficulty Analysis Component",
+          "description": "Create a component that analyzes and visualizes question/topic difficulty levels",
+          "dependencies": [
+            1
+          ],
+          "details": "Develop algorithms to calculate difficulty metrics based on success rates, time spent, and retry attempts. Design visualizations that highlight the most challenging topics or questions. Include comparative views to show difficulty trends over time and across different student segments.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Develop Mistake Pattern Analysis",
+          "description": "Create visualizations that identify and display common mistake patterns",
+          "dependencies": [
+            1,
+            3
+          ],
+          "details": "Implement data processing to identify recurring mistake patterns across assessments. Design visualizations that categorize and display these patterns with frequency metrics. Include drill-down capabilities to see specific examples of each mistake type and related learning resources.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Implement Performance Trends Module",
+          "description": "Develop time-series visualizations showing performance trends over selected periods",
+          "dependencies": [
+            1
+          ],
+          "details": "Create line charts and trend indicators that display performance metrics over time. Include options for different time intervals (daily, weekly, monthly, yearly). Add benchmark lines and goal tracking to provide context for the performance data.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Build Comparative Analysis Features",
+          "description": "Create tools for comparing performance across different dimensions",
+          "dependencies": [
+            2,
+            5
+          ],
+          "details": "Develop side-by-side comparison views for different time periods, student groups, or subjects. Include statistical significance indicators for meaningful comparisons. Design visualizations that highlight gaps and improvements between compared entities.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Dashboard Navigation System",
+          "description": "Create an intuitive navigation system for moving between dashboard sections",
+          "dependencies": [
+            1
+          ],
+          "details": "Design a tab-based or sidebar navigation that clearly indicates current location. Implement breadcrumbs for deep navigation paths. Ensure navigation elements are consistent across all dashboard sections and follow established UX patterns for analytics interfaces.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Develop Advanced Filtering Capabilities",
+          "description": "Create comprehensive filtering options that work across all dashboard components",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "details": "Implement global and section-specific filters for time periods, subjects, difficulty levels, and user groups. Design an intuitive filter interface with clear visual indicators of active filters. Include preset filter combinations for common analysis scenarios and allow users to save custom filter sets.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Implement Data Export Functionality",
+          "description": "Create options for exporting dashboard data in multiple formats",
+          "dependencies": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "details": "Develop export capabilities for raw data (CSV, Excel) and visualizations (PNG, PDF). Include options to export entire dashboard views or specific components. Implement scheduling for automated exports and delivery via email or to cloud storage locations.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Create Responsive Design Implementation",
+          "description": "Ensure dashboard functions properly across all device sizes with appropriate layouts",
+          "dependencies": [
+            1,
+            7
+          ],
+          "details": "Implement responsive design principles that adapt the dashboard layout to different screen sizes. Create specific optimized views for mobile devices that prioritize the most important metrics. Test and optimize performance across various devices to ensure smooth interaction regardless of platform.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Individual Student Results Interface",
+      "description": "Implement the interface for viewing and editing individual student results, including question-by-question feedback and grade adjustments.",
+      "details": "1. Create individual student result page\n2. Implement question-by-question grade display\n3. Add AI-generated feedback display\n4. Create original answer viewer with side-by-side comparison\n5. Implement grade adjustment functionality\n6. Add feedback modification capability\n7. Create comment addition interface\n8. Implement grade recalculation after adjustments\n9. Add change history tracking\n10. Create student report generation\n11. Implement annotated paper viewer\n12. Add navigation between student papers",
+      "testStrategy": "Test grade adjustment functionality, verify feedback editing works correctly, ensure grade recalculation is accurate, validate change history tracking records all modifications, and test report generation produces correct output.",
+      "priority": "high",
+      "dependencies": [
+        14
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Result Page Layout",
+          "description": "Create a comprehensive layout for the student results interface that balances information density with usability",
+          "dependencies": [],
+          "details": "Design the overall structure of the results page considering visual complexity principles. Include sections for summary statistics, question breakdown, and navigation elements. Ensure the interface reduces cognitive load by organizing information hierarchically.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Question Grades Component",
+          "description": "Develop a component to display individual question grades with appropriate visual indicators",
+          "dependencies": [
+            1
+          ],
+          "details": "Create a component that shows each question's grade, including score, maximum points, and visual indicators (color coding, progress bars) to represent performance. Include sorting and filtering capabilities to help users navigate through multiple questions.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Develop AI Feedback System",
+          "description": "Create a system for generating and displaying AI-powered feedback on student responses",
+          "dependencies": [
+            2
+          ],
+          "details": "Implement backend logic to analyze student responses and generate constructive feedback. Design the frontend component to display this feedback in an easily digestible format, with options to expand/collapse detailed explanations.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Build Answer Viewer Component",
+          "description": "Create an interactive component for viewing student answers alongside correct solutions",
+          "dependencies": [
+            2
+          ],
+          "details": "Develop a side-by-side viewer that displays the student's answer and the correct solution. Include syntax highlighting for code, math rendering for equations, and appropriate formatting for different question types. Implement highlighting to show discrepancies.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Implement Grade Adjustment Functionality",
+          "description": "Create tools for instructors to adjust grades with appropriate validation and history tracking",
+          "dependencies": [
+            2
+          ],
+          "details": "Develop UI controls for grade modification with validation to ensure grades stay within allowed ranges. Implement backend logic to record changes, reasons for adjustment, and maintain an audit trail. Include confirmation dialogs for significant changes.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Create Feedback Editing System",
+          "description": "Develop tools for instructors to edit and customize feedback provided to students",
+          "dependencies": [
+            3
+          ],
+          "details": "Build a rich text editor for modifying AI-generated feedback or creating custom feedback. Include templates, formatting options, and the ability to insert media. Implement version control to track changes to feedback over time.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Comments and Annotations System",
+          "description": "Create functionality for adding comments and annotations to specific parts of student responses",
+          "dependencies": [
+            4
+          ],
+          "details": "Develop a system for pinpointing specific sections of student work and attaching comments. Include text highlighting, margin notes, and drawing tools. Ensure comments can be categorized (e.g., critical issues, minor suggestions, positive feedback).",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Build Grade Recalculation Engine",
+          "description": "Develop a system to automatically recalculate overall grades when individual question scores change",
+          "dependencies": [
+            5
+          ],
+          "details": "Implement backend logic to handle grade recalculation based on weighting rules and grading policies. Create UI elements to show the impact of changes on the overall grade. Include validation to prevent unintended consequences of adjustments.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Implement Change History Tracking",
+          "description": "Create a comprehensive system for tracking and displaying the history of changes to grades and feedback",
+          "dependencies": [
+            5,
+            6,
+            8
+          ],
+          "details": "Develop a database structure to record all modifications with timestamps and user information. Create a UI to display the change history in a chronological timeline. Include filtering options to focus on specific types of changes.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Develop Report Generation System",
+          "description": "Create functionality to generate comprehensive reports on student performance",
+          "dependencies": [
+            2,
+            3,
+            8
+          ],
+          "details": "Implement backend logic to compile performance data across questions and assessments. Design report templates with customizable sections. Include options for exporting in various formats (PDF, CSV, etc.) and visualization tools for performance trends.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Bulk Editing and Modification Tools",
+      "description": "Implement bulk editing capabilities for grades, feedback, and marking scheme updates across multiple student submissions.",
+      "details": "1. Create bulk grade adjustment interface\n2. Implement marking scheme update functionality\n3. Add bulk feedback editing capability\n4. Create alternative answer addition interface\n5. Implement regrade functionality after scheme changes\n6. Add confirmation dialogs for bulk actions\n7. Create undo functionality for bulk changes\n8. Implement change tracking for bulk edits\n9. Add filtering for selecting papers to edit\n10. Create batch processing for bulk changes\n11. Implement progress tracking for bulk operations\n12. Add error handling for failed bulk operations",
+      "testStrategy": "Test bulk grade adjustments with various selection criteria, verify marking scheme updates correctly regrade papers, ensure bulk feedback editing applies to all selected papers, validate undo functionality restores previous state, and test the system with large numbers of papers.",
+      "priority": "medium",
+      "dependencies": [
+        15
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Bulk Grade Adjustment UI",
+          "description": "Create a user interface for bulk editing of grades with intuitive controls and clear visual feedback",
+          "dependencies": [],
+          "details": "Design a modal interface similar to the Teamwork bulk editing model that allows users to select multiple student submissions and apply grade changes. Include options for absolute and relative grade adjustments, preview of changes, and confirmation steps. Consider accessibility requirements and responsive design for different screen sizes.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Marking Scheme Update Functionality",
+          "description": "Develop functionality to update marking schemes across multiple submissions simultaneously",
+          "dependencies": [
+            1
+          ],
+          "details": "Create a system that allows instructors to modify marking criteria, point values, or rubric elements across multiple student submissions. Include validation to ensure marking scheme integrity, options to preview changes before applying, and the ability to selectively apply changes to specific criteria only.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Develop Bulk Feedback System",
+          "description": "Create a mechanism for adding, editing, or removing feedback across multiple submissions",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement a text editor with templates and macros for common feedback. Allow instructors to append, prepend, replace, or conditionally add feedback based on grade thresholds or specific criteria. Include support for rich text formatting, media embedding, and comment categorization (e.g., positive feedback, areas for improvement).",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Build Alternative Answers Recognition System",
+          "description": "Develop a system to recognize and credit alternative correct answers across multiple submissions",
+          "dependencies": [
+            2
+          ],
+          "details": "Create functionality that allows instructors to define new acceptable answers and automatically apply credit to all matching submissions. Include pattern matching capabilities, similarity thresholds, and options to review borderline cases. Implement a verification step to confirm which submissions will be affected before applying changes.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Implement Regrade Logic and Transactional Safety",
+          "description": "Develop secure transaction handling for bulk grade changes with rollback capabilities",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "details": "Create a robust transaction system that ensures all bulk operations either complete fully or roll back completely. Implement database locking mechanisms to prevent conflicts during bulk operations. Design an audit log that records all changes, who made them, when, and why. Include performance optimizations for handling large batches of submissions.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Create Confirmation Workflows and Undo Functionality",
+          "description": "Develop confirmation dialogs and undo capabilities for bulk operations",
+          "dependencies": [
+            5
+          ],
+          "details": "Design a multi-step confirmation process that clearly communicates the scope and impact of bulk changes. Implement time-limited undo functionality that allows reverting bulk operations within a configurable window. Create detailed change summaries that show before/after states and affected student counts.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Filtering and Batch Processing",
+          "description": "Create advanced filtering options and batch processing capabilities for targeted bulk operations",
+          "dependencies": [
+            1,
+            5
+          ],
+          "details": "Develop a comprehensive filtering system that allows instructors to target specific subsets of submissions based on multiple criteria (e.g., score ranges, submission dates, specific answers). Implement batch processing with progress indicators for large operations. Include scheduling options for running bulk operations during off-peak hours.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Develop Error Handling and Progress Tracking",
+          "description": "Create robust error handling and progress tracking for bulk operations",
+          "dependencies": [
+            5,
+            6,
+            7
+          ],
+          "details": "Implement comprehensive error detection, reporting, and recovery mechanisms for bulk operations. Design a progress tracking interface that shows real-time updates during processing. Create detailed error logs with actionable information for resolving issues. Include notification systems to alert users when long-running operations complete or encounter problems.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Export Functionality Implementation",
+      "description": "Develop comprehensive export functionality for exam results, including CSV data export, PDF reports, and annotated student papers.",
+      "details": "1. Implement CSV export with all data fields\n2. Create PDF report generation using a PDF library (e.g., `react-pdf` v6.2+)\n3. Add customizable export templates\n4. Implement batch download capabilities\n5. Create annotated student paper export\n6. Add detailed feedback reports generation\n7. Implement parent-friendly summary reports\n8. Create LMS integration export formats\n9. Add export progress tracking\n10. Implement background processing for large exports\n11. Create email delivery for large exports\n12. Add export history tracking",
+      "testStrategy": "Test CSV export with various data sets, verify PDF generation produces correctly formatted documents, ensure batch downloads work for large numbers of files, validate annotated papers contain all feedback, and test export performance with large data sets.",
+      "priority": "medium",
+      "dependencies": [
+        14,
+        15
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "CSV Export Implementation",
+          "description": "Develop functionality to export tasks and subtasks as CSV files",
+          "dependencies": [],
+          "details": "Create a system to export all tasks with subtasks included in a separate column, separated by commas. Ensure both tasks and subtasks are properly formatted in the export. Include options for filtering data before export.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "PDF Generation Module",
+          "description": "Build functionality to export tasks as individual cards in PDF format",
+          "dependencies": [],
+          "details": "Implement PDF export that displays tasks as individual cards with subtasks displayed within them. Ensure any filters applied to the view at the point of export will apply to the PDF output.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Template Export System",
+          "description": "Create template export functionality for reuse and bulk editing",
+          "dependencies": [
+            1
+          ],
+          "details": "Develop an 'Export as template' function that allows exporting all lists, sub-lists, tasks and sub-tasks into an Excel template. This template should support importing tasks into a new site or bulk editing tasks in the current site.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Batch Download Processing",
+          "description": "Implement batch processing for multiple export requests",
+          "dependencies": [
+            1,
+            2,
+            3
+          ],
+          "details": "Create a system to handle multiple export requests simultaneously, allowing users to queue and download multiple exports in different formats. Include progress indicators and notification when exports are complete.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Annotated Exports Feature",
+          "description": "Develop functionality for adding annotations to exported data",
+          "dependencies": [
+            1,
+            2
+          ],
+          "details": "Build a system that allows users to add notes, comments, and highlights to exported data. Implement annotation preservation across different export formats where applicable.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Report Generation System",
+          "description": "Create comprehensive reporting functionality for feedback and summaries",
+          "dependencies": [
+            1,
+            2,
+            5
+          ],
+          "details": "Implement report generation for feedback and summary reports. Include options for customizing report content, formatting, and delivery methods. Support different levels of detail and visualization options.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Background Processing & Email Delivery",
+          "description": "Implement asynchronous processing and email delivery for exports",
+          "dependencies": [
+            4
+          ],
+          "details": "Develop background processing for large exports to prevent UI blocking. Create email delivery system to send completed exports to users. Include retry mechanisms and failure notifications.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Export History & Progress Tracking",
+          "description": "Build export history and progress tracking functionality",
+          "dependencies": [
+            4,
+            7
+          ],
+          "details": "Create a system to track export history, allowing users to access previously generated exports. Implement progress tracking for ongoing exports with status updates and estimated completion times.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "File Storage and Management System",
+      "description": "Implement secure file storage and management for exam documents using AWS S3 via Supabase Storage, including encryption, access control, and lifecycle management.",
+      "details": "1. Configure AWS S3 buckets via Supabase Storage\n2. Implement server-side encryption for stored files\n3. Create time-limited access URLs generation\n4. Add file metadata tracking in database\n5. Implement automatic cleanup of old files\n6. Create backup strategy for important documents\n7. Add file versioning for edited documents\n8. Implement access control based on user permissions\n9. Create file compression for large uploads\n10. Add virus scanning for uploaded files\n11. Implement file type validation\n12. Create file retrieval API endpoints",
+      "testStrategy": "Test file upload and retrieval with various file types and sizes, verify encryption works correctly, ensure access URLs expire as expected, validate automatic cleanup removes only appropriate files, and test the system with concurrent uploads and downloads.",
+      "priority": "high",
+      "dependencies": [
+        3
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Configure S3 Buckets and Prefixes",
+          "description": "Create and configure S3 buckets with appropriate naming conventions and prefixes to optimize performance and scalability.",
+          "dependencies": [],
+          "details": "Set up multiple prefixes within buckets to enable parallel read/write operations and improve throughput. Ensure bucket names comply with AWS standards.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Encryption for Stored Files",
+          "description": "Enable encryption for files stored in S3 to ensure data confidentiality at rest.",
+          "dependencies": [
+            1
+          ],
+          "details": "Configure server-side encryption using AWS KMS-managed keys (SSE-KMS) or S3-managed keys (SSE-S3). Verify encryption is enforced on all uploads.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Set Up Access Control Policies",
+          "description": "Define and apply fine-grained access control policies to S3 buckets and objects.",
+          "dependencies": [
+            1
+          ],
+          "details": "Use IAM roles and policies with least privilege principle. Implement resource-based policies restricting access by IP or VPC. Enable S3 Block Public Access to prevent public exposure.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Generate and Manage Access URLs",
+          "description": "Create mechanisms to generate secure, time-limited access URLs for file retrieval.",
+          "dependencies": [
+            3
+          ],
+          "details": "Implement generation of pre-signed URLs or CloudFront signed URLs to provide temporary, controlled access to files without exposing buckets publicly.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Track and Store File Metadata",
+          "description": "Design and implement metadata tracking for each stored file to support management and retrieval.",
+          "dependencies": [
+            1
+          ],
+          "details": "Capture metadata such as upload timestamp, file size, encryption status, version ID, and access permissions. Store metadata in a database or metadata service linked to S3 objects.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement File Cleanup and Lifecycle Policies",
+          "description": "Set up automated cleanup and lifecycle management for files to optimize storage costs and compliance.",
+          "dependencies": [
+            1
+          ],
+          "details": "Configure S3 lifecycle rules to transition files to cheaper storage classes or delete them after a retention period. Include manual cleanup processes for orphaned or invalid files.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Configure Backup and Versioning",
+          "description": "Enable versioning and backup strategies to protect against accidental deletion or corruption.",
+          "dependencies": [
+            1
+          ],
+          "details": "Activate S3 versioning on buckets to keep multiple versions of objects. Implement backup policies and test restore procedures to ensure data durability.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Apply Compression to Files Before Upload",
+          "description": "Integrate compression of files prior to upload to reduce storage size and improve transfer efficiency.",
+          "dependencies": [],
+          "details": "Choose appropriate compression algorithms (e.g., gzip, zstd) based on file types. Ensure decompression is supported during retrieval.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Integrate Virus Scanning for Uploaded Files",
+          "description": "Implement virus scanning on files before or after upload to prevent malware storage.",
+          "dependencies": [
+            1
+          ],
+          "details": "Use antivirus tools or services to scan files on upload. Block or quarantine infected files and notify administrators.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Develop Validation and Retrieval APIs",
+          "description": "Create APIs for validating file integrity and retrieving files securely from S3.",
+          "dependencies": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "details": "Implement API endpoints to validate file metadata, check encryption and access permissions, and retrieve files using secure URLs. Include error handling and logging.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Error Handling and Edge Cases",
+      "description": "Implement comprehensive error handling for various edge cases, including large file uploads, AI processing failures, and illegible handwriting scenarios.",
+      "details": "1. Create error boundary components for UI\n2. Implement specific error messages for different scenarios\n3. Add retry mechanisms for failed operations\n4. Create fallback options for AI processing failures\n5. Implement manual override capabilities\n6. Add support contact information display\n7. Create error logging with Sentry integration\n8. Implement error notification system\n9. Add handling for illegible handwriting with manual transcription option\n10. Create skip question functionality for problematic cases\n11. Implement confidence score display for AI processing\n12. Add detailed error reporting for debugging",
+      "testStrategy": "Test error handling with various failure scenarios, verify retry mechanisms work correctly, ensure fallback options provide usable alternatives, validate manual override capabilities work as expected, and test the system with deliberately problematic inputs.",
+      "priority": "medium",
+      "dependencies": [
+        11,
+        12,
+        18
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Implement Error Boundaries in UI",
+          "description": "Develop error boundary components to catch and display errors in the UI without crashing the entire application.",
+          "dependencies": [],
+          "details": "Ensure error boundaries are placed at strategic points in the component tree to isolate failures and provide fallback UI.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Design Scenario-Specific Error Messages",
+          "description": "Create and map clear, actionable error messages for different error scenarios across UI, backend, and AI flows.",
+          "dependencies": [
+            1
+          ],
+          "details": "Work with UX to ensure messages are user-friendly and provide guidance for next steps.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Develop Retry Mechanisms",
+          "description": "Implement retry logic for recoverable errors, allowing users or the system to attempt failed operations again.",
+          "dependencies": [
+            2
+          ],
+          "details": "Use Try-Catch-Finally blocks and configurable retry limits; ensure retries do not affect unrelated transactions.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Integrate AI Fallbacks",
+          "description": "Provide alternative AI models or workflows when primary AI inference fails or returns low confidence.",
+          "dependencies": [
+            3
+          ],
+          "details": "Define fallback strategies and ensure seamless transition between primary and fallback AI paths.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Enable Manual Override and Skip Functionality",
+          "description": "Allow users to manually override AI or system decisions and skip problematic steps or data entries.",
+          "dependencies": [
+            4
+          ],
+          "details": "Ensure overrides and skips are logged and do not block overall workflow progress.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Display Support Information and Reporting Options",
+          "description": "Provide users with support contact info and a mechanism to report persistent or unhandled errors.",
+          "dependencies": [
+            5
+          ],
+          "details": "Integrate support links and error reporting forms into error UI components.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Logging and Notification Systems",
+          "description": "Log all errors and exceptions with relevant context and trigger notifications for critical failures.",
+          "dependencies": [],
+          "details": "Ensure logs capture error codes, stack traces, user actions, and system state; set up alerting for high-severity issues.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Handle Illegible Handwriting and Confidence Scores",
+          "description": "Detect and flag illegible handwriting or low-confidence AI outputs, prompting user review or alternative actions.",
+          "dependencies": [],
+          "details": "Display confidence scores, highlight uncertain data, and provide options to accept, correct, or skip entries.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Performance Optimization",
+      "description": "Optimize application performance to meet requirements for page load time, API response time, and concurrent user support.",
+      "details": "1. Implement code splitting for reduced bundle size\n2. Add image optimization using Next.js Image component\n3. Implement Redis caching for API responses\n4. Create database query optimization\n5. Add proper indexing for frequently queried fields\n6. Implement lazy loading for components\n7. Create virtualized lists for large data sets\n8. Add prefetching for likely user paths\n9. Implement debouncing for frequent user actions\n10. Create skeleton loading states\n11. Add performance monitoring with appropriate tools\n12. Implement server-side rendering for critical pages",
+      "testStrategy": "Benchmark page load times before and after optimization, verify API response times meet requirements, test with simulated concurrent users, validate caching improves performance for repeated requests, and monitor memory usage during extended use.",
+      "priority": "medium",
+      "dependencies": [
+        5,
+        11,
+        14
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Implement Code Splitting",
+          "description": "Divide application code into smaller, logical chunks that can be loaded on demand to reduce initial load time and improve resource usage.",
+          "dependencies": [],
+          "details": "Identify large modules and configure build tools (e.g., Webpack, Vite) for dynamic imports. Ensure critical paths are loaded first and test chunk loading in various user flows.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Optimize Images",
+          "description": "Compress and resize images to reduce file size and improve load times without sacrificing visual quality.",
+          "dependencies": [],
+          "details": "Audit all image assets, convert to modern formats (e.g., WebP), automate compression in the build pipeline, and ensure responsive image delivery for different device sizes.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Configure Caching Strategies",
+          "description": "Set up effective caching for static and dynamic assets to minimize redundant network requests and speed up repeat visits.",
+          "dependencies": [],
+          "details": "Implement HTTP cache headers, leverage service workers for offline support, and use a CDN for static assets. Validate cache invalidation logic for updates.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Optimize Database Queries",
+          "description": "Analyze and refactor backend queries to minimize latency and reduce unnecessary data fetching.",
+          "dependencies": [],
+          "details": "Profile slow queries, add query constraints, use pagination, and batch requests where possible. Ensure all endpoints return only required fields.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Add Database Indexing",
+          "description": "Create and optimize indexes on frequently queried database columns to speed up data retrieval.",
+          "dependencies": [
+            4
+          ],
+          "details": "Identify high-traffic queries, analyze execution plans, and add or adjust indexes accordingly. Monitor for index bloat and maintain regular index health checks.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement Lazy Loading",
+          "description": "Defer loading of non-critical resources (e.g., images, components) until they are needed to reduce initial page load time.",
+          "dependencies": [
+            1,
+            2
+          ],
+          "details": "Apply lazy loading to below-the-fold images, offscreen components, and third-party scripts. Test for smooth user experience and fallback compatibility.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Integrate Virtualized Lists",
+          "description": "Use virtualization techniques to render only visible list items, improving performance for large data sets.",
+          "dependencies": [],
+          "details": "Replace standard list rendering with a virtualization library (e.g., react-window, react-virtualized). Ensure smooth scrolling and correct item measurement.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Implement Prefetching and Debouncing",
+          "description": "Prefetch likely-needed resources and debounce user-triggered actions to reduce perceived latency and unnecessary processing.",
+          "dependencies": [
+            1,
+            4
+          ],
+          "details": "Set up route and data prefetching for anticipated navigation. Apply debouncing to search, input, and API-triggered actions. Validate with user interaction tests.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Security Implementation",
+      "description": "Implement comprehensive security measures including HTTPS enforcement, API rate limiting, input sanitization, and data encryption.",
+      "details": "1. Configure HTTPS enforcement\n2. Implement API rate limiting\n3. Add input sanitization for all user inputs\n4. Create SQL injection prevention measures\n5. Implement XSS protection\n6. Add CSRF protection\n7. Create secure headers configuration\n8. Implement data encryption at rest\n9. Add data encryption in transit\n10. Create security audit logging\n11. Implement regular security scanning\n12. Add GDPR compliance measures including data export and deletion",
+      "testStrategy": "Perform security testing including penetration testing, verify rate limiting prevents abuse, ensure input sanitization blocks malicious inputs, validate encryption works correctly for sensitive data, and test GDPR compliance features.",
+      "priority": "high",
+      "dependencies": [
+        2,
+        3,
+        18
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Implement HTTPS Across All Endpoints",
+          "description": "Configure the web server to enforce HTTPS for all routes, redirect HTTP traffic to HTTPS, and ensure valid SSL/TLS certificates are in place.",
+          "dependencies": [],
+          "details": "Verify certificate validity, enforce HSTS, and test for downgrade attacks.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Set Up Rate Limiting",
+          "description": "Integrate rate limiting middleware or API gateway rules to restrict the number of requests per user/IP within a defined time window.",
+          "dependencies": [],
+          "details": "Define thresholds, handle rate limit violations gracefully, and test for bypass attempts.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Sanitize and Validate User Input",
+          "description": "Implement input validation and sanitization on both frontend and backend to prevent injection and XSS attacks.",
+          "dependencies": [],
+          "details": "Use allowlists, reject unexpected input, and leverage framework-specific validation libraries.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Prevent SQL Injection",
+          "description": "Refactor all database queries to use parameterized statements or ORM methods, avoiding direct string concatenation with user input.",
+          "dependencies": [
+            3
+          ],
+          "details": "Audit all data access code, add automated tests for injection attempts, and review legacy code.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Implement XSS and CSRF Protections",
+          "description": "Deploy output encoding, CSP headers, and CSRF tokens to mitigate cross-site scripting and request forgery risks.",
+          "dependencies": [
+            3
+          ],
+          "details": "Test with automated scanners and manual payloads to verify effectiveness.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Configure Secure HTTP Headers",
+          "description": "Set security headers such as Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, and Referrer-Policy.",
+          "dependencies": [
+            1,
+            5
+          ],
+          "details": "Review header settings for all endpoints and verify with security scanning tools.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Encrypt Sensitive Data at Rest",
+          "description": "Apply encryption to databases, file storage, and backups containing sensitive or personal data.",
+          "dependencies": [],
+          "details": "Use strong encryption algorithms, manage keys securely, and document encryption coverage.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Encrypt Data in Transit",
+          "description": "Ensure all internal and external data transfers use secure protocols (TLS 1.2+), including API calls and inter-service communication.",
+          "dependencies": [
+            1
+          ],
+          "details": "Audit all network paths, update legacy protocols, and test with packet sniffing tools.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Implement Audit Logging",
+          "description": "Set up comprehensive logging for authentication events, data access, administrative actions, and security-relevant events.",
+          "dependencies": [],
+          "details": "Ensure logs are tamper-resistant, timestamped, and regularly reviewed.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Integrate Security Scanning and Penetration Testing",
+          "description": "Schedule regular automated vulnerability scans and manual penetration tests to identify and remediate security flaws.",
+          "dependencies": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "details": "Document findings, track remediation, and retest after fixes.",
+          "status": "pending"
+        },
+        {
+          "id": 11,
+          "title": "Ensure GDPR Compliance",
+          "description": "Review data collection, processing, and storage practices to align with GDPR requirements, including consent, data minimization, and user rights.",
+          "dependencies": [
+            7,
+            9
+          ],
+          "details": "Update privacy policy, implement data subject request workflows, and conduct a DPIA if necessary.",
+          "status": "pending"
+        },
+        {
+          "id": 12,
+          "title": "Implement Data Export and Deletion Features",
+          "description": "Develop user-facing tools to export personal data and permanently delete user accounts and associated data upon request.",
+          "dependencies": [],
+          "details": "Ensure export is in a standard format, deletion is irreversible, and actions are logged for audit purposes.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Accessibility Implementation",
+      "description": "Ensure the application meets WCAG 2.1 AA compliance standards with keyboard navigation, screen reader compatibility, and other accessibility features.",
+      "details": "1. Implement keyboard navigation support\n2. Add screen reader compatibility\n3. Create high contrast mode option\n4. Implement focus indicators\n5. Add alt text for all images\n6. Create ARIA labels for interactive elements\n7. Implement semantic HTML structure\n8. Add skip navigation links\n9. Create accessible form validation\n10. Implement color contrast checking\n11. Add text resizing support\n12. Create accessibility audit and testing process",
+      "testStrategy": "Test with screen readers (NVDA, JAWS, VoiceOver), verify keyboard navigation works for all interactions, ensure color contrast meets WCAG standards, validate form error messages are accessible, and perform comprehensive accessibility audit.",
+      "priority": "medium",
+      "dependencies": [
+        5,
+        8,
+        14,
+        15
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Implement Keyboard Navigation",
+          "description": "Ensure all interactive elements (links, buttons, form fields, menus) are accessible and operable via keyboard alone. Tab order should be logical and predictable.",
+          "dependencies": [],
+          "details": "Test navigation using Tab, Shift+Tab, Enter, and Space keys. Ensure no keyboard traps exist. Provide visible focus indicators for all focusable elements.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Add Screen Reader Support",
+          "description": "Verify that all content and controls are accessible and understandable when using screen readers.",
+          "dependencies": [
+            1
+          ],
+          "details": "Use semantic HTML, ARIA roles, and properties where necessary. Ensure dynamic content updates are announced. Test with popular screen readers (NVDA, JAWS, VoiceOver).",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Enable High Contrast Mode and Color Contrast Compliance",
+          "description": "Support high contrast mode and ensure all text and UI elements meet WCAG color contrast requirements.",
+          "dependencies": [],
+          "details": "Test with OS/browser high contrast settings. Use tools to verify color contrast ratios (minimum 4.5:1 for normal text). Avoid conveying information by color alone.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Provide Focus Indicators and Skip Links",
+          "description": "Ensure visible focus indicators are present and implement skip links for bypassing repetitive navigation.",
+          "dependencies": [
+            1
+          ],
+          "details": "Customize focus styles for clarity. Add skip-to-content links at the top of each page, ensuring they are visible on focus and functional with keyboard navigation.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Add Alt Text, ARIA Labels, and Semantic HTML",
+          "description": "Ensure all images, icons, and interactive elements have descriptive alt text or ARIA labels. Use semantic HTML for structure.",
+          "dependencies": [],
+          "details": "Write meaningful alt text for images and icons. Apply ARIA-labels to non-text controls. Use headings, lists, and landmarks appropriately for structure and navigation.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Accessible Validation, Text Resizing, and Audit/Testing",
+          "description": "Implement accessible form validation, support text resizing up to 200%, and conduct comprehensive accessibility audits.",
+          "dependencies": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "details": "Provide clear, accessible error messages and instructions. Ensure forms are usable with assistive tech. Allow text resizing without loss of content or functionality. Perform manual and automated accessibility testing using checklists and tools.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Internationalization and Localization",
+      "description": "Implement internationalization support for multiple languages, including RTL languages, and localization of date/time formats and number formatting.",
+      "details": "1. Install and configure next-intl (v3.0+)\n2. Create translation files for supported languages\n3. Implement language selector component\n4. Add RTL support for appropriate languages\n5. Create locale-specific number formatting\n6. Implement date/time localization\n7. Add translatable UI strings extraction\n8. Create dynamic font loading for different scripts\n9. Implement cultural considerations in design\n10. Add language preference persistence\n11. Create fallback mechanisms for missing translations\n12. Implement automatic language detection",
+      "testStrategy": "Test UI rendering in multiple languages, verify RTL layout works correctly, ensure date/time formats display correctly for different locales, validate number formatting follows local conventions, and test language switching functionality.",
+      "priority": "low",
+      "dependencies": [
+        5
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Set Up next-intl and Project Structure",
+          "description": "Install next-intl, configure Next.js for i18n routing, and establish the required directory structure for locale-based routing and message files.",
+          "dependencies": [],
+          "details": "Run 'npm install next-intl'. Update next.config.js to include i18n locales and defaultLocale. Create the [locale] dynamic segment in the app directory. Set up the messages or locales directory with language-specific JSON files for translations. Ensure next-intl plugin is integrated in next.config.js.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Create and Manage Translation Files",
+          "description": "Develop and organize translation JSON files for each supported language, ensuring all UI strings are covered and structured for scalability.",
+          "dependencies": [
+            1
+          ],
+          "details": "For each supported language, create a JSON file (e.g., en.json, fr.json) in the messages or locales directory. Populate these files with key-value pairs for all translatable UI strings. Establish a process for updating and maintaining these files as the app evolves.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Implement Language Selector and Locale Switching",
+          "description": "Develop a UI component for users to select their preferred language, and ensure the app updates content and routing accordingly.",
+          "dependencies": [
+            1,
+            2
+          ],
+          "details": "Build a language selector component accessible from the main navigation. On selection, update the locale in the URL and reload content in the chosen language. Ensure locale switching is seamless and persists across navigation.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Support RTL Languages and Cultural Design Adjustments",
+          "description": "Enable right-to-left (RTL) layout support for applicable languages and adjust UI components for cultural appropriateness.",
+          "dependencies": [
+            2
+          ],
+          "details": "Detect RTL languages (e.g., Arabic, Hebrew) and apply 'dir=\"rtl\"' to the HTML root or relevant containers. Adjust CSS and layout components to ensure proper alignment and mirroring. Review icons, images, and design elements for cultural relevance and appropriateness.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Implement Number, Date, and String Formatting",
+          "description": "Ensure all numbers, dates, and formatted strings are localized according to the active locale using next-intl utilities.",
+          "dependencies": [
+            2
+          ],
+          "details": "Replace hardcoded date, time, and number formats with next-intl formatting functions. Audit the app for all instances of formatted output and update them to use locale-aware formatting. Test formatting for all supported locales.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Enable Locale Preference Persistence, Fallbacks, and Auto-Detection",
+          "description": "Persist user language preference, implement locale fallbacks, and auto-detect preferred language on first visit.",
+          "dependencies": [
+            3
+          ],
+          "details": "Store selected locale in cookies or localStorage for persistence. Implement logic to fall back to a default locale if a translation is missing. Use middleware to auto-detect browser language on first visit and redirect or set locale accordingly.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Analytics and Monitoring Integration",
+      "description": "Integrate analytics and monitoring tools including Mixpanel for user analytics and Sentry for error tracking and performance monitoring.",
+      "details": "1. Install and configure Mixpanel SDK\n2. Implement event tracking for key user actions\n3. Create custom user properties for segmentation\n4. Add conversion funnel tracking\n5. Implement retention analysis\n6. Create dashboard for key metrics\n7. Install and configure Sentry for error tracking\n8. Add performance monitoring\n9. Implement breadcrumbs for error context\n10. Create alert system for critical issues\n11. Add user feedback collection on errors\n12. Implement privacy-compliant analytics",
+      "testStrategy": "Verify event tracking captures all key user actions, ensure error tracking provides sufficient context for debugging, validate performance monitoring accurately measures key metrics, test alert system for critical issues, and verify privacy compliance of analytics implementation.",
+      "priority": "medium",
+      "dependencies": [
+        5,
+        19
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Install and Configure Mixpanel SDK",
+          "description": "Integrate the Mixpanel SDK into both frontend and backend codebases, ensuring correct initialization with the project token and required permissions.",
+          "dependencies": [],
+          "details": "Follow platform-specific installation guides (e.g., npm, CocoaPods, Gradle). Verify SDK loads and sends test events. Ensure permissions (e.g., INTERNET, ACCESS_NETWORK_STATE) are set as needed.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Develop and Document a Tracking Plan",
+          "description": "Create a centralized tracking plan that defines key business goals, KPIs, user flows, events, event properties, and user profile properties.",
+          "dependencies": [
+            1
+          ],
+          "details": "Collaborate with stakeholders to identify critical metrics. Map KPIs to user flows, then translate flows into events and properties. Document in a shared, version-controlled format.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Implement Event Tracking",
+          "description": "Instrument the application to send events to Mixpanel according to the tracking plan, including all required event properties.",
+          "dependencies": [
+            2
+          ],
+          "details": "Add event tracking code at key user interaction points. Ensure event names and properties match the tracking plan. Test event delivery in Mixpanel dashboard.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Set Up User Properties and Profiles",
+          "description": "Configure user identification and profile updates in Mixpanel to enable user-level analytics and segmentation.",
+          "dependencies": [
+            3
+          ],
+          "details": "Implement user identification (distinct_id) and set user properties (e.g., plan, signup date). Ensure updates occur at login, registration, and profile changes.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Configure Funnel and Retention Analysis",
+          "description": "Set up funnel and retention reports in Mixpanel to analyze user journeys and cohort retention based on tracked events.",
+          "dependencies": [
+            4
+          ],
+          "details": "Define funnels for key flows (e.g., signup to purchase). Create retention cohorts and analyze drop-off points. Share insights with stakeholders.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Build Analytics Dashboards",
+          "description": "Create Mixpanel dashboards to visualize key metrics, funnels, and retention data for ongoing monitoring.",
+          "dependencies": [
+            5
+          ],
+          "details": "Design dashboards for product, marketing, and leadership teams. Include charts for KPIs, conversion rates, and retention. Set up dashboard sharing and permissions.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Integrate Sentry for Error and Performance Monitoring",
+          "description": "Set up Sentry SDK for error tracking, performance monitoring, breadcrumbs, and alerting in both frontend and backend.",
+          "dependencies": [
+            1
+          ],
+          "details": "Install Sentry SDK, configure DSN, and enable automatic error and performance tracking. Implement breadcrumbs for key actions. Set up alert rules for critical errors.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Implement Feedback Collection and Privacy Compliance",
+          "description": "Add user feedback collection mechanisms and ensure analytics/monitoring implementations comply with privacy regulations (e.g., GDPR, CCPA).",
+          "dependencies": [
+            6,
+            7
+          ],
+          "details": "Integrate feedback widgets or forms. Review data collection practices, update privacy policy, and implement consent management for analytics and monitoring tools.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Deployment and CI/CD Pipeline",
+      "description": "Set up the deployment infrastructure on AWS Amplify with CloudFront CDN, and implement a CI/CD pipeline for automated testing and deployment.",
+      "details": "1. Configure AWS Amplify for hosting\n2. Set up CloudFront CDN\n3. Configure Route 53 for domain management\n4. Implement AWS Certificate Manager for SSL\n5. Create separate environments (Development, Staging, Production)\n6. Set up CI/CD pipeline using GitHub Actions\n7. Implement automated testing in pipeline\n8. Create build optimization for production\n9. Add environment-specific configuration\n10. Implement blue-green deployment strategy\n11. Create rollback mechanisms\n12. Add deployment notifications\n13. Implement performance monitoring post-deployment",
+      "testStrategy": "Test complete deployment process to all environments, verify SSL configuration works correctly, ensure CDN properly caches static assets, validate automated tests run in CI/CD pipeline, and test rollback mechanisms for failed deployments.",
+      "priority": "high",
+      "dependencies": [
+        1
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Set up AWS Amplify project",
+          "description": "Initialize and configure the AWS Amplify project for the application",
+          "dependencies": [],
+          "details": "Create a new Amplify project, configure the necessary environment settings, and set up the project structure according to best practices. This includes installing the Amplify CLI and initializing the project with appropriate configurations.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Connect Git repository to Amplify",
+          "description": "Link the application's Git repository to AWS Amplify for CI/CD",
+          "dependencies": [
+            1
+          ],
+          "details": "Connect the application's Git repository (GitHub, CodeCommit, etc.) to AWS Amplify. Configure branch settings and permissions to enable automated deployments on code commits.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Configure environment variables and backend settings",
+          "description": "Set up environment-specific configurations for different deployment stages",
+          "dependencies": [
+            1
+          ],
+          "details": "Create and configure environment variables for development, staging, and production environments. Set up backend resources and ensure proper configuration for each environment. Implement secure storage of sensitive information.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Implement automated testing in CI pipeline",
+          "description": "Set up automated testing to run during the CI process",
+          "dependencies": [
+            2
+          ],
+          "details": "Configure unit tests, integration tests, and end-to-end tests to run automatically during the CI process. Ensure tests are properly integrated with the build pipeline and set up failure conditions that prevent deployment of broken code.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Configure CloudFront distribution",
+          "description": "Set up and optimize CloudFront for content delivery",
+          "dependencies": [
+            1
+          ],
+          "details": "Configure CloudFront distribution for the application, including cache behaviors, origin settings, and geographic restrictions. Optimize for performance and implement proper cache invalidation strategies.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Set up custom domain and SSL with Route 53",
+          "description": "Configure custom domain and SSL certificates for secure access",
+          "dependencies": [
+            5
+          ],
+          "details": "Register or configure custom domain in Route 53, set up DNS records, and implement SSL certificates through AWS Certificate Manager. Ensure proper HTTPS configuration and redirect HTTP to HTTPS.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement blue-green deployment strategy",
+          "description": "Configure blue-green deployment for zero-downtime updates",
+          "dependencies": [
+            2,
+            3
+          ],
+          "details": "Set up blue-green deployment configuration in Amplify to enable zero-downtime deployments. Configure traffic shifting rules and validation tests to ensure smooth transitions between environments.",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Create automated rollback mechanisms",
+          "description": "Implement automated rollback procedures for failed deployments",
+          "dependencies": [
+            7
+          ],
+          "details": "Configure automated rollback triggers based on deployment health checks, error rates, or other metrics. Implement scripts and procedures to restore the previous stable version in case of deployment failures.",
+          "status": "pending"
+        },
+        {
+          "id": 9,
+          "title": "Set up deployment notifications",
+          "description": "Configure notification systems for deployment events",
+          "dependencies": [
+            2
+          ],
+          "details": "Implement notification systems using AWS SNS, Slack integrations, or email alerts to notify team members about deployment status, successes, and failures. Configure different notification levels based on severity.",
+          "status": "pending"
+        },
+        {
+          "id": 10,
+          "title": "Implement post-deployment monitoring",
+          "description": "Set up monitoring and alerting for the deployed application",
+          "dependencies": [
+            8,
+            9
+          ],
+          "details": "Configure CloudWatch metrics, logs, and alarms to monitor application performance and health. Set up dashboards for key metrics and implement alerting for critical issues. Integrate with existing monitoring tools if applicable.",
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

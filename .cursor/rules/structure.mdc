@@ -1,0 +1,38 @@
+---
+description: Expected project structure to tend to
+globs: 
+alwaysApply: false
+---
+###Project Structure
+
+qimma/
+├── app/
+│   ├── (auth)/
+│   │   ├── sign-in/
+│   │   └── sign-up/
+│   ├── (dashboard)/
+│   │   ├── dashboard/
+│   │   ├── exams/
+│   │   ├── profile/
+│   │   └── settings/
+│   ├── api/
+│   │   ├── ai/
+│   │   ├── credits/
+│   │   ├── exams/
+│   │   ├── stripe/
+│   │   └── upload/
+│   └── layout.tsx
+├── components/
+│   ├── ui/           # Shadcn/UI components
+│   ├── dashboard/
+│   ├── exams/
+│   ├── forms/
+│   └── shared/
+├── lib/
+│   ├── ai/          # OpenAI integration
+│   ├── db/          # Supabase queries
+│   ├── stripe/      # Payment logic
+│   └── utils/
+├── hooks/
+├── types/
+└── public/

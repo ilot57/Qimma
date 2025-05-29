@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+###Project Overview
+
+Qimma is an AI-powered automatic exam correction application for teachers using OpenAI models to grade student papers. Built with Next.js, Supabase, Clerk, Stripe, and Tailwind CSS + Shadcn/UI.

@@ -1,0 +1,58 @@
+---
+description: Error handling
+globs: 
+alwaysApply: false
+---
+###Global Error Boundary
+
+// app/error.tsx
+'use client'
+
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
+  useEffect(() => {
+    // Log to error reporting service
+    console.error(error)
+  }, [error])
+  
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h2 className="text-2xl font-bold mb-4">Something went wrong!</h2>
+      <button onClick={reset} className="btn-primary">
+        Try again
+      </button>
+    </div>
+  )
+}
+
+###API Error Handling
+
+// lib/api/errorHandler.ts
+export function handleApiError(error: unknown): Response {
+  console.error('API Error:', error)
+  
+  if (error instanceof ValidationError) {
+    return NextResponse.json(
+      { success: false, error: { code: 'INVALID_INPUT', message: error.message } },
+      { status: 400 }
+    )
+  }
+  
+  if (error instanceof AuthError) {
+    return NextResponse.json(
+      { success: false, error: { code: 'AUTH_REQUIRED', message: 'Authentication required' } },
+      { status: 401 }
+    )
+  }
+  
+  // Default error
+  return NextResponse.json(
+    { success: false, error: { code: 'INTERNAL_ERROR', message: 'An error occurred' } },
+    { status: 500 }
+  )
+}

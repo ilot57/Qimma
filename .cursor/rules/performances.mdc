@@ -1,0 +1,24 @@
+---
+description: Performance Optimization rules
+globs: 
+alwaysApply: false
+---
+###Image Optimization
+
+Use Next.js Image component
+Implement lazy loading
+Optimize file sizes before upload
+Use appropriate formats (WebP when possible)
+
+###Data Fetching
+
+Implement pagination for large datasets
+Use infinite scrolling for exam lists
+Cache API responses appropriately
+Prefetch data for predictable navigation
+
+###Code Splitting
+
+Use dynamic imports for heavy components
+Split AI processing logic into separate chunks
+Lazy load dashboard sections

@@ -1,0 +1,16 @@
+---
+description: Descrive the desired tech stack for the project
+globs: 
+alwaysApply: false
+---
+Tech Stack
+
+Framework: Next.js 14+ (App Router)
+Database: Supabase PostgreSQL
+Auth: Clerk
+Payments: Stripe
+Email: Resend
+UI: Tailwind CSS + Shadcn/UI
+AI: OpenAI API (GPT-4 Vision)
+File Storage: Supabase Storage (AWS S3)
+Deployment: AWS Amplify

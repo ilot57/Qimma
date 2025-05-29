@@ -1,0 +1,11 @@
+---
+description: Database Schema Conventions
+globs: 
+alwaysApply: false
+---
+###Naming Conventions
+
+Tables: snake_case, plural (e.g., users, exam_submissions)
+Columns: snake_case (e.g., created_at, user_id)
+Foreign keys: <table>_id (e.g., exam_id, teacher_id)
+Indexes: idx_<table>_<columns> (e.g., idx_exams_teacher_id)

@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+###Input Validation
+
+Validate all user inputs on client and server
+Use Zod for schema validation
+Sanitize file names and content
+Implement rate limiting
+
+###Data Protection
+
+Never expose sensitive data in client code
+Use environment variables for secrets
+Implement proper CORS policies
+Follow GDPR guidelines for data handling

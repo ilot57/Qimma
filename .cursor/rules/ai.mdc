@@ -1,0 +1,44 @@
+---
+description: AI Integration Guidelines
+globs: 
+alwaysApply: false
+---
+### OpenAI API Usage
+
+// lib/ai/correction.ts
+export async function correctExam(params: CorrectionParams) {
+  // Always validate inputs
+  if (!params.referenceExam || !params.studentSubmission) {
+    throw new Error('Missing required parameters')
+  }
+  
+  // Use GPT-4 Vision for image processing
+  const response = await openai.chat.completions.create({
+    model: "gpt-4-vision-preview",
+    messages: [
+      {
+        role: "system",
+        content: "You are an expert teacher grading exams..."
+      },
+      {
+        role: "user",
+        content: [
+          { type: "text", text: params.instructions },
+          { type: "image_url", image_url: { url: params.imageUrl } }
+        ]
+      }
+    ],
+    max_tokens: 4096,
+    temperature: 0.3 // Lower temperature for consistency
+  })
+  
+  // Always parse and validate AI responses
+  return validateAIResponse(response)
+}
+
+### Credit consumption 
+
+Always check credits before AI operations
+Deduct credits in a transaction
+Log all credit operations
+Implement rollback on failure

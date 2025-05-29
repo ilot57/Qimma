@@ -1,103 +1,172 @@
-import Image from 'next/image'
+"use client"
+
+import { useState } from "react"
+import { ShadcnTest } from "@/components/shadcn-test"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
-  return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      <main className="row-start-2 flex flex-col items-center gap-[32px] sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-center font-[family-name:var(--font-geist-mono)] text-sm/6 sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{' '}
-            <code className="rounded bg-black/[.05] px-1 py-0.5 font-[family-name:var(--font-geist-mono)] font-semibold dark:bg-white/[.06]">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [activeTab, setActiveTab] = useState<"tailwind" | "shadcn">("shadcn")
 
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            className="bg-foreground text-background flex h-10 items-center justify-center gap-2 rounded-full border border-solid border-transparent px-4 text-sm font-medium transition-colors hover:bg-[#383838] sm:h-12 sm:w-auto sm:px-5 sm:text-base dark:hover:bg-[#ccc]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
+      {/* Header */}
+      <div className="text-center py-12">
+        <h1 className="text-5xl font-bold text-primary-700 mb-4 animate-fade-in">
+          🎓 Qimma
+        </h1>
+        <p className="text-xl text-secondary-600 animate-slide-up mb-8">
+          AI-Powered Exam Correction Platform
+        </p>
+
+        {/* Tab Navigation */}
+        <div className="flex justify-center gap-2 mb-8">
+          <Button
+            variant={activeTab === "shadcn" ? "default" : "outline"}
+            onClick={() => setActiveTab("shadcn")}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="flex h-10 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-4 text-sm font-medium transition-colors hover:border-transparent hover:bg-[#f2f2f2] sm:h-12 sm:w-auto sm:px-5 sm:text-base md:w-[158px] dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Shadcn/UI Components
+          </Button>
+          <Button
+            variant={activeTab === "tailwind" ? "default" : "outline"}
+            onClick={() => setActiveTab("tailwind")}
           >
-            Read our docs
-          </a>
+            Tailwind CSS Test
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-6xl mx-auto pb-12">
+        {activeTab === "shadcn" ? (
+          <ShadcnTest />
+        ) : (
+          <div className="p-8">
+            <div className="card max-w-2xl mx-auto">
+              <h2 className="text-2xl font-semibold text-secondary-800 mb-6 text-center">
+                ✅ Tailwind CSS Configuration Test
+              </h2>
+
+              <div className="space-y-6">
+                {/* Color Palette Test */}
+                <div>
+                  <h3 className="text-lg font-medium text-secondary-700 mb-3">Color Palette</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="bg-primary-500 text-white p-3 rounded-lg text-center text-sm font-medium">
+                      Primary
+                    </div>
+                    <div className="bg-secondary-500 text-white p-3 rounded-lg text-center text-sm font-medium">
+                      Secondary
+                    </div>
+                    <div className="bg-success-500 text-white p-3 rounded-lg text-center text-sm font-medium">
+                      Success
+                    </div>
+                    <div className="bg-error-500 text-white p-3 rounded-lg text-center text-sm font-medium">
+                      Error
+                    </div>
+                  </div>
+                </div>
+
+                {/* Button Components Test */}
+                <div>
+                  <h3 className="text-lg font-medium text-secondary-700 mb-3">Custom Button Classes</h3>
+                  <div className="flex flex-wrap gap-3">
+                    <button className="btn-primary">Primary Button</button>
+                    <button className="btn-secondary">Secondary Button</button>
+                    <button className="btn-success">Success Button</button>
+                    <button className="btn-warning">Warning Button</button>
+                    <button className="btn-error">Error Button</button>
+                  </div>
+                </div>
+
+                {/* Form Elements Test */}
+                <div>
+                  <h3 className="text-lg font-medium text-secondary-700 mb-3">Custom Form Elements</h3>
+                  <div className="space-y-3">
+                    <input
+                      type="text"
+                      placeholder="Custom input field"
+                      className="input-field"
+                    />
+                    <select className="input-field">
+                      <option>Select an option</option>
+                      <option>Option 1</option>
+                      <option>Option 2</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Typography Test */}
+                <div>
+                  <h3 className="text-lg font-medium text-secondary-700 mb-3">Typography</h3>
+                  <div className="space-y-2">
+                    <p className="text-3xl font-bold text-primary-700">Heading 1</p>
+                    <p className="text-xl font-semibold text-secondary-700">Heading 2</p>
+                    <p className="text-base text-secondary-600">Regular paragraph text</p>
+                    <p className="text-sm text-secondary-500">Small text</p>
+                    <code className="bg-secondary-100 text-secondary-800 px-2 py-1 rounded font-mono text-sm">
+                      Code snippet
+                    </code>
+                  </div>
+                </div>
+
+                {/* Responsive Grid Test */}
+                <div>
+                  <h3 className="text-lg font-medium text-secondary-700 mb-3">Responsive Grid</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="bg-primary-100 text-primary-700 p-4 rounded-lg text-center">
+                      Grid Item 1
+                    </div>
+                    <div className="bg-secondary-100 text-secondary-700 p-4 rounded-lg text-center">
+                      Grid Item 2
+                    </div>
+                    <div className="bg-success-100 text-success-700 p-4 rounded-lg text-center">
+                      Grid Item 3
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              <div className="card hover:shadow-lg transition-shadow duration-300">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mx-auto mb-4 text-xl">
+                    🤖
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary-800 mb-2">AI Processing</h3>
+                  <p className="text-secondary-600 text-sm">Advanced AI-powered exam correction</p>
+                </div>
+              </div>
+
+              <div className="card hover:shadow-lg transition-shadow duration-300">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-success-100 text-success-600 rounded-lg flex items-center justify-center mx-auto mb-4 text-xl">
+                    📊
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary-800 mb-2">Analytics</h3>
+                  <p className="text-secondary-600 text-sm">Comprehensive performance insights</p>
+                </div>
+              </div>
+
+              <div className="card hover:shadow-lg transition-shadow duration-300">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-warning-100 text-warning-600 rounded-lg flex items-center justify-center mx-auto mb-4 text-xl">
+                    ⚡
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary-800 mb-2">Fast Processing</h3>
+                  <p className="text-secondary-600 text-sm">Quick and efficient grading</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="text-center text-secondary-500 text-sm mt-12">
+              <p>✨ Custom Tailwind CSS classes working perfectly! ✨</p>
+            </div>
+          </div>
+        )}
+      </div>
+    </main>
   )
 }

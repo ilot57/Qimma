@@ -1,0 +1,72 @@
+# Task ID: 13
+# Title: Real-time Processing Status Updates
+# Status: pending
+# Dependencies: 12
+# Priority: medium
+# Description: Implement real-time status updates for exam processing using WebSockets or polling to keep users informed of progress.
+# Details:
+1. Implement polling mechanism for processing status updates
+2. Create processing status UI components
+3. Add estimated completion time calculation
+4. Implement progress bar for overall processing
+5. Create individual paper processing status indicators
+6. Add real-time error notifications
+7. Implement completion notifications
+8. Create email notification system using Resend
+9. Add browser notifications for completion
+10. Implement partial results access during processing
+11. Create processing log viewer
+12. Add retry functionality for failed papers
+
+# Test Strategy:
+Test real-time updates with various processing durations, verify estimated completion time accuracy, ensure notifications are delivered correctly, validate partial results access works as expected, and test the system with network interruptions.
+
+# Subtasks:
+## 1. Implement Real-Time Backend Infrastructure (Polling/WebSocket) [pending]
+### Dependencies: None
+### Description: Set up backend endpoints and logic to support both polling and WebSocket connections for real-time status updates.
+### Details:
+Develop REST API endpoints for polling and configure WebSocket server (e.g., using socket.io or native WebSocket) to broadcast status changes. Ensure scalability and reliability for concurrent connections.
+
+## 2. Develop Frontend Real-Time Data Handling [pending]
+### Dependencies: 13.1
+### Description: Create frontend logic to connect to backend via polling and WebSocket, handle incoming status updates, and manage connection lifecycle.
+### Details:
+Implement setInterval-based polling and WebSocket client logic. Handle reconnection, error states, and fallback between polling and WebSocket as needed.
+
+## 3. Design and Build Status UI Components [pending]
+### Dependencies: 13.2
+### Description: Develop UI components to display real-time status updates, including overall status, progress, and individual indicators.
+### Details:
+Create modular React/Vue components for status display, ensuring accessibility and responsiveness. Integrate with real-time data handlers.
+
+## 4. Implement Estimated Time Calculation Logic [pending]
+### Dependencies: 13.1, 13.3
+### Description: Develop backend and frontend logic to calculate and display estimated time remaining for ongoing processes.
+### Details:
+Use historical data or progress metrics to estimate time remaining. Display estimates in the UI and update them in real time.
+
+## 5. Create Progress Bars and Individual Status Indicators [pending]
+### Dependencies: 13.3, 13.4
+### Description: Build visual progress bars and per-task indicators reflecting real-time progress and status.
+### Details:
+Implement animated progress bars and icons for each tracked item. Ensure updates are smooth and reflect backend state accurately.
+
+## 6. Integrate Notification Systems (Email/Browser) [pending]
+### Dependencies: 13.1, 13.3
+### Description: Set up backend and frontend logic to send notifications via email and browser when status changes or completes.
+### Details:
+Configure email service (e.g., SMTP, SendGrid) and browser notification APIs. Allow users to opt-in/out and customize notification preferences.
+
+## 7. Display Partial Results and Log Viewer [pending]
+### Dependencies: 13.3, 13.5
+### Description: Enable UI to show partial results as they become available and provide a real-time log viewer for process output.
+### Details:
+Stream partial results and logs from backend to frontend. Implement a scrollable, filterable log viewer component.
+
+## 8. Add Retry Functionality for Failed Updates [pending]
+### Dependencies: 13.2, 13.3
+### Description: Implement logic to detect failed status updates and allow users to retry operations or re-establish connections.
+### Details:
+Provide UI controls for retrying failed tasks or reconnecting to the server. Handle retries gracefully and update status accordingly.
+

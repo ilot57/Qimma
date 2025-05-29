@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+###Unit Tests
+
+// __tests__/lib/utils/formatGrade.test.ts
+describe('formatGrade', () => {
+  it('should format numeric grades correctly', () => {
+    expect(formatGrade(85.5)).toBe('85.5%')
+    expect(formatGrade(100)).toBe('100%')
+  })
+})
+
+
+###Integration Tests
+
+Test API routes with different auth states
+Test file upload flows
+Test credit consumption flows
+Test AI processing pipeline

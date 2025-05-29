@@ -1,0 +1,84 @@
+# Task ID: 9
+# Title: Exam Creation Wizard - Step 1 & 2 (Subject Selection and Reference Upload)
+# Status: pending
+# Dependencies: 3, 5
+# Priority: high
+# Description: Implement the first two steps of the exam creation wizard: subject/level selection and reference exam upload with AI parsing.
+# Details:
+1. Create multi-step wizard component with progress indicator
+2. Implement subject and level selection form with predefined options
+3. Add exam metadata input fields (name, date, class)
+4. Create file upload component using React Dropzone for reference exam
+5. Implement file validation for PDF and image formats (JPG, PNG)
+6. Add file size limit validation (max 50MB)
+7. Create upload progress indicator
+8. Implement backend API for file storage in AWS S3 via Supabase Storage
+9. Add AI parsing status indicator
+10. Implement auto-save functionality
+11. Create navigation between wizard steps
+12. Add help tooltips for complex fields
+
+# Test Strategy:
+Test file upload with various formats and sizes, verify subject selection works correctly, ensure progress is saved between steps, validate file validation prevents invalid uploads, and test the auto-save functionality.
+
+# Subtasks:
+## 1. Design Wizard UI Framework [pending]
+### Dependencies: None
+### Description: Create the base UI framework for the exam wizard with progress indicators and navigation controls
+### Details:
+Implement a clear, numbered step indicator showing the user's current position in the wizard flow. Keep the total number of steps between 3-8 to avoid user fatigue. Design a consistent header that clearly indicates the wizard's purpose on every screen. Remove unnecessary interface elements to help users focus on the task.
+
+## 2. Implement Subject/Level Selection Step [pending]
+### Dependencies: 9.1
+### Description: Create the first step of the wizard for selecting exam subject and difficulty level
+### Details:
+Design a clean interface with dropdown menus or card-based selection for subjects and levels. Include clear labels and brief descriptions for each option. Set appropriate default values based on user history if available. Ensure this step is self-sufficient with all necessary information for users to make informed choices.
+
+## 3. Develop Metadata Input Form [pending]
+### Dependencies: 9.1
+### Description: Build the form for collecting exam metadata such as title, description, and tags
+### Details:
+Create form fields with clear labels and validation rules. Include helpful placeholder text and tooltips explaining the purpose of each field. Mark required fields clearly and provide immediate validation feedback. Keep the form concise by only requesting essential information and making non-critical fields optional.
+
+## 4. Create File Upload Component [pending]
+### Dependencies: 9.1
+### Description: Develop the file upload interface with drag-and-drop functionality and file type validation
+### Details:
+Implement a drag-and-drop zone with clear visual feedback. Add file type restrictions and size limits with user-friendly error messages. Show upload progress indicators and preview capabilities where appropriate. Include fallback button for traditional file selection.
+
+## 5. Build Validation System [pending]
+### Dependencies: 9.2, 9.3, 9.4
+### Description: Implement client-side and server-side validation for all user inputs and uploaded files
+### Details:
+Create validation rules for all form fields with clear, actionable error messages. Implement file format and content validation. Highlight errors directly at the step where they occur rather than delaying feedback. Ensure validation messages are specific about what went wrong and how to fix it.
+
+## 6. Develop Progress Tracking System [pending]
+### Dependencies: 9.1
+### Description: Create a system to track and display user progress through the wizard
+### Details:
+Implement a visual progress indicator showing completed, current, and upcoming steps. Store progress data to enable resuming the wizard later. Add visual cues for successfully completed steps. Design a final completion message with results summary.
+
+## 7. Implement Backend API Integration [pending]
+### Dependencies: 9.2, 9.3, 9.4, 9.5
+### Description: Develop API endpoints for handling data submission and processing from each wizard step
+### Details:
+Create RESTful API endpoints for each wizard step. Implement proper error handling and status codes. Design the API to support partial submissions for auto-save functionality. Ensure secure file handling and data validation on the server side.
+
+## 8. Create AI Processing Status Indicator [pending]
+### Dependencies: 9.4, 9.7
+### Description: Develop a component to show the status of AI parsing for uploaded exam files
+### Details:
+Design an animated loading indicator for when AI is processing files. Create clear status messages explaining the current processing stage. Implement error handling for AI processing failures with retry options. Add estimated time remaining where possible.
+
+## 9. Implement Auto-Save Functionality [pending]
+### Dependencies: 9.5, 9.7
+### Description: Create a system to automatically save user progress at each step
+### Details:
+Implement periodic auto-saving of form data. Add visual indicators when auto-save occurs. Create a system to restore saved data when users return to the wizard. Handle edge cases like network failures during auto-save operations.
+
+## 10. Develop Summary and Review Step [pending]
+### Dependencies: 9.2, 9.3, 9.4, 9.5, 9.7
+### Description: Create a final step showing a summary of all user inputs for review before submission
+### Details:
+Design a comprehensive summary page showing all user selections and inputs. Allow users to navigate back to specific steps to make changes if needed. Include a clear final submission button. Provide confirmation feedback after successful submission.
+

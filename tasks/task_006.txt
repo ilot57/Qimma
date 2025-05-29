@@ -1,0 +1,84 @@
+# Task ID: 6
+# Title: Credit System Backend Implementation
+# Status: pending
+# Dependencies: 3
+# Priority: high
+# Description: Develop the backend for the credit-based system, including credit balance tracking, consumption history, alerts, and purchase options.
+# Details:
+1. Create credit balance table in database
+2. Implement credit transaction logging system
+3. Develop API endpoints for credit balance retrieval
+4. Create credit consumption history API
+5. Implement credit deduction logic for exam processing
+6. Add low credit alert system (trigger at 10 credits)
+7. Create credit allocation system for different subscription tiers
+8. Implement credit expiration logic if needed
+9. Add credit refund functionality for failed operations
+10. Create admin panel for manual credit adjustments
+11. Implement credit usage analytics
+12. Set up automated monthly credit renewal for subscriptions
+
+# Test Strategy:
+Test credit deduction for various operations, verify transaction logging works correctly, ensure low credit alerts trigger appropriately, validate credit balance updates in real-time, and test credit renewal process for different subscription tiers.
+
+# Subtasks:
+## 1. Design Database Schema for Credit System [pending]
+### Dependencies: None
+### Description: Define and create normalized database tables for users, credits, transactions, allocations, expirations, refunds, and audit logs. Ensure referential integrity and scalability.
+### Details:
+Tables should include primary keys, foreign keys, indexes, and constraints. Document ER diagrams and table relationships.
+
+## 2. Implement Transaction Logging Mechanism [pending]
+### Dependencies: 6.1
+### Description: Develop a robust transaction logging system to record all credit-related activities, including allocations, deductions, refunds, and expirations.
+### Details:
+Ensure logs are immutable, timestamped, and support querying for audits and analytics. Integrate with the main ledger.
+
+## 3. Develop API Endpoints for Credit Operations [pending]
+### Dependencies: 6.1, 6.2
+### Description: Create RESTful API endpoints for credit allocation, deduction, refund, balance inquiry, and transaction history retrieval.
+### Details:
+Endpoints must be secure, follow REST conventions, and include input validation and error handling. Document with OpenAPI/Swagger.
+
+## 4. Implement Credit Deduction Logic [pending]
+### Dependencies: 6.1, 6.2, 6.3
+### Description: Develop backend logic to deduct credits atomically, ensuring consistency and handling edge cases such as insufficient balance or concurrent requests.
+### Details:
+Include rollback mechanisms and idempotency to prevent double deductions. Unit test for race conditions.
+
+## 5. Set Up Credit Allocation and Expiration Processes [pending]
+### Dependencies: 6.1, 6.2, 6.3
+### Description: Build logic for allocating credits to users (manual, promotional, or automated) and scheduling expirations based on business rules.
+### Details:
+Implement background jobs for expiration and notifications. Ensure expired credits are marked and cannot be used.
+
+## 6. Develop Refund and Reversal Mechanisms [pending]
+### Dependencies: 6.1, 6.2, 6.3, 6.4
+### Description: Implement processes to refund credits to users, including partial and full refunds, and handle transaction reversals with proper logging.
+### Details:
+Ensure refunds update balances and logs correctly, and are traceable for audits.
+
+## 7. Integrate Alerts and Notification System [pending]
+### Dependencies: 6.2, 6.4, 6.5
+### Description: Set up real-time alerts for critical events such as low balance, credit expiration, failed deductions, and suspicious activities.
+### Details:
+Integrate with email/SMS/push notification services. Allow user preferences for alert types.
+
+## 8. Build Admin Panel for Credit Management [pending]
+### Dependencies: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6
+### Description: Develop a secure admin interface for managing user credits, viewing logs, issuing manual adjustments, and monitoring system health.
+### Details:
+Include role-based access control, audit trails, and search/filter capabilities.
+
+## 9. Implement Analytics and Reporting Module [pending]
+### Dependencies: 6.2, 6.3, 6.4, 6.5, 6.6, 6.8
+### Description: Create analytics dashboards and reports for credit usage, allocation trends, refunds, expirations, and system performance.
+### Details:
+Support export to CSV/Excel and scheduled report generation. Ensure data privacy compliance.
+
+## 10. Automate Credit Renewal and Subscription Integration [pending]
+### Dependencies: 6.1, 6.2, 6.3, 6.4, 6.5, 6.7, 6.8
+### Description: Develop automated workflows for credit renewal based on subscription status, including proration, renewal reminders, and integration with payment systems.
+### Details:
+Ensure seamless user experience and accurate credit balance updates upon renewal.
+

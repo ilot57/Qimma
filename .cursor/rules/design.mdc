@@ -1,0 +1,24 @@
+---
+description: UI Design rules
+globs: 
+alwaysApply: false
+---
+###Styling Guidelines
+
+##Tailwind Classes Order
+
+Layout (display, position)
+Spacing (margin, padding)
+Sizing (width, height)
+Typography (font, text)
+Colors (background, text color)
+Borders
+Effects (shadows, opacity)
+Animations
+Responsive modifiers
+
+###Custom Styles
+
+Prefer Tailwind utilities over custom CSS
+Use CSS modules for complex animations
+Define design tokens in tailwind.config.js

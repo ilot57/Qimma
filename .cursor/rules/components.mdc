@@ -1,0 +1,65 @@
+---
+description: Components guidelines
+globs: 
+alwaysApply: false
+---
+###File Naming
+
+Components: PascalCase (e.g., ExamCard.tsx)
+Utilities: camelCase (e.g., formatGrade.ts)
+Types: PascalCase with .types.ts extension
+Hooks: camelCase starting with 'use' (e.g., useExamData.ts)
+
+###Component Structure
+
+// components/exams/ExamCard.tsx
+import { cn } from "@/lib/utils"
+import { ExamCardProps } from "./ExamCard.types"
+
+export function ExamCard({ exam, className, ...props }: ExamCardProps) {
+  // Hooks first
+  const { user } = useUser()
+  const [isLoading, setIsLoading] = useState(false)
+  
+  // Event handlers
+  const handleClick = async () => {
+    // Implementation
+  }
+  
+  // Render
+  return (
+    <div className={cn("rounded-lg border p-4", className)} {...props}>
+      {/* Content */}
+    </div>
+  )
+}
+
+###Shadcn/UI Usage
+
+Always use Shadcn/UI components when available
+Extend with className prop using cn() utility
+Don't modify core UI components directly
+Create wrapper components for custom behavior
+
+###State Management
+
+##Client State
+
+Use React hooks for component state
+Zustand for global client state (user preferences, UI state)
+React Query/SWR for server state
+
+##Server State Pattern
+
+// hooks/useExams.ts
+export function useExams() {
+  return useQuery({
+    queryKey: ['exams'],
+    queryFn: async () => {
+      const response = await fetch('/api/exams')
+      if (!response.ok) throw new Error('Failed to fetch exams')
+      return response.json()
+    },
+    staleTime: 1000 * 60 * 5, // 5 minutes
+  })
+}

@@ -1,0 +1,38 @@
+---
+description: API Route Conventions
+globs: 
+alwaysApply: false
+---
+###Naming
+
+Use RESTful conventions
+Plural resource names: /api/exams, /api/submissions
+Actions as sub-routes: /api/exams/[id]/process
+
+###Response Format
+
+// Success response
+{
+  success: true,
+  data: any,
+  message?: string
+}
+
+// Error response
+{
+  success: false,
+  error: {
+    code: string,
+    message: string,
+    details?: any
+  }
+}
+
+###Error Codes
+
+AUTH_REQUIRED: Authentication required
+INSUFFICIENT_CREDITS: Not enough credits
+INVALID_INPUT: Validation error
+NOT_FOUND: Resource not found
+PROCESSING_ERROR: AI processing failed
+RATE_LIMITED: Too many requests

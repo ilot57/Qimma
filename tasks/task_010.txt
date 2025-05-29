@@ -1,0 +1,84 @@
+# Task ID: 10
+# Title: Exam Creation Wizard - Step 3 & 4 (AI Parsing and Student Upload)
+# Status: pending
+# Dependencies: 9
+# Priority: high
+# Description: Complete the exam creation wizard with AI parsing of reference exam and student submission batch upload functionality.
+# Details:
+1. Implement AI parsing review interface for reference exam
+2. Create editable marking scheme component
+3. Add expected answer modification capability
+4. Implement batch file upload for student submissions
+5. Create multi-file selection and upload component
+6. Add individual upload progress indicators
+7. Implement failed upload retry functionality
+8. Create student name/ID input mechanism
+9. Add validation for student submission files
+10. Implement exam creation completion and submission
+11. Create credit deduction confirmation
+12. Add exam creation success notification
+
+# Test Strategy:
+Test AI parsing review interface with various exam formats, verify marking scheme editing works correctly, ensure batch upload handles multiple files properly, validate retry functionality for failed uploads, and test the complete exam creation flow end-to-end.
+
+# Subtasks:
+## 1. Implement AI Parsing Review Step [pending]
+### Dependencies: None
+### Description: Develop the UI and backend logic for reviewing parsed answers using AI, including displaying AI suggestions and allowing human validation.
+### Details:
+Ensure the system supports human-in-the-loop review, displays actionable AI feedback, and tracks which suggestions are accepted or rejected for continuous improvement.
+
+## 2. Design and Edit Marking Scheme Interface [pending]
+### Dependencies: 10.1
+### Description: Create an interface for educators to view, edit, and approve the marking scheme generated or suggested by AI.
+### Details:
+Allow for manual overrides, versioning, and validation of marking criteria. Ensure changes are tracked and auditable.
+
+## 3. Enable Answer Modification Workflow [pending]
+### Dependencies: 10.1
+### Description: Allow users to modify parsed answers before final submission, with clear UI for editing and validation.
+### Details:
+Support inline editing, change tracking, and validation checks to ensure answer integrity.
+
+## 4. Develop Batch Upload Functionality [pending]
+### Dependencies: 10.1
+### Description: Implement backend and UI for uploading multiple answer sheets or documents in a single operation.
+### Details:
+Support file validation, progress tracking, error reporting, and efficient handling of large volumes.
+
+## 5. Integrate Progress Indicators [pending]
+### Dependencies: 10.4
+### Description: Add real-time progress indicators for each wizard step, especially for parsing, batch uploads, and review processes.
+### Details:
+Display granular progress (e.g., per file, per answer) and handle edge cases like network interruptions.
+
+## 6. Implement Retry Logic for Failed Operations [pending]
+### Dependencies: 10.4, 10.5
+### Description: Develop robust retry mechanisms for failed parsing, uploads, or submissions, with clear user feedback.
+### Details:
+Allow users to retry failed steps individually or in bulk, and log errors for diagnostics.
+
+## 7. Build Student Information Input and Validation [pending]
+### Dependencies: 10.4
+### Description: Create forms and backend logic for entering and validating student information associated with each answer sheet.
+### Details:
+Ensure data integrity, prevent duplicates, and support bulk student info import if needed.
+
+## 8. Develop Comprehensive Validation Checks [pending]
+### Dependencies: 10.2, 10.3, 10.4, 10.7
+### Description: Implement validation logic for all user inputs, parsed data, marking schemes, and uploads.
+### Details:
+Ensure all data meets required formats, completeness, and consistency before allowing progression.
+
+## 9. Handle Completion and Credit Deduction Logic [pending]
+### Dependencies: None
+### Description: Implement transactional logic to finalize the wizard, deduct credits, and lock submissions upon successful completion.
+### Details:
+Ensure atomicity, handle edge cases (e.g., insufficient credits), and provide clear user feedback.
+
+## 10. Configure Notifications and User Feedback [pending]
+### Dependencies: 10.6, 10.9
+### Description: Set up notifications for key events (e.g., completion, errors, retries needed) via UI and/or email.
+### Details:
+Ensure timely, actionable, and clear notifications for all relevant stakeholders.
+

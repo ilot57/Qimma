@@ -1,0 +1,602 @@
+# Product Requirements Document: Qimma AI-Powered Exam Correction Platform
+
+## 1. Introduction
+
+This Product Requirements Document (PRD) defines the features, functionality, and technical specifications for Qimma, an AI-powered automatic exam correction application designed to revolutionize how teachers grade and provide feedback on student examinations. This document serves as the authoritative reference for all stakeholders involved in the development, implementation, and deployment of the Qimma platform.
+
+The PRD outlines the complete product vision, from user authentication to AI-powered correction capabilities, ensuring alignment between product, engineering, design, and business teams throughout the development lifecycle.
+
+## 2. Product overview
+
+Qimma is a comprehensive SaaS platform that leverages OpenAI's advanced language models to automate the exam correction process for educators. The platform transforms traditionally time-consuming manual grading into an efficient, consistent, and insightful process by:
+
+- Automatically interpreting and transcribing handwritten student responses
+- Comparing student answers against reference solutions
+- Generating detailed feedback and grades for each question
+- Providing comprehensive analytics and insights on student performance
+- Supporting multiple formats including LaTeX expressions and graphical content
+
+The platform operates on a credit-based subscription model, making it accessible to educators across all academic levels from primary school to university.
+
+## 3. Goals and objectives
+
+### 3.1 Primary goals
+
+- **Reduce grading time** by 80% compared to traditional manual correction methods
+- **Improve feedback quality** through consistent, detailed AI-generated comments
+- **Enhance teaching insights** via comprehensive analytics on student performance patterns
+- **Democratize access** to advanced grading tools across all educational levels
+
+### 3.2 Business objectives
+
+- Achieve 10,000 active teacher subscriptions within the first year
+- Maintain a 90% customer retention rate through continuous value delivery
+- Process over 1 million exam papers monthly by year two
+- Establish Qimma as the leading AI-powered grading solution in the education technology market
+
+### 3.3 Success metrics
+
+- Average time saved per exam: Target 75% reduction
+- User satisfaction score: Maintain above 4.5/5
+- AI accuracy rate: Achieve 95% accuracy in grade assignment
+- Platform uptime: Maintain 99.9% availability
+
+## 4. Target audience
+
+### 4.1 Primary users
+
+**Teachers and educators** across all academic levels:
+
+- Primary school teachers (grades 1-5)
+- Secondary school teachers (grades 6-8)
+- High school teachers (grades 9-12)
+- University professors and teaching assistants
+
+### 4.2 User characteristics
+
+- **Technical proficiency**: Basic to intermediate computer skills
+- **Pain points**: Time-consuming manual grading, inconsistent feedback, difficulty tracking student progress
+- **Goals**: Save time, provide better feedback, gain insights into student learning patterns
+- **Usage patterns**: Peak usage during exam periods, regular use for quizzes and assignments
+
+### 4.3 User segments by subscription tier
+
+- **Free tier users**: Individual teachers testing the platform or with minimal grading needs
+- **Standard tier users**: Primary and secondary teachers with regular grading requirements
+- **Plus tier users**: High school teachers with larger class sizes and frequent assessments
+- **Full tier users**: University professors and institutions with high-volume grading needs
+
+## 5. Features and requirements
+
+### 5.1 Authentication and user management
+
+#### 5.1.1 User authentication (Clerk integration)
+
+- Secure login with email/password
+- Social authentication options (Google, Microsoft)
+- Multi-factor authentication support
+- Password reset functionality
+- Session management and timeout controls
+
+#### 5.1.2 User profile management
+
+- Personal information editing
+- Language preference settings
+- Notification preferences
+- Account deletion options
+
+### 5.2 Dashboard and navigation
+
+#### 5.2.1 Main dashboard
+
+- Exam list view with comprehensive filtering
+- Real-time status updates
+- Quick access to recent exams
+- Performance metrics overview
+- Credit balance display
+
+#### 5.2.2 Sidebar navigation
+
+- Collapsible menu structure
+- User profile quick access
+- Credit balance indicator
+- Support and help center links
+- Settings access
+
+### 5.3 Credit system and subscriptions
+
+#### 5.3.1 Credit management
+
+- Real-time credit balance tracking
+- Credit consumption history
+- Low credit alerts
+- Additional credit purchase options
+
+#### 5.3.2 Subscription tiers (Stripe integration)
+
+- Free: 30 credits monthly
+- Standard: 100 credits monthly ($X/month)
+- Plus: 300 credits monthly ($Y/month)
+- Full: Unlimited (10,000 cap) monthly ($Z/month)
+
+### 5.4 Exam creation and import
+
+#### 5.4.1 Four-step correction process
+
+1. Subject and level selection with predefined options
+2. Reference exam upload with AI parsing
+3. Student submission batch upload
+4. AI-generated content validation and modification
+
+#### 5.4.2 File processing capabilities
+
+- PDF format support
+- Image format support (JPG, PNG)
+- Batch file upload
+- Automatic file validation
+- Progress tracking
+
+### 5.5 AI-powered correction engine
+
+#### 5.5.1 Core AI capabilities
+
+- Handwriting recognition and transcription
+- Question parsing and mapping
+- Answer evaluation against reference
+- Grade calculation with justification
+- Feedback generation in teacher's tone
+
+#### 5.5.2 Advanced features
+
+- LaTeX expression recognition
+- Graphical content analysis
+- Multi-language support
+- Customizable grading scales
+- Partial credit assignment
+
+### 5.6 Results and analytics
+
+#### 5.6.1 Exam-level analytics
+
+- Grade distribution charts
+- Question difficulty analysis
+- Common mistake patterns
+- Student performance trends
+- Comparative class analysis
+
+#### 5.6.2 Student-level results
+
+- Individual grade reports
+- Question-by-question feedback
+- Personalized improvement suggestions
+- Progress tracking over time
+
+### 5.7 Editing and modification
+
+#### 5.7.1 Post-correction editing
+
+- Grade adjustment capabilities
+- Feedback modification
+- Marking scheme updates
+- Additional student upload
+- Bulk edit operations
+
+### 5.8 Export functionality
+
+#### 5.8.1 Bulk export options
+
+- CSV format with all data
+- PDF reports with analytics
+- Customizable export templates
+- Batch download capabilities
+
+#### 5.8.2 Individual exports
+
+- Annotated student papers
+- Detailed feedback reports
+- Parent-friendly summaries
+- Integration with LMS systems
+
+## 6. User stories and acceptance criteria
+
+### 6.1 Authentication and access
+
+**ST-101: Secure user registration**
+
+- As a teacher, I want to create an account securely so that I can access the platform
+- Acceptance criteria:
+  - Email validation is performed
+  - Password meets security requirements (8+ characters, mixed case, numbers)
+  - Account verification email is sent
+  - User profile is created in database
+
+**ST-102: User login**
+
+- As a registered teacher, I want to log in to my account so that I can access my exams
+- Acceptance criteria:
+  - Login accepts email/password or social auth
+  - Failed login attempts are limited
+  - Session tokens are securely generated
+  - User is redirected to dashboard upon success
+
+**ST-103: Password recovery**
+
+- As a teacher, I want to reset my password if forgotten so that I can regain access
+- Acceptance criteria:
+  - Password reset link is sent to registered email
+  - Reset link expires after 24 hours
+  - New password must meet security requirements
+  - User is notified of successful password change
+
+### 6.2 Dashboard and navigation
+
+**ST-201: View exam dashboard**
+
+- As a teacher, I want to see all my exams in one place so that I can manage them efficiently
+- Acceptance criteria:
+  - All exams are displayed with key information
+  - Exams are sorted by creation date by default
+  - Status indicators are clearly visible
+  - Loading time is under 2 seconds
+
+**ST-202: Filter and search exams**
+
+- As a teacher, I want to filter my exams so that I can find specific ones quickly
+- Acceptance criteria:
+  - Filter by status, subject, and grade level
+  - Search by exam name
+  - Filters can be combined
+  - Results update in real-time
+
+### 6.3 Credit and subscription management
+
+**ST-301: View credit balance**
+
+- As a teacher, I want to see my remaining credits so that I know when to purchase more
+- Acceptance criteria:
+  - Credit balance is displayed prominently
+  - Low credit warning appears at 10 credits
+  - Credit history is accessible
+  - Balance updates immediately after use
+
+**ST-302: Upgrade subscription**
+
+- As a teacher, I want to upgrade my subscription so that I can access more credits
+- Acceptance criteria:
+  - All tier options are clearly presented
+  - Pricing is transparent
+  - Upgrade is processed immediately
+  - Confirmation email is sent
+
+**ST-303: Purchase additional credits**
+
+- As a teacher, I want to buy extra credits so that I can continue grading without upgrading
+- Acceptance criteria:
+  - Credit packages are available for purchase
+  - Payment is processed securely via Stripe
+  - Credits are added immediately
+  - Purchase receipt is emailed
+
+### 6.4 Exam creation process
+
+**ST-401: Create new exam correction**
+
+- As a teacher, I want to start a new exam correction so that I can grade student papers
+- Acceptance criteria:
+  - Four-step process is clearly indicated
+  - Progress is saved between steps
+  - Back navigation is available
+  - Incomplete exams are saved as drafts
+
+**ST-402: Upload reference exam**
+
+- As a teacher, I want to upload my exam template so that the AI can understand the correct answers
+- Acceptance criteria:
+  - PDF and image files are accepted
+  - File size limit is clearly stated (max 50MB)
+  - Upload progress is shown
+  - AI processing status is displayed
+
+**ST-403: Review AI-parsed content**
+
+- As a teacher, I want to verify the AI's interpretation so that grading is accurate
+- Acceptance criteria:
+  - All parsed questions are displayed
+  - Marking scheme is editable
+  - Expected answers can be modified
+  - Changes are saved automatically
+
+**ST-404: Batch upload student submissions**
+
+- As a teacher, I want to upload all student papers at once so that I can save time
+- Acceptance criteria:
+  - Multiple files can be selected
+  - Upload progress for each file is shown
+  - Failed uploads are clearly indicated
+  - Retry option for failed uploads
+
+### 6.5 AI correction process
+
+**ST-501: AI paper processing**
+
+- As a teacher, I want the AI to process student papers so that they are graded automatically
+- Acceptance criteria:
+  - Processing status is shown in real-time
+  - Estimated completion time is displayed
+  - Email notification upon completion
+  - Partial results are accessible
+
+**ST-502: Handle handwritten responses**
+
+- As a teacher, I want handwritten answers to be transcribed so that they can be graded
+- Acceptance criteria:
+  - Handwriting is accurately transcribed
+  - Unclear text is flagged for review
+  - Original image is retained for reference
+  - Transcription can be manually corrected
+
+**ST-503: Grade mathematical expressions**
+
+- As a teacher, I want LaTeX and mathematical notation to be recognized so that STEM subjects are supported
+- Acceptance criteria:
+  - LaTeX expressions are correctly parsed
+  - Mathematical symbols are recognized
+  - Partial credit for correct methodology
+  - Step-by-step solution checking
+
+### 6.6 Results and analytics
+
+**ST-601: View exam statistics**
+
+- As a teacher, I want to see overall exam performance so that I can identify learning gaps
+- Acceptance criteria:
+  - Average grade is calculated
+  - Grade distribution is visualized
+  - Question-level statistics are available
+  - Exportable analytics report
+
+**ST-602: Review individual student results**
+
+- As a teacher, I want to see detailed student feedback so that I can provide personalized support
+- Acceptance criteria:
+  - Question-by-question grades are shown
+  - AI-generated feedback is displayed
+  - Student's original answers are viewable
+  - Comments can be added/edited
+
+**ST-603: Identify common mistakes**
+
+- As a teacher, I want to see recurring errors so that I can address them in class
+- Acceptance criteria:
+  - Common wrong answers are aggregated
+  - Frequency of mistakes is shown
+  - Affected students are listed
+  - Teaching recommendations are provided
+
+### 6.7 Editing and modifications
+
+**ST-701: Modify grades**
+
+- As a teacher, I want to adjust AI-assigned grades so that I maintain grading control
+- Acceptance criteria:
+  - Grades can be changed per question
+  - Overall grade recalculates automatically
+  - Change history is maintained
+  - Bulk grade adjustments are possible
+
+**ST-702: Edit feedback comments**
+
+- As a teacher, I want to customize AI feedback so that it matches my teaching style
+- Acceptance criteria:
+  - Feedback text is editable
+  - Formatting options are available
+  - Templates can be saved
+  - Bulk feedback editing is supported
+
+**ST-703: Update marking scheme**
+
+- As a teacher, I want to modify the marking criteria so that grading reflects my standards
+- Acceptance criteria:
+  - Point values can be adjusted
+  - Alternative answers can be added
+  - Changes apply to all papers
+  - Regrade option is available
+
+### 6.8 Export and sharing
+
+**ST-801: Export all results**
+
+- As a teacher, I want to export exam results so that I can share them with administration
+- Acceptance criteria:
+  - CSV and PDF formats are available
+  - All data fields are included
+  - Custom templates can be selected
+  - Export completes within 30 seconds
+
+**ST-802: Generate student reports**
+
+- As a teacher, I want to create individual reports so that I can share with students/parents
+- Acceptance criteria:
+  - Professional report layout
+  - Includes grades and feedback
+  - Customizable content sections
+  - Batch generation for all students
+
+**ST-803: Export annotated papers**
+
+- As a teacher, I want to download marked papers so that students can review their work
+- Acceptance criteria:
+  - Comments are embedded in PDF
+  - Grade annotations are visible
+  - Original formatting is preserved
+  - Bulk download is available
+
+### 6.9 Database and system requirements
+
+**ST-901: Database schema design**
+
+- As a developer, I want to design the database schema so that all application data is properly stored
+- Acceptance criteria:
+  - User accounts table with authentication fields
+  - Exams table with metadata and relationships
+  - Student submissions table with file references
+  - Grades and feedback storage with versioning
+  - Credit transactions table with audit trail
+  - Subscription management tables
+
+**ST-902: File storage implementation**
+
+- As a developer, I want to implement secure file storage so that exam documents are safely stored
+- Acceptance criteria:
+  - Files are stored in AWS S3 with encryption
+  - Access URLs are time-limited
+  - File metadata is tracked in database
+  - Automatic cleanup of old files
+  - Backup strategy is implemented
+
+### 6.10 Edge cases and error handling
+
+**ST-1001: Handle large file uploads**
+
+- As a teacher, I want to upload large exam files so that high-quality scans are supported
+- Acceptance criteria:
+  - Files up to 50MB are accepted
+  - Upload resume on connection loss
+  - Clear error messages for oversized files
+  - Compression suggestions provided
+
+**ST-1002: Manage AI processing failures**
+
+- As a teacher, I want to be notified of processing errors so that I can take corrective action
+- Acceptance criteria:
+  - Specific error messages are displayed
+  - Partial results are preserved
+  - Manual override options available
+  - Support contact is provided
+
+**ST-1003: Handle illegible handwriting**
+
+- As a teacher, I want options for unclear text so that all papers can be graded
+- Acceptance criteria:
+  - Unclear sections are highlighted
+  - Manual transcription option
+  - Skip question functionality
+  - Confidence scores displayed
+
+## 7. Technical requirements / Stack
+
+### 7.1 Frontend architecture
+
+- **Framework**: Next.js 14+ with App Router
+- **UI Components**: Tailwind CSS + Shadcn/UI
+- **State Management**: React Context + Zustand
+- **Form Handling**: React Hook Form + Zod validation
+- **File Upload**: React Dropzone
+
+### 7.2 Backend architecture
+
+- **API**: Next.js API Routes
+- **Database**: Supabase PostgreSQL
+- **File Storage**: AWS S3 via Supabase Storage
+- **Background Jobs**: Vercel Cron Jobs
+- **Caching**: Redis for API responses
+
+### 7.3 Third-party integrations
+
+- **Authentication**: Clerk
+- **Payments**: Stripe
+- **Email**: Resend
+- **AI Processing**: OpenAI API (GPT-4 Vision)
+- **Monitoring**: Sentry
+- **Analytics**: Mixpanel
+
+### 7.4 Deployment and infrastructure
+
+- **Hosting**: AWS Amplify
+- **CDN**: CloudFront
+- **Domain**: Route 53
+- **SSL**: AWS Certificate Manager
+- **Environment**: Production, Staging, Development
+
+### 7.5 Performance requirements
+
+- Page load time: < 3 seconds
+- API response time: < 500ms (non-AI endpoints)
+- AI processing time: < 30 seconds per paper
+- Concurrent users: Support 1000+ simultaneous users
+- Uptime: 99.9% availability
+
+### 7.6 Security requirements
+
+- HTTPS enforcement
+- API rate limiting
+- Input sanitization
+- SQL injection prevention
+- XSS protection
+- GDPR compliance
+- Data encryption at rest and in transit
+
+## 8. Design and user interface
+
+### 8.1 Design principles
+
+- **Clarity**: Clear visual hierarchy and intuitive navigation
+- **Efficiency**: Minimize clicks and streamline workflows
+- **Accessibility**: WCAG 2.1 AA compliance
+- **Responsiveness**: Full mobile and tablet support
+- **Consistency**: Unified design language across all features
+
+### 8.2 Visual design
+
+- **Color Palette**: Professional blues and grays with accent colors
+- **Typography**: Inter for UI, Roboto for content
+- **Spacing**: 8px grid system
+- **Icons**: Lucide React icon set
+- **Animations**: Subtle transitions for better UX
+
+### 8.3 Key UI components
+
+#### 8.3.1 Dashboard layout
+
+- Fixed header with user menu
+- Collapsible sidebar (240px expanded)
+- Main content area with responsive grid
+- Floating action button for new corrections
+
+#### 8.3.2 Exam creation wizard
+
+- Step progress indicator
+- Clear CTAs for navigation
+- Auto-save functionality indicator
+- Help tooltips for complex fields
+
+#### 8.3.3 Results interface
+
+- Tab-based navigation for different views
+- Interactive charts using Recharts
+- Expandable student result cards
+- Inline editing capabilities
+
+#### 8.3.4 Mobile experience
+
+- Bottom navigation for key actions
+- Swipe gestures for navigation
+- Optimized file upload flow
+- Responsive data tables
+
+### 8.4 Accessibility features
+
+- Keyboard navigation support
+- Screen reader compatibility
+- High contrast mode option
+- Focus indicators
+- Alt text for all images
+- ARIA labels for interactive elements
+
+### 8.5 Internationalization
+
+- Support for RTL languages
+- Locale-specific number formatting
+- Date/time localization
+- Translatable UI strings
+- Cultural considerations in design

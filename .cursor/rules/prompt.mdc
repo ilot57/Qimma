@@ -1,0 +1,34 @@
+---
+description: AI Prompt Engineering rules
+globs: 
+alwaysApply: false
+---
+### System Prompts
+
+Be specific about expected output format
+Include examples when possible
+Set appropriate temperature for task
+Implement validation for AI outputs
+
+### Prompt template exemple
+
+const GRADING_PROMPT = `
+You are an expert teacher grading an exam. 
+
+Reference Answer: {referenceAnswer}
+Student Answer: {studentAnswer}
+Maximum Points: {maxPoints}
+
+Please evaluate the student's answer and provide:
+1. Points awarded (0 to {maxPoints})
+2. Detailed feedback explaining the grade
+3. Suggestions for improvement
+
+Respond in JSON format:
+{
+  "points": number,
+  "feedback": string,
+  "suggestions": string[]
+}
+`
+

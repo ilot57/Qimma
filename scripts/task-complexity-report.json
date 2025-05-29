@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "generatedAt": "2025-05-29T18:31:24.367Z",
+    "tasksAnalyzed": 25,
+    "totalTasks": 25,
+    "analysisCount": 25,
+    "thresholdScore": 5,
+    "projectName": "Task Master",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Project Setup and Repository Configuration",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Break down the project setup into subtasks for initializing the Next.js 14+ project, configuring Tailwind CSS, integrating Shadcn/UI, setting up ESLint/Prettier, initializing Git with branching strategy, creating environment configurations, setting up Husky, and installing key libraries (React Hook Form, Zod, Zustand).",
+      "reasoning": "This task involves multiple foundational steps, each with its own configuration requirements and dependencies. Setting up a modern Next.js project with App Router, TypeScript, Tailwind CSS, Shadcn/UI, code quality tools, Git strategies, environment management, and state/form libraries is complex and critical for future maintainability. Each step can be a subtask due to the depth and potential for issues during integration.[1][2][3]"
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Authentication System Integration with Clerk",
+      "complexityScore": 9,
+      "recommendedSubtasks": 12,
+      "expansionPrompt": "Expand the authentication integration into subtasks for Clerk SDK installation, provider setup, sign-up/login flows, social auth, MFA, password reset, session management, protected routes, Supabase sync, sign-out, and UI components.",
+      "reasoning": "Integrating a full-featured authentication system with Clerk, including social logins, MFA, session management, and synchronization with Supabase, is highly complex. Each authentication flow and provider requires careful configuration, testing, and UI work, justifying a high number of subtasks."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Database Schema Design and Supabase Integration",
+      "complexityScore": 9,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Decompose the database integration into subtasks for Supabase client setup, table creation, relationships, RLS policies, indexing, triggers, storage configuration, migrations, backup strategy, and TypeScript types.",
+      "reasoning": "Designing a normalized database schema with security (RLS), performance (indexes), storage, migrations, and type safety is a major architectural task. Each aspect (tables, policies, triggers, types) is substantial and should be a separate subtask."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "User Profile Management System",
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Break down user profile management into subtasks for profile page UI, form handling, language and notification preferences, account deletion, profile picture upload, API endpoints, Clerk/Supabase sync, and validation/notifications.",
+      "reasoning": "While not as foundational as setup or authentication, profile management involves multiple UI forms, data sync, and validation, each requiring careful handling and testing."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Main Dashboard and Navigation Implementation",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Expand the dashboard implementation into subtasks for layout, exam list, filtering, real-time updates, quick access, metrics, credit display, sidebar navigation, profile access, responsive design, loading/empty states.",
+      "reasoning": "The dashboard is a central, multi-faceted UI with real-time data, filtering, navigation, and responsive requirements. Each feature (list, filters, metrics, navigation) is significant and should be a subtask."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Credit System Backend Implementation",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Break down the credit system backend into subtasks for database tables, transaction logging, API endpoints, deduction logic, alerts, allocation, expiration, refunds, admin panel, analytics, and renewal automation.",
+      "reasoning": "A credit system involves transactional logic, security, admin controls, analytics, and integration with subscriptions. Each area is complex and warrants its own subtask."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Stripe Integration for Subscription Management",
+      "complexityScore": 9,
+      "recommendedSubtasks": 12,
+      "expansionPrompt": "Expand Stripe integration into subtasks for SDK setup, webhook configuration, product/plan creation, checkout flow, payment processing, upgrade/downgrade, cancellation, webhook handlers, status sync, receipt emailing, renewal, UI, and error handling.",
+      "reasoning": "Integrating Stripe for subscriptions and payments is highly complex, involving backend, frontend, webhooks, error handling, and compliance. Each flow (checkout, upgrade, cancellation, receipts) is a substantial subtask."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Credit System Frontend Implementation",
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Decompose the frontend credit system into subtasks for balance display, purchase modal, tier comparison, management page, transaction history, warnings, charts, upgrade UI, receipts, responsive design, and tooltips.",
+      "reasoning": "The frontend for credits involves several interactive components and integration with backend/payment systems. Each UI piece (display, purchase, history, charts) is a logical subtask."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Exam Creation Wizard - Step 1 & 2 (Subject Selection and Reference Upload)",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Break down the exam wizard steps into subtasks for wizard UI, subject/level selection, metadata input, file upload, validation, progress, backend API, AI parsing indicator, auto-save, navigation, and help tooltips.",
+      "reasoning": "Multi-step wizards with file upload, validation, and AI integration are complex. Each step (UI, upload, validation, backend, AI status) is a distinct subtask."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Exam Creation Wizard - Step 3 & 4 (AI Parsing and Student Upload)",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Expand the remaining wizard steps into subtasks for AI parsing review, marking scheme editing, answer modification, batch upload, progress indicators, retry logic, student info input, validation, completion, credit deduction, and notifications.",
+      "reasoning": "These steps involve AI review, batch uploads, and transactional flows, each requiring careful UI and backend coordination."
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "OpenAI Integration for Exam Processing",
+      "complexityScore": 10,
+      "recommendedSubtasks": 12,
+      "expansionPrompt": "Break down OpenAI integration into subtasks for SDK setup, API wrapper, prompt engineering, handwriting recognition, question parsing, answer evaluation, grade calculation, feedback generation, LaTeX/graphical analysis, processing queue, error handling, status tracking, and logging.",
+      "reasoning": "Integrating GPT-4 Vision for exam processing, including handwriting, parsing, grading, and feedback, is highly advanced and multi-disciplinary, requiring many specialized subtasks."
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "Background Job Processing System",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Expand background job processing into subtasks for Vercel Cron setup, job queue, job processor, retry logic, prioritization, monitoring dashboard, notifications, error handling, cancellation, progress tracking, and logging.",
+      "reasoning": "Asynchronous job processing with retries, prioritization, monitoring, and notifications is complex and should be decomposed into clear subtasks."
+    },
+    {
+      "taskId": 13,
+      "taskTitle": "Real-time Processing Status Updates",
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Break down real-time status updates into subtasks for polling/WebSocket setup, status UI, estimated time calculation, progress bars, individual indicators, notifications (email/browser), partial results, log viewer, and retry functionality.",
+      "reasoning": "Real-time updates require backend and frontend coordination, UI components, and notification systems, each a logical subtask."
+    },
+    {
+      "taskId": 14,
+      "taskTitle": "Exam Results and Analytics Dashboard",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Expand analytics dashboard into subtasks for overview page, grade distribution, difficulty analysis, mistake patterns, performance trends, comparative analysis, navigation, filtering, export, printable reports, responsive design, and tooltips.",
+      "reasoning": "Comprehensive analytics dashboards involve data processing, visualization, filtering, and export, each requiring focused development."
+    },
+    {
+      "taskId": 15,
+      "taskTitle": "Individual Student Results Interface",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Break down student results interface into subtasks for result page, question grades, AI feedback, answer viewer, grade adjustment, feedback editing, comments, recalculation, change history, report generation, annotated viewer, and navigation.",
+      "reasoning": "This interface is feature-rich, requiring detailed UI and backend logic for editing, feedback, and reporting."
+    },
+    {
+      "taskId": 16,
+      "taskTitle": "Bulk Editing and Modification Tools",
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Expand bulk editing tools into subtasks for grade adjustment UI, marking scheme updates, bulk feedback, alternative answers, regrade logic, confirmation dialogs, undo, change tracking, filtering, batch processing, progress tracking, and error handling.",
+      "reasoning": "Bulk operations require careful UI/UX, transactional safety, and error handling, each a distinct subtask."
+    },
+    {
+      "taskId": 17,
+      "taskTitle": "Export Functionality Implementation",
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Break down export functionality into subtasks for CSV export, PDF generation, templates, batch downloads, annotated exports, feedback reports, summary reports, LMS formats, progress tracking, background processing, email delivery, and history.",
+      "reasoning": "Exporting data in multiple formats with batch and background processing involves several technical and UX challenges."
+    },
+    {
+      "taskId": 18,
+      "taskTitle": "File Storage and Management System",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Expand file storage into subtasks for S3 configuration, encryption, access URLs, metadata tracking, cleanup, backups, versioning, access control, compression, virus scanning, validation, and retrieval APIs.",
+      "reasoning": "Secure file storage with encryption, access control, cleanup, and integration with Supabase is complex and multi-faceted."
+    },
+    {
+      "taskId": 19,
+      "taskTitle": "Error Handling and Edge Cases",
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Break down error handling into subtasks for error boundaries, scenario-specific messages, retry mechanisms, AI fallbacks, manual overrides, support info, logging, notifications, illegible handwriting handling, skip functionality, confidence scores, and reporting.",
+      "reasoning": "Comprehensive error handling across UI, backend, and AI flows requires multiple focused subtasks."
+    },
+    {
+      "taskId": 20,
+      "taskTitle": "Performance Optimization",
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Expand performance optimization into subtasks for code splitting, image optimization, caching, query optimization, indexing, lazy loading, virtualized lists, prefetching, debouncing, skeleton states, monitoring, and SSR.",
+      "reasoning": "Performance work spans frontend and backend, each optimization technique is a logical subtask."
+    },
+    {
+      "taskId": 21,
+      "taskTitle": "Security Implementation",
+      "complexityScore": 9,
+      "recommendedSubtasks": 12,
+      "expansionPrompt": "Break down security implementation into subtasks for HTTPS, rate limiting, input sanitization, SQL injection prevention, XSS/CSRF protection, secure headers, encryption (rest/transit), audit logging, security scanning, GDPR compliance, and data export/deletion.",
+      "reasoning": "Comprehensive security covers many areas (network, API, data, compliance), each requiring specialized attention and testing."
+    },
+    {
+      "taskId": 22,
+      "taskTitle": "Accessibility Implementation",
+      "complexityScore": 6,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Expand accessibility implementation into subtasks for keyboard navigation, screen reader support, high contrast mode, focus indicators, alt text, ARIA labels, semantic HTML, skip links, accessible validation, color contrast, text resizing, and audit/testing.",
+      "reasoning": "Accessibility is essential but can be broken into a moderate number of focused UI and testing subtasks."
+    },
+    {
+      "taskId": 23,
+      "taskTitle": "Internationalization and Localization",
+      "complexityScore": 6,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down internationalization into subtasks for next-intl setup, translation files, language selector, RTL support, number/date formatting, string extraction, font loading, cultural design, preference persistence, fallback, and auto-detection.",
+      "reasoning": "i18n/l10n is moderately complex, with each aspect (translations, RTL, formatting, detection) a logical subtask."
+    },
+    {
+      "taskId": 24,
+      "taskTitle": "Analytics and Monitoring Integration",
+      "complexityScore": 7,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Expand analytics and monitoring into subtasks for Mixpanel setup, event tracking, user properties, funnel/retention analysis, dashboard, Sentry setup, performance monitoring, breadcrumbs, alerts, feedback collection, and privacy compliance.",
+      "reasoning": "Integrating analytics and monitoring tools involves both backend and frontend work, with each tool and feature a logical subtask."
+    },
+    {
+      "taskId": 25,
+      "taskTitle": "Deployment and CI/CD Pipeline",
+      "complexityScore": 8,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Break down deployment and CI/CD into subtasks for AWS Amplify setup, CloudFront, Route 53, SSL, environment configs, GitHub Actions, automated testing, build optimization, blue-green deployment, rollback, notifications, and post-deployment monitoring.",
+      "reasoning": "Deployment infrastructure and CI/CD setup is complex, involving cloud services, automation, testing, and monitoring, each requiring dedicated subtasks."
+    }
+  ]
+}
