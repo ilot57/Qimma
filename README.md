@@ -162,6 +162,8 @@ RESEND_API_KEY=
 # See scripts/environment-setup.md for complete list
 ```
 
+> **Note**: ESLint v9 compatibility has been configured with Next.js integration for optimal development experience.
+
 ## 🧪 Testing
 
 ### Available Test Pages
