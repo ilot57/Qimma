@@ -3,9 +3,9 @@ description: UI Design rules
 globs: 
 alwaysApply: false
 ---
-###Styling Guidelines
+### Styling Guidelines
 
-##Tailwind Classes Order
+#### Tailwind Classes Order
 
 Layout (display, position)
 Spacing (margin, padding)
@@ -17,8 +17,71 @@ Effects (shadows, opacity)
 Animations
 Responsive modifiers
 
-###Custom Styles
+#### Custom Styles
 
 Prefer Tailwind utilities over custom CSS
 Use CSS modules for complex animations
 Define design tokens in tailwind.config.js
+
+### 8.1 Design principles
+
+- **Clarity**: Clear visual hierarchy and intuitive navigation
+- **Efficiency**: Minimize clicks and streamline workflows
+- **Accessibility**: WCAG 2.1 AA compliance
+- **Responsiveness**: Full mobile and tablet support
+- **Consistency**: Unified design language across all features
+
+### 8.2 Visual design
+
+- **Color Palette**: Professional blues and grays with accent colors
+- **Typography**: Inter for UI, Roboto for content
+- **Spacing**: 8px grid system
+- **Icons**: Lucide React icon set
+- **Animations**: Subtle transitions for better UX
+
+### 8.3 Key UI components
+
+#### 8.3.1 Dashboard layout
+
+- Fixed header with user menu
+- Collapsible sidebar (240px expanded)
+- Main content area with responsive grid
+- Floating action button for new corrections
+
+#### 8.3.2 Exam creation wizard
+
+- Step progress indicator
+- Clear CTAs for navigation
+- Auto-save functionality indicator
+- Help tooltips for complex fields
+
+#### 8.3.3 Results interface
+
+- Tab-based navigation for different views
+- Interactive charts using Recharts
+- Expandable student result cards
+- Inline editing capabilities
+
+#### 8.3.4 Mobile experience
+
+- Bottom navigation for key actions
+- Swipe gestures for navigation
+- Optimized file upload flow
+- Responsive data tables
+
+### 8.4 Accessibility features
+
+- Keyboard navigation support
+- Screen reader compatibility
+- High contrast mode option
+- Focus indicators
+- Alt text for all images
+- ARIA labels for interactive elements
+
+### 8.5 Internationalization
+
+- Support for RTL languages
+- Locale-specific number formatting
+- Date/time localization
+- Translatable UI strings
+- Cultural considerations in design
