@@ -548,55 +548,106 @@ The platform operates on a credit-based subscription model, making it accessible
 
 ### 8.2 Visual design
 
-- **Color Palette**: Professional blues and grays with accent colors
-- **Typography**: Inter for UI, Roboto for content
-- **Spacing**: 8px grid system
-- **Icons**: Lucide React icon set
-- **Animations**: Subtle transitions for better UX
+- **Color Palette**: Modern emerald and teal with complementary accent colors
+  - Primary: Emerald (#10b981) for success states and primary actions
+  - Accent: Teal (#14b8a6) for secondary elements and highlights
+  - Warning: Amber (#f59e0b) for caution states
+  - Error: Red (#ef4444) for error states
+  - Neutral: Comprehensive gray scale for backgrounds and text hierarchy
+- **Typography**: Plus Jakarta Sans for modern, professional appearance
+  - Primary font: Plus Jakarta Sans for all UI elements and headings
+  - Fallback chain: Inter, system-ui, sans-serif for maximum compatibility
+  - Monospace: Fira Code, JetBrains Mono for code and technical content
+- **Spacing**: 8px grid system with consistent padding and margins
+- **Icons**: Lucide React icon set with semantic meaning and contextual usage
+- **Animations**: Subtle transitions (0.3s ease-out) and micro-interactions for enhanced UX
 
 ### 8.3 Key UI components
 
 #### 8.3.1 Dashboard layout
 
-- Fixed header with user menu
-- Collapsible sidebar (240px expanded)
-- Main content area with responsive grid
-- Floating action button for new corrections
+- Fixed header with user menu, search functionality, and notification center
+- Optimized collapsible sidebar:
+  - Expanded: 224px (desktop) with full navigation labels
+  - Collapsed: 56px (desktop) with icon-only navigation
+  - Mobile: Overlay drawer with gesture support
+- Main content area with responsive grid (6-unit gap spacing)
+- Modern card-based design with rounded corners (rounded-xl)
+- Subtle shadows and borders for visual depth without heaviness
+- Emerald accent colors for active states and primary interactions
 
-#### 8.3.2 Exam creation wizard
+#### 8.3.2 Dashboard metrics and analytics
 
-- Step progress indicator
-- Clear CTAs for navigation
-- Auto-save functionality indicator
-- Help tooltips for complex fields
+- Meaningful pictograms replacing generic indicators:
+  - BookOpen icon for total exams with trending indicators
+  - CheckCircle icon for completion metrics with percentage rates
+  - Clock icon for processing status with estimated completion times
+  - Coins icon for credit balance with subscription plan indicators
+- Color-coded icon backgrounds for visual categorization
+- Consistent card structure with proper information hierarchy
+- Performance indicators and contextual information below primary metrics
+- Interactive hover states with subtle animations
 
-#### 8.3.3 Results interface
+#### 8.3.3 Exam creation wizard
 
-- Tab-based navigation for different views
-- Interactive charts using Recharts
-- Expandable student result cards
-- Inline editing capabilities
+- Multi-step progress indicator with emerald theme progression
+- Clear call-to-action buttons with consistent styling
+- Auto-save functionality with visual feedback indicators
+- Contextual help tooltips for complex form fields
+- Form validation with emerald success states and clear error messaging
+- File upload areas with drag-and-drop visual feedback
 
-#### 8.3.4 Mobile experience
+#### 8.3.4 Results and analytics interface
 
-- Bottom navigation for key actions
-- Swipe gestures for navigation
-- Optimized file upload flow
-- Responsive data tables
+- Tab-based navigation for different data views and insights
+- Interactive charts and visualizations using Recharts with emerald color scheme
+- Expandable student result cards with proper spacing and typography
+- Inline editing capabilities with focus states and validation
+- Export options with clear visual hierarchy and batch processing indicators
 
-### 8.4 Accessibility features
+#### 8.3.5 Mobile-optimized experience
 
-- Keyboard navigation support
-- Screen reader compatibility
-- High contrast mode option
-- Focus indicators
-- Alt text for all images
-- ARIA labels for interactive elements
+- Bottom navigation bar for primary actions and quick access
+- Swipe gestures for intuitive navigation between sections
+- Optimized file upload flow with mobile-friendly interactions
+- Responsive data tables with horizontal scroll and touch-friendly controls
+- Adaptive sidebar that transforms to slide-out overlay on mobile devices
 
-### 8.5 Internationalization
+### 8.4 Accessibility and usability features
 
-- Support for RTL languages
-- Locale-specific number formatting
-- Date/time localization
-- Translatable UI strings
-- Cultural considerations in design
+- Comprehensive keyboard navigation with visible focus indicators
+- Screen reader compatibility with semantic HTML structure
+- High contrast mode support for visual accessibility
+- WCAG 2.1 AA compliant color contrast ratios throughout
+- Descriptive alt text for all images, icons, and visual elements
+- ARIA labels and roles for complex interactive components
+- Meaningful iconography with text labels for clarity
+
+### 8.5 Component styling standards
+
+#### Cards and containers
+- Rounded corners (rounded-xl) for modern visual appeal
+- Consistent subtle shadows (shadow-sm) with gray borders
+- Standardized padding (p-6 for main cards, p-3/p-4 for compact elements)
+- White backgrounds with subtle gray border accents
+
+#### Interactive elements
+- Primary buttons: Emerald theme (bg-emerald-600 hover:bg-emerald-700)
+- Secondary buttons: Gray theme with emerald accent highlights
+- Consistent sizing and padding across all button variants
+- Smooth hover transitions for enhanced user feedback
+
+#### Typography hierarchy
+- Headings: Bold font weights with scalable sizing (text-3xl, text-xl, text-lg)
+- Body text: Regular weight with optimized line height for readability
+- Secondary text: Gray-600 for reduced emphasis and supporting information
+- Consistent font-medium weighting for labels and important data points
+
+### 8.6 Internationalization and localization
+
+- Full support for right-to-left (RTL) languages with proper layout adaptation
+- Locale-specific number and currency formatting
+- Comprehensive date and time localization
+- Translatable UI strings with context-aware translations
+- Cultural considerations in visual design and color usage
+- Icon directionality awareness for international markets

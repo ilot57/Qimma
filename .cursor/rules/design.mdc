@@ -33,55 +33,105 @@ Define design tokens in tailwind.config.js
 
 ### 8.2 Visual design
 
-- **Color Palette**: Professional blues and grays with accent colors
-- **Typography**: Inter for UI, Roboto for content
-- **Spacing**: 8px grid system
-- **Icons**: Lucide React icon set
-- **Animations**: Subtle transitions for better UX
+- **Color Palette**: Modern emerald and teal with complementary accent colors
+  - Primary: Emerald (#10b981) for success states and primary actions
+  - Accent: Teal (#14b8a6) for secondary elements and highlights
+  - Warning: Amber (#f59e0b) for caution states
+  - Error: Red (#ef4444) for error states
+  - Neutral: Gray scale for backgrounds and text
+- **Typography**: Plus Jakarta Sans for modern, professional appearance
+  - Primary font: Plus Jakarta Sans for all UI elements
+  - Fallback: Inter, system-ui, sans-serif
+  - Monospace: Fira Code, JetBrains Mono for code elements
+- **Spacing**: 8px grid system with consistent padding and margins
+- **Icons**: Lucide React icon set with semantic meaning
+  - Use contextual icons instead of generic shapes
+  - Meaningful pictograms for dashboard cards and status indicators
+- **Animations**: Subtle transitions and micro-interactions for better UX
+  - Standard transitions: 0.3s ease-out
+  - Hover effects: subtle scale and color changes
+  - Loading states: smooth progress indicators
 
 ### 8.3 Key UI components
 
 #### 8.3.1 Dashboard layout
 
-- Fixed header with user menu
-- Collapsible sidebar (240px expanded)
-- Main content area with responsive grid
-- Floating action button for new corrections
+- Fixed header with user menu and search functionality
+- Collapsible sidebar (224px/56px expanded, 56px/14px collapsed) for optimized space usage
+- Main content area with responsive grid (gap-6 spacing)
+- Rounded corners (rounded-xl) for modern appearance
+- Subtle borders and shadows for depth without heaviness
+- Emerald accent colors for active states and primary actions
 
-#### 8.3.2 Exam creation wizard
+#### 8.3.2 Dashboard cards and metrics
 
-- Step progress indicator
-- Clear CTAs for navigation
+- Meaningful pictograms using Lucide icons:
+  - BookOpen for exam totals with trending indicators
+  - CheckCircle for completion metrics
+  - Clock for processing status with time estimates
+  - Coins for credit balance with plan information
+- Consistent card structure with proper visual hierarchy
+- Color-coded backgrounds (emerald-100, amber-100, indigo-100) for icon containers
+- Performance indicators and contextual information below main metrics
+
+#### 8.3.3 Exam creation wizard
+
+- Step progress indicator with emerald theme
+- Clear CTAs for navigation with consistent button styling
 - Auto-save functionality indicator
 - Help tooltips for complex fields
+- Proper form validation with emerald success states
 
-#### 8.3.3 Results interface
+#### 8.3.4 Results interface
 
 - Tab-based navigation for different views
-- Interactive charts using Recharts
-- Expandable student result cards
-- Inline editing capabilities
+- Interactive charts using Recharts with emerald color scheme
+- Expandable student result cards with proper spacing
+- Inline editing capabilities with focus states
 
-#### 8.3.4 Mobile experience
+#### 8.3.5 Mobile experience
 
 - Bottom navigation for key actions
 - Swipe gestures for navigation
 - Optimized file upload flow
-- Responsive data tables
+- Responsive data tables with proper mobile breakpoints
+- Collapsible sidebar transforms to overlay on mobile
 
 ### 8.4 Accessibility features
 
-- Keyboard navigation support
-- Screen reader compatibility
+- Keyboard navigation support with proper focus indicators
+- Screen reader compatibility with semantic HTML
 - High contrast mode option
-- Focus indicators
-- Alt text for all images
+- Sufficient color contrast ratios (WCAG 2.1 AA)
+- Alt text for all images and icons
 - ARIA labels for interactive elements
+- Meaningful icon usage with text labels when needed
 
-### 8.5 Internationalization
+### 8.5 Component styling standards
+
+#### Cards and containers
+- Use rounded-xl for modern appearance
+- Consistent shadow-sm with subtle borders (border-gray-100)
+- Proper padding (p-6 for cards, p-3/p-4 for smaller containers)
+- Background: white with subtle gray borders
+
+#### Buttons and interactive elements
+- Primary: emerald theme (bg-emerald-600 hover:bg-emerald-700)
+- Secondary: gray theme with emerald accents
+- Proper sizing with consistent padding
+- Hover states with subtle transitions
+
+#### Typography hierarchy
+- Headings: Bold weights with proper sizing (text-3xl, text-xl, text-lg)
+- Body text: Regular weight with good line height
+- Secondary text: Gray-600 for reduced emphasis
+- Consistent font-medium for labels and important text
+
+### 8.6 Internationalization
 
 - Support for RTL languages
 - Locale-specific number formatting
 - Date/time localization
 - Translatable UI strings
 - Cultural considerations in design
+- Icon directionality awareness
