@@ -9,10 +9,7 @@ import {
   Calendar,
   ChevronLeft,
   ChevronRight,
-  Clock,
-  FileText,
   MoreHorizontal,
-  Users,
 } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
@@ -69,29 +66,21 @@ const statusConfig = {
   [ExamStatus.DRAFT]: {
     label: 'Draft',
     variant: 'secondary' as const,
-    icon: FileText,
-    color: 'text-gray-600',
     badgeClass: undefined,
   },
   [ExamStatus.PROCESSING]: {
     label: 'Processing',
     variant: 'default' as const,
-    icon: Clock,
-    color: 'text-amber-600',
     badgeClass: undefined,
   },
   [ExamStatus.COMPLETED]: {
     label: 'Completed',
     variant: 'default' as const,
-    icon: Users,
-    color: 'text-emerald-600',
-    badgeClass: 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200',
+    badgeClass: 'bg-emerald-100 text-emerald-800',
   },
   [ExamStatus.ERROR]: {
     label: 'Error',
     variant: 'destructive' as const,
-    icon: FileText,
-    color: 'text-red-600',
     badgeClass: undefined,
   },
 };
@@ -302,7 +291,6 @@ export function ExamList({
                 <TableBody>
                   {currentExams.map((exam) => {
                     const statusInfo = statusConfig[exam.status];
-                    const StatusIcon = statusInfo.icon;
 
                     return (
                       <TableRow key={exam.id} className="hover:bg-gray-50">
@@ -331,17 +319,12 @@ export function ExamList({
                           </div>
                         </TableCell>
                         <TableCell>
-                          <div className="flex items-center space-x-2">
-                            <StatusIcon
-                              className={`h-4 w-4 ${statusInfo.color}`}
-                            />
-                            <Badge
-                              variant={statusInfo.variant}
-                              className={statusInfo.badgeClass}
-                            >
-                              {statusInfo.label}
-                            </Badge>
-                          </div>
+                          <Badge
+                            variant={statusInfo.variant}
+                            className={statusInfo.badgeClass}
+                          >
+                            {statusInfo.label}
+                          </Badge>
                         </TableCell>
                         <TableCell>
                           <div className="space-y-1">
