@@ -71,24 +71,28 @@ const statusConfig = {
     variant: 'secondary' as const,
     icon: FileText,
     color: 'text-gray-600',
+    badgeClass: undefined,
   },
   [ExamStatus.PROCESSING]: {
     label: 'Processing',
     variant: 'default' as const,
     icon: Clock,
     color: 'text-amber-600',
+    badgeClass: undefined,
   },
   [ExamStatus.COMPLETED]: {
     label: 'Completed',
     variant: 'default' as const,
     icon: Users,
     color: 'text-emerald-600',
+    badgeClass: 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200',
   },
   [ExamStatus.ERROR]: {
     label: 'Error',
     variant: 'destructive' as const,
     icon: FileText,
     color: 'text-red-600',
+    badgeClass: undefined,
   },
 };
 
@@ -331,7 +335,10 @@ export function ExamList({
                             <StatusIcon
                               className={`h-4 w-4 ${statusInfo.color}`}
                             />
-                            <Badge variant={statusInfo.variant}>
+                            <Badge
+                              variant={statusInfo.variant}
+                              className={statusInfo.badgeClass}
+                            >
                               {statusInfo.label}
                             </Badge>
                           </div>
