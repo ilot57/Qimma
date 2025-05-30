@@ -6,11 +6,11 @@ import {
   CheckCircle,
   Clock,
   Coins,
-  FileText,
   Plus,
   TrendingUp,
 } from 'lucide-react';
 
+import { ExamList } from '@/components/dashboard/ExamList';
 import { Button } from '@/components/ui/button';
 import { requireAuth } from '@/lib/auth/session';
 
@@ -115,60 +115,8 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      {/* Recent Activity */}
-      <div className="rounded-xl border border-gray-100 bg-white shadow-sm">
-        <div className="border-b border-gray-200 px-6 py-5">
-          <h2 className="text-xl font-semibold text-gray-900">
-            Recent Activity
-          </h2>
-        </div>
-        <div className="p-6">
-          <div className="space-y-6">
-            <div className="flex items-start space-x-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100">
-                <CheckCircle className="h-4 w-4 text-emerald-600" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-sm font-medium text-gray-900">
-                  Math Quiz #3 graded
-                </p>
-                <p className="text-sm text-gray-600">
-                  25 submissions processed successfully
-                </p>
-                <span className="text-xs text-gray-500">2 hours ago</span>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100">
-                <FileText className="h-4 w-4 text-blue-600" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-sm font-medium text-gray-900">
-                  Science Test created
-                </p>
-                <p className="text-sm text-gray-600">
-                  Ready for student submissions
-                </p>
-                <span className="text-xs text-gray-500">1 day ago</span>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100">
-                <Clock className="h-4 w-4 text-amber-600" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-sm font-medium text-gray-900">
-                  History Essay processing started
-                </p>
-                <p className="text-sm text-gray-600">12 submissions in queue</p>
-                <span className="text-xs text-gray-500">2 days ago</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Exam List Component */}
+      <ExamList className="mb-8" />
 
       {/* Debug Info (Development) */}
       {process.env.NODE_ENV === 'development' && (

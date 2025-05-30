@@ -392,7 +392,7 @@
           "description": "Develop the exam list component with sorting, pagination, and item display",
           "dependencies": [1],
           "details": "Create the exam list table/grid with columns for exam name, date, status, and score. Implement sorting functionality for each column. Add pagination controls with configurable items per page. Design individual exam item cards with appropriate visual indicators for status. Include empty state design for when no exams are available.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 3,
