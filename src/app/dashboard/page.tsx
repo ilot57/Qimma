@@ -1,8 +1,17 @@
 import { redirect } from 'next/navigation';
 
-import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs/server';
+import {
+  BookOpen,
+  CheckCircle,
+  Clock,
+  Coins,
+  FileText,
+  Plus,
+  TrendingUp,
+} from 'lucide-react';
 
+import { Button } from '@/components/ui/button';
 import { requireAuth } from '@/lib/auth/session';
 
 export default async function DashboardPage() {
@@ -16,162 +25,201 @@ export default async function DashboardPage() {
   const user = await currentUser();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="border-b bg-white shadow-sm">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center">
-              <h1 className="text-xl font-semibold text-gray-900">
-                Qimma AI Dashboard
-              </h1>
+    <div className="p-6">
+      {/* Page Header */}
+      <div className="mb-8 flex items-start justify-between">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">
+            Welcome back, {user?.firstName}!
+          </h1>
+          <p className="mt-2 text-lg text-gray-600">
+            Here&apos;s what&apos;s happening with your exams today.
+          </p>
+        </div>
+
+        {/* Create New Exam Button */}
+        <Button
+          size="lg"
+          className="bg-emerald-600 text-white shadow-sm hover:bg-emerald-700"
+        >
+          <Plus className="mr-2 h-5 w-5" />
+          Create a new exam
+        </Button>
+      </div>
+
+      {/* Stats Grid */}
+      <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {/* Total Exams */}
+        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-gray-600">Total Exams</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">12</p>
+              <p className="mt-1 flex items-center text-sm text-emerald-600">
+                <TrendingUp className="mr-1 h-3 w-3" />
+                +2 this week
+              </p>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="text-sm text-gray-600">
-                Welcome, {user?.firstName || 'User'}!
-              </div>
-              <UserButton />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100">
+              <BookOpen className="h-6 w-6 text-emerald-600" />
             </div>
           </div>
         </div>
-      </header>
 
-      {/* Main Content */}
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="space-y-8">
-          {/* Session Info Card */}
-          <div className="overflow-hidden rounded-lg bg-white shadow">
-            <div className="px-4 py-5 sm:p-6">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Authentication Status
-              </h3>
-              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <div className="rounded-lg border border-green-200 bg-green-50 p-4">
-                  <dt className="text-sm font-medium text-green-800">Status</dt>
-                  <dd className="mt-1 text-sm text-green-600">
+        {/* Completed */}
+        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-gray-600">Completed</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">8</p>
+              <p className="mt-1 text-sm text-emerald-600">
+                67% completion rate
+              </p>
+            </div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100">
+              <CheckCircle className="h-6 w-6 text-emerald-600" />
+            </div>
+          </div>
+        </div>
+
+        {/* Processing */}
+        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-gray-600">Processing</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">3</p>
+              <p className="mt-1 text-sm text-amber-600">~5 min remaining</p>
+            </div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100">
+              <Clock className="h-6 w-6 text-amber-600" />
+            </div>
+          </div>
+        </div>
+
+        {/* Credits */}
+        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-gray-600">
+                Credits Remaining
+              </p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">
+                {sessionInfo.user?.creditsRemaining || 0}
+              </p>
+              <p className="mt-1 text-sm text-indigo-600">Standard plan</p>
+            </div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100">
+              <Coins className="h-6 w-6 text-indigo-600" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Activity */}
+      <div className="rounded-xl border border-gray-100 bg-white shadow-sm">
+        <div className="border-b border-gray-200 px-6 py-5">
+          <h2 className="text-xl font-semibold text-gray-900">
+            Recent Activity
+          </h2>
+        </div>
+        <div className="p-6">
+          <div className="space-y-6">
+            <div className="flex items-start space-x-4">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100">
+                <CheckCircle className="h-4 w-4 text-emerald-600" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-medium text-gray-900">
+                  Math Quiz #3 graded
+                </p>
+                <p className="text-sm text-gray-600">
+                  25 submissions processed successfully
+                </p>
+                <span className="text-xs text-gray-500">2 hours ago</span>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100">
+                <FileText className="h-4 w-4 text-blue-600" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-medium text-gray-900">
+                  Science Test created
+                </p>
+                <p className="text-sm text-gray-600">
+                  Ready for student submissions
+                </p>
+                <span className="text-xs text-gray-500">1 day ago</span>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100">
+                <Clock className="h-4 w-4 text-amber-600" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-medium text-gray-900">
+                  History Essay processing started
+                </p>
+                <p className="text-sm text-gray-600">12 submissions in queue</p>
+                <span className="text-xs text-gray-500">2 days ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Debug Info (Development) */}
+      {process.env.NODE_ENV === 'development' && (
+        <div className="mt-8">
+          <details className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm">
+            <summary className="cursor-pointer px-6 py-5 hover:bg-gray-50">
+              <span className="text-lg font-semibold text-gray-900">
+                🔧 Development Info
+              </span>
+            </summary>
+            <div className="px-6 pb-5">
+              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
+                  <dt className="text-sm font-medium text-emerald-800">
+                    Status
+                  </dt>
+                  <dd className="mt-1 text-sm text-emerald-700">
                     ✅ Authenticated
                   </dd>
                 </div>
                 <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
                   <dt className="text-sm font-medium text-blue-800">User ID</dt>
-                  <dd className="mt-1 font-mono text-sm text-blue-600">
+                  <dd className="mt-1 font-mono text-sm text-blue-700">
                     {sessionInfo.userId?.slice(0, 12)}...
                   </dd>
                 </div>
                 {sessionInfo.user && (
                   <>
-                    <div className="rounded-lg border border-purple-200 bg-purple-50 p-4">
-                      <dt className="text-sm font-medium text-purple-800">
+                    <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4">
+                      <dt className="text-sm font-medium text-indigo-800">
                         Role
                       </dt>
-                      <dd className="mt-1 text-sm text-purple-600 capitalize">
+                      <dd className="mt-1 text-sm text-indigo-700 capitalize">
                         {sessionInfo.user.role}
                       </dd>
                     </div>
-                    <div className="rounded-lg border border-orange-200 bg-orange-50 p-4">
-                      <dt className="text-sm font-medium text-orange-800">
-                        Credits
+                    <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+                      <dt className="text-sm font-medium text-amber-800">
+                        Subscription
                       </dt>
-                      <dd className="mt-1 text-sm text-orange-600">
-                        {sessionInfo.user.creditsRemaining} remaining
+                      <dd className="mt-1 text-sm text-amber-700 capitalize">
+                        {sessionInfo.user.subscriptionTier}
                       </dd>
                     </div>
                   </>
                 )}
               </div>
             </div>
-          </div>
-
-          {/* User Profile Card */}
-          {sessionInfo.user && (
-            <div className="overflow-hidden rounded-lg bg-white shadow">
-              <div className="px-4 py-5 sm:p-6">
-                <h3 className="text-lg leading-6 font-medium text-gray-900">
-                  User Profile
-                </h3>
-                <div className="mt-4">
-                  <dl className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
-                    <div>
-                      <dt className="text-sm font-medium text-gray-500">
-                        Email
-                      </dt>
-                      <dd className="mt-1 text-sm text-gray-900">
-                        {sessionInfo.user.email}
-                      </dd>
-                    </div>
-                    <div>
-                      <dt className="text-sm font-medium text-gray-500">
-                        Name
-                      </dt>
-                      <dd className="mt-1 text-sm text-gray-900">
-                        {sessionInfo.user.firstName} {sessionInfo.user.lastName}
-                      </dd>
-                    </div>
-                    <div>
-                      <dt className="text-sm font-medium text-gray-500">
-                        Subscription Tier
-                      </dt>
-                      <dd className="mt-1 text-sm text-gray-900 capitalize">
-                        {sessionInfo.user.subscriptionTier}
-                      </dd>
-                    </div>
-                    <div>
-                      <dt className="text-sm font-medium text-gray-500">
-                        Member Since
-                      </dt>
-                      <dd className="mt-1 text-sm text-gray-900">
-                        {new Date(
-                          sessionInfo.user.createdAt
-                        ).toLocaleDateString()}
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Quick Actions */}
-          <div className="overflow-hidden rounded-lg bg-white shadow">
-            <div className="px-4 py-5 sm:p-6">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
-                Quick Actions
-              </h3>
-              <div className="mt-4 flex space-x-4">
-                <button
-                  type="button"
-                  className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-                >
-                  Create New Exam
-                </button>
-                <button
-                  type="button"
-                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-                >
-                  View Past Exams
-                </button>
-                <button
-                  type="button"
-                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-                >
-                  Purchase Credits
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Placeholder for future features */}
-          <div className="rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
-            <h3 className="mt-2 text-sm font-medium text-gray-900">
-              Coming Soon
-            </h3>
-            <p className="mt-1 text-sm text-gray-500">
-              Exam management, analytics, and more features will be available
-              here.
-            </p>
-          </div>
+          </details>
         </div>
-      </main>
+      )}
     </div>
   );
 }

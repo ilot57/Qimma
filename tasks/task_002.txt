@@ -1,6 +1,6 @@
 # Task ID: 2
 # Title: Authentication System Integration with Clerk
-# Status: in-progress
+# Status: done
 # Dependencies: 1
 # Priority: high
 # Description: Implement user authentication using Clerk, including email/password login, social authentication, MFA, and session management.
@@ -263,7 +263,7 @@ Successfully implemented the user login flow using Clerk's prebuilt SignIn compo
 ### Details:
 Verify OAuth redirects, successful sign-in, and user profile creation for each provider.
 
-## 7. Implement Multi-Factor Authentication (MFA) [pending]
+## 7. Implement Multi-Factor Authentication (MFA) [done]
 ### Dependencies: 2.2, 2.4, 2.5
 ### Description: Enable MFA in Clerk dashboard and integrate MFA setup and verification flows in the UI.
 ### Details:

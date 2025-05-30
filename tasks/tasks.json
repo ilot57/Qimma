@@ -100,7 +100,7 @@
       "testStrategy": "Test all authentication flows (signup, login, logout, password reset), verify social authentication providers work correctly, ensure protected routes redirect unauthenticated users, and validate session persistence and timeout behavior.",
       "priority": "high",
       "dependencies": [1],
-      "status": "in-progress",
+      "status": "done",
       "subtasks": [
         {
           "id": 1,
@@ -156,7 +156,7 @@
           "description": "Enable MFA in Clerk dashboard and integrate MFA setup and verification flows in the UI.",
           "dependencies": [2, 4, 5],
           "details": "Configure MFA options (e.g., SMS, authenticator app), test enrollment, and verify challenge during login.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 8,
@@ -208,7 +208,7 @@
       "testStrategy": "Validate schema design with test data, verify foreign key constraints work correctly, test RLS policies to ensure proper data access control, benchmark query performance, and ensure data integrity across related tables.",
       "priority": "high",
       "dependencies": [1],
-      "status": "pending",
+      "status": "done",
       "subtasks": [
         {
           "id": 1,
@@ -216,7 +216,7 @@
           "description": "Create a new Supabase project, obtain API keys, and configure the Supabase client in the application codebase.",
           "dependencies": [],
           "details": "Sign up or log in to Supabase, create a new project, set a strong database password, and integrate the Supabase client library into your codebase with the correct environment variables.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 2,
@@ -224,7 +224,7 @@
           "description": "Define a normalized schema and create tables according to the application's data model and user stories.",
           "dependencies": [1],
           "details": "Use the Supabase dashboard or SQL editor to create tables with appropriate columns, data types, and constraints. Ensure the schema supports all required features and relationships.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 3,
@@ -232,7 +232,7 @@
           "description": "Establish relationships between tables using foreign keys to enforce data integrity.",
           "dependencies": [2],
           "details": "Identify one-to-many, many-to-many, and one-to-one relationships. Add foreign key constraints and document the relationships for future reference.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 4,
@@ -240,7 +240,7 @@
           "description": "Enable RLS on relevant tables and write policies to enforce access control based on user roles and requirements.",
           "dependencies": [2],
           "details": "Enable RLS for each table in the Supabase dashboard or via SQL. Write and test policies to restrict data access according to the PRD's security requirements.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 5,
@@ -248,7 +248,7 @@
           "description": "Analyze query patterns and add indexes to frequently queried columns to improve database performance.",
           "dependencies": [2],
           "details": "Identify columns used in WHERE clauses, JOINs, and ORDER BY statements. Create appropriate indexes and verify their effectiveness using query analysis tools.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 6,
@@ -256,7 +256,7 @@
           "description": "Write triggers to automate business logic such as auditing, cascading updates, or data validation.",
           "dependencies": [2],
           "details": "Define trigger functions in SQL and attach them to relevant tables for actions like insert, update, or delete. Test triggers to ensure correct behavior.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 7,
@@ -264,7 +264,7 @@
           "description": "Set up Supabase Storage buckets and permissions for handling user-uploaded files or media assets.",
           "dependencies": [1],
           "details": "Create storage buckets, define access rules, and integrate storage operations into the application as needed.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 8,
@@ -272,7 +272,7 @@
           "description": "Establish a repeatable process for managing schema changes using migration scripts or tools.",
           "dependencies": [2],
           "details": "Choose a migration tool (e.g., Supabase CLI, SQL files), write initial migration scripts, and document the workflow for applying and rolling back changes.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 9,
@@ -280,7 +280,7 @@
           "description": "Plan and document a backup and restore strategy to ensure data durability and disaster recovery.",
           "dependencies": [1],
           "details": "Review Supabase's automated backup features, determine backup frequency, retention policies, and test the restore process. Document procedures for compliance and operational readiness.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 10,
@@ -288,7 +288,7 @@
           "description": "Automatically generate TypeScript types from the database schema and integrate them into the codebase for type safety.",
           "dependencies": [2],
           "details": "Use tools like Supabase's codegen or openapi-typegen to generate types, ensure they are up-to-date with schema changes, and use them throughout the application for type-safe database access.",
-          "status": "pending"
+          "status": "done"
         }
       ]
     },
@@ -376,15 +376,15 @@
       "testStrategy": "Test dashboard loading performance, verify all filters work correctly, ensure responsive behavior on different screen sizes, validate navigation paths work as expected, and test real-time updates of exam status.",
       "priority": "high",
       "dependencies": [1, 2, 3],
-      "status": "pending",
+      "status": "in-progress",
       "subtasks": [
         {
           "id": 1,
           "title": "Define Dashboard Layout Structure",
           "description": "Create the overall layout framework for the dashboard including grid system, component placement, and responsive breakpoints",
           "dependencies": [],
-          "details": "Design the dashboard's main container, grid system, and spacing guidelines. Include specifications for header, main content area, sidebar, and footer. Create wireframes showing component placement at different screen sizes. Define the responsive behavior for all layout elements.",
-          "status": "pending"
+          "details": "Design the dashboard's main container, grid system, and spacing guidelines. Include specifications for header, main content area, sidebar, and footer. Create wireframes showing component placement at different screen sizes. Define the responsive behavior for all layout elements.\n<info added on 2025-05-30T13:08:24.197Z>\nDashboard layout improvements completed:\n\n- Sidebar width optimization: Reduced from w-64 to w-56 (expanded) and w-16 to w-14 (collapsed) to align with 8px grid system\n- Implemented contextual Lucide icons (BookOpen, CheckCircle, Clock, Coins, TrendingUp, FileText) replacing generic colored circles\n- Integrated Plus Jakarta Sans font family for a modern, professional typography system\n- Transitioned from blue to emerald/teal color palette for a warmer, contemporary appearance\n- Enhanced design consistency with standardized rounded corners (rounded-xl), proper spacing, subtle shadows, and organized Tailwind class ordering\n- Improved visual hierarchy and readability through thoughtful component arrangement and spacing\n\nAll implementations adhere to core design principles: clarity, efficiency, accessibility, responsiveness, and consistency.\n</info added on 2025-05-30T13:08:24.197Z>",
+          "status": "done"
         },
         {
           "id": 2,

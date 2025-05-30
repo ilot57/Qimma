@@ -421,6 +421,10 @@ fetch('/api/user/sync', { method: 'POST' })
 
    // src/components/AuthenticatedContent.tsx
 
+   // src/components/AuthenticatedContent.tsx
+
+   // src/components/AuthenticatedContent.tsx
+
    export function AuthenticatedHeader() {
      const { isSignedIn, user, isLoaded } = useUser();
 

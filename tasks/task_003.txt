@@ -1,6 +1,6 @@
 # Task ID: 3
 # Title: Database Schema Design and Supabase Integration
-# Status: pending
+# Status: done
 # Dependencies: 1
 # Priority: high
 # Description: Design and implement the database schema in Supabase PostgreSQL according to the requirements, including user accounts, exams, submissions, and credit management.
@@ -28,61 +28,61 @@
 Validate schema design with test data, verify foreign key constraints work correctly, test RLS policies to ensure proper data access control, benchmark query performance, and ensure data integrity across related tables.
 
 # Subtasks:
-## 1. Initialize Supabase Project and Client Setup [pending]
+## 1. Initialize Supabase Project and Client Setup [done]
 ### Dependencies: None
 ### Description: Create a new Supabase project, obtain API keys, and configure the Supabase client in the application codebase.
 ### Details:
 Sign up or log in to Supabase, create a new project, set a strong database password, and integrate the Supabase client library into your codebase with the correct environment variables.
 
-## 2. Design and Create Database Tables [pending]
+## 2. Design and Create Database Tables [done]
 ### Dependencies: 3.1
 ### Description: Define a normalized schema and create tables according to the application's data model and user stories.
 ### Details:
 Use the Supabase dashboard or SQL editor to create tables with appropriate columns, data types, and constraints. Ensure the schema supports all required features and relationships.
 
-## 3. Define Table Relationships and Foreign Keys [pending]
+## 3. Define Table Relationships and Foreign Keys [done]
 ### Dependencies: 3.2
 ### Description: Establish relationships between tables using foreign keys to enforce data integrity.
 ### Details:
 Identify one-to-many, many-to-many, and one-to-one relationships. Add foreign key constraints and document the relationships for future reference.
 
-## 4. Enable and Configure Row-Level Security (RLS) Policies [pending]
+## 4. Enable and Configure Row-Level Security (RLS) Policies [done]
 ### Dependencies: 3.2
 ### Description: Enable RLS on relevant tables and write policies to enforce access control based on user roles and requirements.
 ### Details:
 Enable RLS for each table in the Supabase dashboard or via SQL. Write and test policies to restrict data access according to the PRD's security requirements.
 
-## 5. Create Indexes for Performance Optimization [pending]
+## 5. Create Indexes for Performance Optimization [done]
 ### Dependencies: 3.2
 ### Description: Analyze query patterns and add indexes to frequently queried columns to improve database performance.
 ### Details:
 Identify columns used in WHERE clauses, JOINs, and ORDER BY statements. Create appropriate indexes and verify their effectiveness using query analysis tools.
 
-## 6. Implement Database Triggers for Business Logic [pending]
+## 6. Implement Database Triggers for Business Logic [done]
 ### Dependencies: 3.2
 ### Description: Write triggers to automate business logic such as auditing, cascading updates, or data validation.
 ### Details:
 Define trigger functions in SQL and attach them to relevant tables for actions like insert, update, or delete. Test triggers to ensure correct behavior.
 
-## 7. Configure Supabase Storage for File Handling [pending]
+## 7. Configure Supabase Storage for File Handling [done]
 ### Dependencies: 3.1
 ### Description: Set up Supabase Storage buckets and permissions for handling user-uploaded files or media assets.
 ### Details:
 Create storage buckets, define access rules, and integrate storage operations into the application as needed.
 
-## 8. Set Up Database Migrations Workflow [pending]
+## 8. Set Up Database Migrations Workflow [done]
 ### Dependencies: 3.2
 ### Description: Establish a repeatable process for managing schema changes using migration scripts or tools.
 ### Details:
 Choose a migration tool (e.g., Supabase CLI, SQL files), write initial migration scripts, and document the workflow for applying and rolling back changes.
 
-## 9. Define and Document Database Backup Strategy [pending]
+## 9. Define and Document Database Backup Strategy [done]
 ### Dependencies: 3.1
 ### Description: Plan and document a backup and restore strategy to ensure data durability and disaster recovery.
 ### Details:
 Review Supabase's automated backup features, determine backup frequency, retention policies, and test the restore process. Document procedures for compliance and operational readiness.
 
-## 10. Generate and Integrate TypeScript Types from Database Schema [pending]
+## 10. Generate and Integrate TypeScript Types from Database Schema [done]
 ### Dependencies: 3.2
 ### Description: Automatically generate TypeScript types from the database schema and integrate them into the codebase for type safety.
 ### Details:
