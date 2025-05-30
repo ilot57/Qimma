@@ -3,6 +3,7 @@ import {
   AuthenticatedHeader,
   AuthenticationStatus,
 } from '@/components/AuthenticatedContent';
+import { Logo } from '@/components/ui/logo';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
-              <h1 className="text-primary-700 text-2xl font-bold">Qimma</h1>
+              <Logo size="sm" />
             </div>
             <div className="flex items-center space-x-4">
               <AuthenticatedHeader />

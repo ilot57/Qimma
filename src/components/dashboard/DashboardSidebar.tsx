@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
 import { cn } from '@/lib/utils';
 
 const navigation = [
@@ -43,15 +44,10 @@ export function DashboardSidebar() {
     >
       {/* Sidebar Header */}
       <div className="flex h-16 items-center justify-between px-3">
-        {!collapsed && (
-          <div className="flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded bg-emerald-600">
-              <span className="text-sm font-bold text-white">Q</span>
-            </div>
-            <span className="text-lg font-semibold text-gray-900">
-              Qimma AI
-            </span>
-          </div>
+        {!collapsed ? (
+          <Logo size="sm" />
+        ) : (
+          <Logo size="sm" iconOnly className="mx-auto" />
         )}
 
         {/* Toggle button */}
