@@ -1,0 +1,182 @@
+# Task ID: 26
+# Title: Homepage Design Upgrade for Conversion Optimization
+# Status: pending
+# Dependencies: 1, 2
+# Priority: medium
+# Description: Design and implement a professional, conversion-focused homepage for the Qimma AI platform that effectively communicates value proposition and drives user sign-ups for the AI-powered exam correction service.
+# Details:
+1. Research and Analysis:
+   - Analyze competitor education technology platforms for best practices
+   - Review current conversion metrics to establish baseline
+   - Define key user personas and their journey paths
+
+2. Design Phase:
+   - Create wireframes for the homepage layout using Figma or similar tool
+   - Design high-fidelity mockups incorporating:
+     - Hero section with clear value proposition and CTA
+     - Feature highlights section showcasing AI exam correction capabilities
+     - Pricing tiers with feature comparison
+     - Testimonials/social proof section
+     - FAQ section addressing common objections
+     - Footer with necessary links and contact information
+   - Ensure responsive design for mobile, tablet, and desktop
+   - Incorporate Qimma AI brand colors, typography, and visual elements
+
+3. Implementation Phase:
+   - Create React components using Next.js and Tailwind CSS:
+     ```tsx
+     // Example Hero component structure
+     const Hero = () => {
+       return (
+         <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20">
+           <div className="container mx-auto px-4">
+             <h1 className="text-4xl md:text-6xl font-bold text-white">
+               AI-Powered Exam Correction
+             </h1>
+             <p className="mt-4 text-xl text-white/80 max-w-2xl">
+               Grade exams faster and more accurately with our advanced AI platform
+             </p>
+             <div className="mt-8">
+               <Button size="lg" variant="default">Get Started</Button>
+             </div>
+           </div>
+         </section>
+       )
+     }
+     ```
+   - Implement Shadcn/UI components for consistent UI elements
+   - Create custom animations for interactive elements
+   - Implement lazy loading for images and heavy content
+   - Ensure authentication state is reflected in the UI (login/signup buttons vs. dashboard access)
+
+4. Conversion Optimization:
+   - Implement clear call-to-action buttons throughout the page
+   - Create a streamlined sign-up flow from homepage
+   - Add social proof elements (customer logos, testimonials, case studies)
+   - Implement A/B testing framework for key elements
+   - Add exit-intent popups for lead capture
+
+5. Performance Optimization:
+   - Optimize image loading with Next.js Image component
+   - Implement code splitting for faster initial load
+   - Ensure Core Web Vitals meet or exceed industry standards
+   - Test and optimize for mobile performance
+
+6. Content Creation:
+   - Write compelling copy focused on benefits and solutions
+   - Create or source professional imagery relevant to education technology
+   - Develop concise feature descriptions highlighting AI capabilities
+   - Create pricing tables with clear value differentiation
+
+7. Integration:
+   - Connect authentication flows to Clerk
+   - Implement analytics tracking for conversion events
+   - Ensure proper SEO metadata and structured data
+
+# Test Strategy:
+1. Visual Testing:
+   - Conduct cross-browser testing on Chrome, Firefox, Safari, and Edge
+   - Verify responsive design on mobile (iOS/Android), tablet, and desktop devices
+   - Ensure all UI elements render correctly at different viewport sizes
+   - Validate that all images and assets load properly
+
+2. Functional Testing:
+   - Verify all CTAs and buttons link to correct destinations
+   - Test authentication flows from homepage to sign-up/login
+   - Ensure pricing section accurately reflects current offerings
+   - Test all interactive elements (dropdowns, accordions, etc.)
+   - Verify form validations work correctly on contact/signup forms
+
+3. Performance Testing:
+   - Run Lighthouse audits to verify performance scores (aim for 90+ on all metrics)
+   - Test page load time on various connection speeds (3G, 4G, fiber)
+   - Verify Core Web Vitals meet standards (LCP < 2.5s, FID < 100ms, CLS < 0.1)
+   - Test image optimization and lazy loading functionality
+
+4. Conversion Testing:
+   - Set up heatmap tracking to analyze user interaction patterns
+   - Implement A/B testing for key conversion elements
+   - Track conversion rates from homepage visits to sign-ups
+   - Monitor bounce rates and time on page metrics
+   - Test user journey flows from landing to conversion
+
+5. Accessibility Testing:
+   - Verify WCAG 2.1 AA compliance
+   - Test with screen readers (NVDA, VoiceOver)
+   - Ensure proper keyboard navigation
+   - Verify sufficient color contrast ratios
+   - Test with accessibility tools like axe or Wave
+
+6. User Testing:
+   - Conduct usability testing with 5-7 participants from target audience
+   - Gather feedback on clarity of value proposition and messaging
+   - Test first-time user experience and navigation
+   - Collect qualitative feedback on design professionalism and trust factors
+
+7. Final Review:
+   - Conduct stakeholder review against original requirements
+   - Verify brand consistency across all elements
+   - Ensure all copy is error-free and messaging is clear
+   - Compare against competitor sites for competitive positioning
+
+# Subtasks:
+## 1. Research Competitor Platforms and Define User Personas [pending]
+### Dependencies: None
+### Description: Analyze competitor education technology platforms for best practices and define key user personas for the Qimma AI platform.
+### Details:
+Conduct research on at least 5 competitor platforms, documenting their homepage structure, value proposition presentation, and conversion elements. Create 3-4 detailed user personas representing primary target audiences (e.g., teachers, school administrators, education technology coordinators). Document current conversion metrics as a baseline for future comparison.
+
+## 2. Create Homepage Wireframes in Figma [pending]
+### Dependencies: 26.1
+### Description: Design low-fidelity wireframes for the homepage layout that effectively communicates the value proposition and drives conversions.
+### Details:
+Using Figma, create wireframes for desktop, tablet, and mobile views. Include placement for: hero section, value proposition, feature highlights, pricing section, testimonials, FAQ section, and footer. Focus on information hierarchy and user flow that guides visitors toward the primary CTA. Present wireframes for stakeholder feedback before proceeding to high-fidelity designs.
+
+## 3. Design Hero Section with Clear Value Proposition [pending]
+### Dependencies: 26.2
+### Description: Create a high-fidelity design for the hero section that immediately communicates the platform's value and includes a prominent call-to-action.
+### Details:
+Design a visually striking hero section with a compelling headline that clearly states the AI exam correction value proposition. Include a subheading that addresses key pain points. Design a prominent primary CTA button ('Get Started' or 'Try Free') and a secondary action option. Incorporate relevant imagery that resonates with educators. Use Qimma AI brand colors and typography.
+
+## 4. Develop Feature Showcase Section [pending]
+### Dependencies: 26.2
+### Description: Design the feature highlights section showcasing the AI exam correction capabilities with visual elements and concise benefit-focused descriptions.
+### Details:
+Create a visually engaging feature showcase with 3-5 key platform capabilities. Each feature should include an icon or illustration, a clear headline, and a brief benefit-focused description (under 30 words each). Design in a way that visually demonstrates how the platform works, possibly including simplified screenshots or illustrations of the exam correction process.
+
+## 5. Design Pricing and Social Proof Sections [pending]
+### Dependencies: 26.2
+### Description: Create high-fidelity designs for the pricing tiers comparison and testimonials/social proof sections.
+### Details:
+Design a clear pricing table comparing different tiers (e.g., Free, Standard, Premium) with feature availability and highlighted recommended option. For the testimonials section, design cards featuring customer quotes, names, positions, and optional photos. Include space for logos of educational institutions already using the platform. Ensure both sections maintain responsive design principles.
+
+## 6. Implement Hero Section and Navigation Components [pending]
+### Dependencies: 26.3
+### Description: Develop the React components for the hero section and site navigation using Next.js and Tailwind CSS.
+### Details:
+Create responsive React components for the hero section and navigation bar. Implement the gradient background, responsive typography, and CTA button using Tailwind CSS. Ensure the navigation handles authentication state appropriately (showing login/signup or dashboard access based on user state). Implement smooth animations for interactive elements using Framer Motion or CSS transitions.
+
+## 7. Implement Feature Showcase and Pricing Components [pending]
+### Dependencies: 26.4, 26.5, 26.6
+### Description: Develop the React components for the feature highlights and pricing sections using Next.js and Tailwind CSS.
+### Details:
+Create responsive components for the feature showcase section with appropriate grid layouts for different screen sizes. Implement the pricing table component with toggle functionality if offering monthly/annual options. Use Shadcn/UI components for consistent UI elements like buttons, cards, and tooltips. Ensure all interactive elements have appropriate hover and focus states.
+
+## 8. Implement Testimonials, FAQ, and Footer Components [pending]
+### Dependencies: 26.5, 26.7
+### Description: Develop the React components for testimonials, FAQ accordion, and site footer sections.
+### Details:
+Create a testimonial carousel/grid component that showcases social proof effectively. Implement an accordion component for the FAQ section using Shadcn/UI. Develop a comprehensive footer with navigation links, contact information, and social media icons. Ensure all components are fully responsive and maintain design consistency with the rest of the page.
+
+## 9. Implement SEO and Performance Optimizations [pending]
+### Dependencies: 26.6, 26.7, 26.8
+### Description: Optimize the homepage for search engines and performance metrics.
+### Details:
+Configure proper SEO metadata including title, description, and Open Graph tags. Implement structured data for rich snippets. Optimize all images using Next.js Image component with appropriate sizing and lazy loading. Implement code splitting to reduce initial bundle size. Set up font optimization with next/font. Ensure Core Web Vitals meet or exceed standards (LCP < 2.5s, FID < 100ms, CLS < 0.1).
+
+## 10. Set Up Conversion Tracking and A/B Testing [pending]
+### Dependencies: 26.6, 26.7, 26.8, 26.9
+### Description: Implement analytics tracking for conversion events and set up A/B testing framework for key homepage elements.
+### Details:
+Integrate Google Analytics or similar tool to track user interactions and conversion events. Set up event tracking for all CTAs and important user actions. Implement an A/B testing framework (like Google Optimize) to test variations of headlines, CTAs, and feature presentations. Create an exit-intent popup for lead capture with email signup form. Document the testing plan with hypotheses for each test variation.
+

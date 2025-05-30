@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from 'next/font/google';
 
 import { ClerkProvider } from '@clerk/nextjs';
 
+import { SessionWarning } from '@/components/SessionWarning';
+
 import './globals.css';
 
 const geistSans = Geist({
@@ -43,6 +45,7 @@ export default function RootLayout({
           suppressHydrationWarning
         >
           {children}
+          <SessionWarning />
         </body>
       </html>
     </ClerkProvider>

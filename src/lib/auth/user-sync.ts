@@ -226,3 +226,18 @@ export async function updateUserCredits(
     return false;
   }
 }
+
+/**
+ * Ensures the current user is synced to Supabase database
+ * This should be called in server components for protected routes
+ * to automatically sync users when they access the application
+ */
+export async function ensureUserSynced() {
+  try {
+    const userProfile = await getUserProfile();
+    return userProfile;
+  } catch (error) {
+    console.error('Error ensuring user sync:', error);
+    return null;
+  }
+}

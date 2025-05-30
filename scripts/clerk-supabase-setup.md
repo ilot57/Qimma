@@ -304,11 +304,92 @@ NEXT_PUBLIC_SITE_NAME="Qimma AI"
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_your_actual_key
 CLERK_SECRET_KEY=sk_test_your_actual_key
 
+# Clerk Webhooks (for automatic user sync)
+CLERK_WEBHOOK_SECRET=your_clerk_webhook_secret_here
+
 # Supabase Database
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 ```
+
+## Step 7: Configure Automatic User Sync
+
+### 7.1 ✅ Dashboard Auto-Sync (IMPLEMENTED)
+
+**Problem Solved**: Users signing in with social auth (Facebook, Google) were not automatically synced to Supabase database.
+
+**Solution Implemented**:
+
+- ✅ Dashboard page now automatically calls `getUserProfile()` on load
+- ✅ This triggers auto-sync if user doesn't exist in Supabase
+- ✅ User data from both Clerk and Supabase is displayed on dashboard
+
+**What happens now**:
+
+1. User signs in with any method (email, Google, Facebook, etc.)
+2. User visits `/dashboard` (or any protected route)
+3. Dashboard automatically calls `getUserProfile()`
+4. If user doesn't exist in Supabase, they are auto-synced
+5. User profile displays both Clerk and Supabase data
+
+### 7.2 📋 Webhook Setup (OPTIONAL - For Production)
+
+For more robust automatic sync, set up Clerk webhooks:
+
+#### A. Create Webhook in Clerk Dashboard
+
+1. **Go to Clerk Dashboard** → **Webhooks**
+2. **Click "Add Endpoint"**
+3. **Enter URL**: `https://your-domain.com/api/webhooks/clerk`
+   - For local testing: Use ngrok or similar tunnel service
+4. **Select Events**:
+   - ✅ `user.created` - When users sign up
+   - ✅ `user.updated` - When users update profile
+5. **Click "Create"**
+
+#### B. Get Webhook Secret
+
+1. **Click on your webhook**
+2. **Copy the "Signing Secret"**
+3. **Add to `.env.local`**:
+   ```bash
+   CLERK_WEBHOOK_SECRET=whsec_your_actual_secret_here
+   ```
+
+#### C. Webhook Benefits
+
+- ✅ **Immediate sync**: Users are synced the moment they sign up
+- ✅ **No manual triggers**: No need to visit dashboard first
+- ✅ **Real-time updates**: Profile changes sync automatically
+- ✅ **Production ready**: Handles high traffic efficiently
+
+### 7.3 🔧 Manual Sync (Available Anytime)
+
+Users can always manually trigger sync via:
+
+```javascript
+// In browser console (when authenticated):
+fetch('/api/user/sync', { method: 'POST' })
+  .then((r) => r.json())
+  .then(console.log);
+```
+
+## Step 8: Testing the Auto-Sync Fix
+
+### 8.1 Test New User Sign-Up
+
+1. **Create a new account** with social auth (Google/Facebook)
+2. **Visit `/dashboard`** immediately after sign-up
+3. **Verify sync**: You should see both Clerk and Supabase data
+4. **Check database**: User should appear in Supabase users table
+
+### 8.2 Test Existing Users
+
+1. **Sign in** with existing social auth account
+2. **Visit `/dashboard`**
+3. **Automatic sync**: User will be synced if not already in database
+4. **Success message**: "✅ User successfully synced to database"
 
 ## Troubleshooting
 
@@ -333,6 +414,10 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
    'use client';
 
    import { useUser } from '@clerk/nextjs';
+
+   // src/components/AuthenticatedContent.tsx
+
+   // src/components/AuthenticatedContent.tsx
 
    // src/components/AuthenticatedContent.tsx
 
