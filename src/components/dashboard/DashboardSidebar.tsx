@@ -43,12 +43,15 @@ export function DashboardSidebar() {
       )}
     >
       {/* Sidebar Header */}
-      <div className="flex h-16 items-center justify-between px-3">
-        {!collapsed ? (
-          <Logo size="sm" />
-        ) : (
-          <Logo size="sm" iconOnly className="mx-auto" />
+      <div
+        className={cn(
+          'flex h-16 items-center px-3',
+          collapsed
+            ? 'flex-col justify-center space-y-1 pt-2'
+            : 'justify-between'
         )}
+      >
+        {!collapsed ? <Logo size="sm" /> : <Logo size="sm" iconOnly />}
 
         {/* Toggle button */}
         <Button

@@ -24,7 +24,7 @@ const iconSizeMap = {
 
 export function Logo({ className, size = 'md', iconOnly = false }: LogoProps) {
   const logoSize = iconOnly ? iconSizeMap[size] : sizeMap[size];
-  const logoSrc = iconOnly ? '/qimma-icon.svg' : '/qimma-logo.svg';
+  const logoSrc = iconOnly ? '/Logo_Qimma_small.svg' : '/qimma-logo.svg';
 
   return (
     <div className={cn('flex items-center', className)}>
