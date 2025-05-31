@@ -432,7 +432,7 @@
           "description": "Create the component for displaying user credits and credit-related actions",
           "dependencies": [1],
           "details": "Design credit balance display with visual indicators for low balance. Implement credit history view with transaction details. Add credit purchase flow integration points. Create notifications for credit-related events. Ensure secure display of sensitive credit information.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 8,

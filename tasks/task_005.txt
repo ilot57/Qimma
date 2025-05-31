@@ -73,7 +73,7 @@ Identify key dashboard functions for quick access. Design shortcut UI elements (
 ### Details:
 Design charts and graphs for exam scores, progress, and comparison metrics. Implement data visualization components with appropriate libraries. Create summary cards for key statistics. Add tooltips and explanations for complex metrics. Ensure all visualizations are responsive and accessible.
 
-## 7. Develop Credit Display System [pending]
+## 7. Develop Credit Display System [done]
 ### Dependencies: 5.1
 ### Description: Create the component for displaying user credits and credit-related actions
 ### Details:
