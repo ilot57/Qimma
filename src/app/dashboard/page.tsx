@@ -8,7 +8,6 @@ import { useUser } from '@clerk/nextjs';
 import { Plus } from 'lucide-react';
 
 import { CreditDisplaySystem } from '@/components/dashboard/CreditDisplaySystem';
-import { QuickActionCards } from '@/components/dashboard/QuickActionCards';
 import { RealTimeDashboardStats } from '@/components/dashboard/RealTimeDashboardStats';
 import { RealTimeExamList } from '@/components/dashboard/RealTimeExamList';
 import { Button } from '@/components/ui/button';
@@ -117,9 +116,6 @@ export default function DashboardPage() {
 
       {/* Real-time Dashboard Stats */}
       <RealTimeDashboardStats userId={user.id} className="mb-8" />
-
-      {/* Quick Action Cards */}
-      <QuickActionCards className="mb-8" />
 
       {/* Credit Display System */}
       <CreditDisplaySystem userId={user.id} className="mb-8" />
