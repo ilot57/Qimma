@@ -1,3 +1,11 @@
+'use client';
+
+import { useEffect } from 'react';
+
+import { useRouter } from 'next/navigation';
+
+import { useUser } from '@clerk/nextjs';
+
 import {
   AuthenticatedCTA,
   AuthenticatedHeader,
@@ -6,6 +14,33 @@ import {
 import { Logo } from '@/components/ui/logo';
 
 export default function Home() {
+  const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
+
+  // Redirect authenticated users to dashboard
+  useEffect(() => {
+    if (isLoaded && isSignedIn) {
+      router.push('/dashboard');
+    }
+  }, [isLoaded, isSignedIn, router]);
+
+  // Show loading state while Clerk loads or during redirect
+  if (!isLoaded || isSignedIn) {
+    return (
+      <div className="from-primary-50 to-primary-100 flex min-h-screen items-center justify-center bg-gradient-to-br">
+        <div className="text-center">
+          <Logo size="lg" />
+          <div className="mt-4">
+            <div className="border-primary-600 mx-auto h-8 w-8 animate-spin rounded-full border-4 border-t-transparent"></div>
+            <p className="mt-2 text-gray-600">
+              {isSignedIn ? 'Redirecting to dashboard...' : 'Loading...'}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="from-primary-50 to-primary-100 min-h-screen bg-gradient-to-br">
       {/* Header */}
