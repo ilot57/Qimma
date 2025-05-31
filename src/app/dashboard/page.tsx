@@ -7,6 +7,7 @@ import { redirect } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import { Plus } from 'lucide-react';
 
+import { QuickActionCards } from '@/components/dashboard/QuickActionCards';
 import { RealTimeDashboardStats } from '@/components/dashboard/RealTimeDashboardStats';
 import { RealTimeExamList } from '@/components/dashboard/RealTimeExamList';
 import { Button } from '@/components/ui/button';
@@ -98,6 +99,9 @@ export default function DashboardPage() {
 
       {/* Real-time Dashboard Stats */}
       <RealTimeDashboardStats userId={user.id} className="mb-8" />
+
+      {/* Quick Action Cards */}
+      <QuickActionCards className="mb-8" />
 
       {/* Real-time Exam List */}
       <RealTimeExamList userId={user.id} className="mb-8" limit={8} />
