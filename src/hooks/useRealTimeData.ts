@@ -84,7 +84,10 @@ export function useRealTimeData<T>(
       try {
         const data = await fetchFn();
 
-        if (!mountedRef.current) return;
+        console.log(
+          '🔄 useRealTimeData: Setting successful state with data:',
+          !!data
+        );
 
         setState((prev) => ({
           ...prev,
@@ -95,6 +98,8 @@ export function useRealTimeData<T>(
           lastUpdated: new Date(),
           retryCount: 0,
         }));
+
+        console.log('✅ useRealTimeData: State updated successfully');
       } catch (error) {
         if (!mountedRef.current) return;
 
@@ -166,11 +171,12 @@ export function useRealTimeData<T>(
 
   // Cleanup on unmount
   useEffect(() => {
+    mountedRef.current = true; // Ensure it's set to true on mount
     return () => {
       mountedRef.current = false;
       cleanup();
     };
-  }, [cleanup]);
+  }, []); // Empty dependency array - only run on mount/unmount
 
   const actions: RealTimeActions = {
     refresh,
@@ -200,13 +206,16 @@ export interface DashboardStats {
 // Hook specifically for dashboard statistics
 export function useDashboardStats(userId: string) {
   const fetchStats = useCallback(async (): Promise<DashboardStats> => {
+    console.log('🔄 useDashboardStats: Starting fetch for user:', userId);
+
     // TODO: Replace with actual API call to fetch dashboard stats
     // This would typically call your Supabase API or Next.js API route
 
     // Mock implementation for now
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API delay
+    console.log('⏳ useDashboardStats: Simulating API delay...');
+    await new Promise((resolve) => setTimeout(resolve, 300)); // Reduced from 1000ms to 300ms
 
-    return {
+    const mockData = {
       totalExams: Math.floor(Math.random() * 20) + 10,
       completedExams: Math.floor(Math.random() * 15) + 5,
       processingExams: Math.floor(Math.random() * 5),
@@ -215,10 +224,23 @@ export function useDashboardStats(userId: string) {
       averageScore: Math.random() * 100,
       recentActivity: [],
     };
+
+    console.log('✅ useDashboardStats: Fetch completed, returning:', mockData);
+    return mockData;
   }, [userId]);
 
-  return useRealTimeData(fetchStats, {
+  console.log('🚀 useDashboardStats: Hook initializing for user:', userId);
+
+  const result = useRealTimeData(fetchStats, {
     interval: 30000, // 30 seconds for dashboard stats
     enabled: true,
   });
+
+  console.log('📈 useDashboardStats: Hook result state:', {
+    loading: result[0].loading,
+    hasData: !!result[0].data,
+    error: result[0].error,
+  });
+
+  return result;
 }

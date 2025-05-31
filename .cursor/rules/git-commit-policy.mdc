@@ -1,0 +1,55 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Git Commit and Push Policy
+
+## Core Rule: No Automatic Git Operations
+
+**NEVER commit changes to git or push to GitHub without explicit user permission in the chat.**
+
+## Required Behavior
+
+### Before Any Git Operation:
+- ✅ **MUST** ask the user explicitly: "Should I commit these changes?"
+- ✅ **MUST** wait for clear confirmation before proceeding
+- ✅ **MUST** explain what changes will be committed
+- ✅ **MUST** provide a meaningful commit message for user approval
+
+### Prohibited Actions:
+- ❌ **NEVER** run `git add` without permission
+- ❌ **NEVER** run `git commit` without permission  
+- ❌ **NEVER** run `git push` without permission
+- ❌ **NEVER** assume user wants changes committed
+- ❌ **NEVER** commit "automatically" after implementing features
+
+### Acceptable Git Operations Without Permission:
+- ✅ `git status` - to check current state
+- ✅ `git diff` - to review changes
+- ✅ `git log` - to check history
+- ✅ `git branch` - to check branches
+
+## User Permission Examples
+
+### Clear Permission Indicators:
+- "Commit these changes"
+- "Push to GitHub"
+- "Save this to git"
+- "Make a commit"
+- "Push the changes"
+
+### NOT Permission:
+- "Looks good" (too vague)
+- "Nice work" (not explicit about git)
+- "Thanks" (acknowledgment, not permission)
+
+## Exception Handling
+
+If the user asks me to implement features, I should:
+1. Implement the requested changes
+2. Test that they work
+3. **STOP and ask for commit permission**
+4. Only proceed with git operations after explicit approval
+
+This rule applies to ALL git operations that modify the repository state, regardless of how small or obvious the changes might seem.

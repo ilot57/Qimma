@@ -19,10 +19,24 @@ export default function DashboardPage() {
   // Handle hydration
   useEffect(() => {
     setMounted(true);
+    // Debug logging
+    console.log('🚀 Dashboard mounted');
   }, []);
+
+  // Debug Clerk state
+  useEffect(() => {
+    console.log('👤 Clerk state:', { isLoaded, isSignedIn, userId: user?.id });
+  }, [isLoaded, isSignedIn, user?.id]);
 
   // Show loading state while Clerk loads
   if (!mounted || !isLoaded) {
+    console.log(
+      '⏳ Dashboard loading - mounted:',
+      mounted,
+      'isLoaded:',
+      isLoaded
+    );
+
     return (
       <div className="p-6">
         <div className="animate-pulse">
@@ -70,9 +84,12 @@ export default function DashboardPage() {
 
   // Redirect if not authenticated
   if (!isSignedIn) {
+    console.log('🚫 Not signed in, redirecting...');
     redirect('/sign-in');
     return null;
   }
+
+  console.log('✅ Dashboard rendering with user:', user?.firstName);
 
   return (
     <div className="p-6">

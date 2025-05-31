@@ -93,6 +93,16 @@ export function RealTimeDashboardStats({
   const [statsState, statsActions] = useDashboardStats(userId);
   const { data: stats, loading, error, isRefreshing, lastUpdated } = statsState;
 
+  // Debug logging
+  console.log('📊 RealTimeDashboardStats state:', {
+    loading,
+    hasData: !!stats,
+    error,
+    isRefreshing,
+    lastUpdated,
+    userId,
+  });
+
   // Calculate derived values
   const completionRate = stats
     ? Math.round((stats.completedExams / Math.max(stats.totalExams, 1)) * 100)
