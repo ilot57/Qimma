@@ -1,28 +1,77 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
 import { redirect } from 'next/navigation';
 
-import { currentUser } from '@clerk/nextjs/server';
-import {
-  BookOpen,
-  CheckCircle,
-  Clock,
-  Coins,
-  Plus,
-  TrendingUp,
-} from 'lucide-react';
+import { useUser } from '@clerk/nextjs';
+import { Plus } from 'lucide-react';
 
-import { ExamList } from '@/components/dashboard/ExamList';
+import { RealTimeDashboardStats } from '@/components/dashboard/RealTimeDashboardStats';
+import { RealTimeExamList } from '@/components/dashboard/RealTimeExamList';
 import { Button } from '@/components/ui/button';
-import { requireAuth } from '@/lib/auth/session';
 
-export default async function DashboardPage() {
-  // Use the new session management
-  const sessionInfo = await requireAuth('/dashboard');
+export default function DashboardPage() {
+  const { user, isLoaded, isSignedIn } = useUser();
+  const [mounted, setMounted] = useState(false);
 
-  if (!sessionInfo.isAuthenticated) {
-    redirect('/sign-in');
+  // Handle hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Show loading state while Clerk loads
+  if (!mounted || !isLoaded) {
+    return (
+      <div className="p-6">
+        <div className="animate-pulse">
+          {/* Header Skeleton */}
+          <div className="mb-8 flex items-start justify-between">
+            <div>
+              <div className="mb-2 h-8 w-64 rounded bg-gray-200"></div>
+              <div className="h-6 w-96 rounded bg-gray-200"></div>
+            </div>
+            <div className="h-12 w-40 rounded bg-gray-200"></div>
+          </div>
+
+          {/* Stats Grid Skeleton */}
+          <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex-1">
+                    <div className="mb-2 h-4 w-20 rounded bg-gray-200"></div>
+                    <div className="mb-1 h-8 w-16 rounded bg-gray-200"></div>
+                    <div className="h-4 w-24 rounded bg-gray-200"></div>
+                  </div>
+                  <div className="h-12 w-12 rounded-xl bg-gray-200"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Exam List Skeleton */}
+          <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div className="mb-4 h-6 w-32 rounded bg-gray-200"></div>
+            <div className="space-y-4">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="h-16 rounded bg-gray-200"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
-  const user = await currentUser();
+  // Redirect if not authenticated
+  if (!isSignedIn) {
+    redirect('/sign-in');
+    return null;
+  }
 
   return (
     <div className="p-6">
@@ -47,76 +96,11 @@ export default async function DashboardPage() {
         </Button>
       </div>
 
-      {/* Stats Grid */}
-      <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {/* Total Exams */}
-        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Total Exams</p>
-              <p className="mt-2 text-3xl font-bold text-gray-900">12</p>
-              <p className="mt-1 flex items-center text-sm text-emerald-600">
-                <TrendingUp className="mr-1 h-3 w-3" />
-                +2 this week
-              </p>
-            </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100">
-              <BookOpen className="h-6 w-6 text-emerald-600" />
-            </div>
-          </div>
-        </div>
+      {/* Real-time Dashboard Stats */}
+      <RealTimeDashboardStats userId={user.id} className="mb-8" />
 
-        {/* Completed */}
-        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Completed</p>
-              <p className="mt-2 text-3xl font-bold text-gray-900">8</p>
-              <p className="mt-1 text-sm text-emerald-600">
-                67% completion rate
-              </p>
-            </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100">
-              <CheckCircle className="h-6 w-6 text-emerald-600" />
-            </div>
-          </div>
-        </div>
-
-        {/* Processing */}
-        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Processing</p>
-              <p className="mt-2 text-3xl font-bold text-gray-900">3</p>
-              <p className="mt-1 text-sm text-amber-600">~5 min remaining</p>
-            </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100">
-              <Clock className="h-6 w-6 text-amber-600" />
-            </div>
-          </div>
-        </div>
-
-        {/* Credits */}
-        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">
-                Credits Remaining
-              </p>
-              <p className="mt-2 text-3xl font-bold text-gray-900">
-                {sessionInfo.user?.creditsRemaining || 0}
-              </p>
-              <p className="mt-1 text-sm text-indigo-600">Standard plan</p>
-            </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100">
-              <Coins className="h-6 w-6 text-indigo-600" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Exam List Component */}
-      <ExamList className="mb-8" />
+      {/* Real-time Exam List */}
+      <RealTimeExamList userId={user.id} className="mb-8" limit={8} />
 
       {/* Debug Info (Development) */}
       {process.env.NODE_ENV === 'development' && (
@@ -140,29 +124,25 @@ export default async function DashboardPage() {
                 <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
                   <dt className="text-sm font-medium text-blue-800">User ID</dt>
                   <dd className="mt-1 font-mono text-sm text-blue-700">
-                    {sessionInfo.userId?.slice(0, 12)}...
+                    {user?.id?.slice(0, 12)}...
                   </dd>
                 </div>
-                {sessionInfo.user && (
-                  <>
-                    <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4">
-                      <dt className="text-sm font-medium text-indigo-800">
-                        Role
-                      </dt>
-                      <dd className="mt-1 text-sm text-indigo-700 capitalize">
-                        {sessionInfo.user.role}
-                      </dd>
-                    </div>
-                    <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
-                      <dt className="text-sm font-medium text-amber-800">
-                        Subscription
-                      </dt>
-                      <dd className="mt-1 text-sm text-amber-700 capitalize">
-                        {sessionInfo.user.subscriptionTier}
-                      </dd>
-                    </div>
-                  </>
-                )}
+                <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4">
+                  <dt className="text-sm font-medium text-indigo-800">
+                    Real-time Updates
+                  </dt>
+                  <dd className="mt-1 text-sm text-indigo-700">
+                    ✅ Active (15s/30s intervals)
+                  </dd>
+                </div>
+                <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+                  <dt className="text-sm font-medium text-amber-800">
+                    Components
+                  </dt>
+                  <dd className="mt-1 text-sm text-amber-700">
+                    Stats + Exam List + Indicators
+                  </dd>
+                </div>
               </div>
             </div>
           </details>

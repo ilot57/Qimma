@@ -1,0 +1,68 @@
+# Task ID: 27
+# Title: Create Dedicated Dashboard Exams Page
+# Status: pending
+# Dependencies: 5
+# Priority: high
+# Description: Develop a comprehensive /dashboard/exams page that serves as the main hub for exam management with detailed listing, search functionality, and advanced management features.
+# Details:
+1. Create a new route at `/dashboard/exams` using Next.js App Router
+2. Implement a full-screen layout with breadcrumb navigation showing the path hierarchy
+3. Develop an enhanced version of the ExamList component with the following columns:
+   - Exam title (with link to exam details)
+   - Subject
+   - Grade level
+   - Creation date (formatted with day.js)
+   - Status indicator (draft, published, grading, completed)
+   - Submissions count with visual indicator
+   - Average score (when available)
+   - Action dropdown menu
+4. Add server-side pagination with configurable items per page (10/25/50)
+5. Implement search functionality for exam titles and descriptions
+   - Add debounced input field
+   - Connect to Supabase query with text search capabilities
+   - Show loading states during search
+6. Create quick action buttons in the header:
+   - "Create New Exam" primary button
+   - Bulk action dropdown (delete, change status, export)
+7. Implement responsive design with:
+   - Column priority hiding for smaller screens
+   - Mobile-optimized action menus
+   - Touch-friendly interaction patterns
+8. Add empty and loading states with appropriate UI feedback
+9. Implement client-side sorting for all columns
+10. Connect to the existing data fetching utilities but optimize for larger datasets
+11. Add keyboard navigation support for accessibility
+12. Ensure the UI matches the design system and maintains visual consistency
+
+# Test Strategy:
+1. Verify the route `/dashboard/exams` renders correctly and is accessible from the main dashboard
+2. Test the exam table with various data scenarios:
+   - Empty state (no exams)
+   - Few exams (under 10)
+   - Many exams (100+) to verify pagination
+   - Mixed exam statuses to confirm status indicators
+3. Validate search functionality:
+   - Search for existing exam titles
+   - Search for partial matches
+   - Search with no results
+   - Verify search performance with large datasets
+4. Test responsive behavior:
+   - Check layout on mobile devices (320px width)
+   - Verify tablet display (768px width)
+   - Confirm desktop experience (1200px+ width)
+5. Verify all action buttons function correctly:
+   - Create new exam navigation
+   - Bulk action operations
+   - Individual exam actions
+6. Test accessibility:
+   - Run Lighthouse accessibility audit
+   - Test keyboard navigation
+   - Verify screen reader compatibility
+7. Perform cross-browser testing in Chrome, Firefox, Safari, and Edge
+8. Verify the page integrates correctly with the authentication system by testing with:
+   - Authenticated users
+   - Unauthenticated users (should redirect to login)
+9. Test performance metrics:
+   - Initial load time
+   - Time to interactive
+   - Search response time

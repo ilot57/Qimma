@@ -46,13 +46,16 @@ All implementations adhere to core design principles: clarity, efficiency, acces
 ### Details:
 Create the exam list table/grid with columns for exam name, date, status, and score. Implement sorting functionality for each column. Add pagination controls with configurable items per page. Design individual exam item cards with appropriate visual indicators for status. Include empty state design for when no exams are available.
 
-## 3. Build Advanced Filtering System [pending]
-### Dependencies: 5.2
+## 3. Build Advanced Filtering System [cancelled]
+### Dependencies: 5.2, 27
 ### Description: Create a comprehensive filtering system for the exam list with multiple filter types and saved filters
 ### Details:
 Implement filter controls for date ranges, exam types, status, and scores. Create UI for filter selection, application, and clearing. Add functionality for saving and loading custom filter combinations. Ensure filters work with pagination and sorting. Design mobile-friendly filter UI that collapses appropriately.
+<info added on 2025-05-31T14:29:04.608Z>
+The advanced filtering system will be implemented on the dedicated /dashboard/exams page (Task 27) rather than the main dashboard. The main dashboard will retain a simplified exam list for overview purposes only. The comprehensive filtering functionality (date ranges, exam types, status, scores), custom filter combinations, and related features will be built into the dedicated exams page. This separation allows the dashboard to focus on providing a high-level overview while the exams page handles detailed exam management and advanced filtering capabilities. Ensure the UI designs and implementations reflect this architectural change.
+</info added on 2025-05-31T14:29:04.608Z>
 
-## 4. Develop Real-time Update Mechanism [pending]
+## 4. Develop Real-time Update Mechanism [done]
 ### Dependencies: 5.1
 ### Description: Implement the system for real-time data updates throughout the dashboard
 ### Details:

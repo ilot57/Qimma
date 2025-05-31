@@ -398,9 +398,9 @@
           "id": 3,
           "title": "Build Advanced Filtering System",
           "description": "Create a comprehensive filtering system for the exam list with multiple filter types and saved filters",
-          "dependencies": [2],
-          "details": "Implement filter controls for date ranges, exam types, status, and scores. Create UI for filter selection, application, and clearing. Add functionality for saving and loading custom filter combinations. Ensure filters work with pagination and sorting. Design mobile-friendly filter UI that collapses appropriately.",
-          "status": "pending"
+          "dependencies": [2, "27"],
+          "details": "Implement filter controls for date ranges, exam types, status, and scores. Create UI for filter selection, application, and clearing. Add functionality for saving and loading custom filter combinations. Ensure filters work with pagination and sorting. Design mobile-friendly filter UI that collapses appropriately.\n<info added on 2025-05-31T14:29:04.608Z>\nThe advanced filtering system will be implemented on the dedicated /dashboard/exams page (Task 27) rather than the main dashboard. The main dashboard will retain a simplified exam list for overview purposes only. The comprehensive filtering functionality (date ranges, exam types, status, scores), custom filter combinations, and related features will be built into the dedicated exams page. This separation allows the dashboard to focus on providing a high-level overview while the exams page handles detailed exam management and advanced filtering capabilities. Ensure the UI designs and implementations reflect this architectural change.\n</info added on 2025-05-31T14:29:04.608Z>",
+          "status": "cancelled"
         },
         {
           "id": 4,
@@ -408,7 +408,7 @@
           "description": "Implement the system for real-time data updates throughout the dashboard",
           "dependencies": [1],
           "details": "Set up WebSocket or polling connection for real-time data. Create data refresh strategy with configurable intervals. Implement visual indicators for when data is refreshing. Add notification system for important real-time changes. Ensure updates don't disrupt user interactions or reset filters/sorting.",
-          "status": "pending"
+          "status": "done"
         },
         {
           "id": 5,
@@ -2273,6 +2273,17 @@
           "testStrategy": "Verify that all events are being correctly tracked in the analytics dashboard and that A/B test variations display correctly."
         }
       ]
+    },
+    {
+      "id": 27,
+      "title": "Create Dedicated Dashboard Exams Page",
+      "description": "Develop a comprehensive /dashboard/exams page that serves as the main hub for exam management with detailed listing, search functionality, and advanced management features.",
+      "details": "1. Create a new route at `/dashboard/exams` using Next.js App Router\n2. Implement a full-screen layout with breadcrumb navigation showing the path hierarchy\n3. Develop an enhanced version of the ExamList component with the following columns:\n   - Exam title (with link to exam details)\n   - Subject\n   - Grade level\n   - Creation date (formatted with day.js)\n   - Status indicator (draft, published, grading, completed)\n   - Submissions count with visual indicator\n   - Average score (when available)\n   - Action dropdown menu\n4. Add server-side pagination with configurable items per page (10/25/50)\n5. Implement search functionality for exam titles and descriptions\n   - Add debounced input field\n   - Connect to Supabase query with text search capabilities\n   - Show loading states during search\n6. Create quick action buttons in the header:\n   - \"Create New Exam\" primary button\n   - Bulk action dropdown (delete, change status, export)\n7. Implement responsive design with:\n   - Column priority hiding for smaller screens\n   - Mobile-optimized action menus\n   - Touch-friendly interaction patterns\n8. Add empty and loading states with appropriate UI feedback\n9. Implement client-side sorting for all columns\n10. Connect to the existing data fetching utilities but optimize for larger datasets\n11. Add keyboard navigation support for accessibility\n12. Ensure the UI matches the design system and maintains visual consistency",
+      "testStrategy": "1. Verify the route `/dashboard/exams` renders correctly and is accessible from the main dashboard\n2. Test the exam table with various data scenarios:\n   - Empty state (no exams)\n   - Few exams (under 10)\n   - Many exams (100+) to verify pagination\n   - Mixed exam statuses to confirm status indicators\n3. Validate search functionality:\n   - Search for existing exam titles\n   - Search for partial matches\n   - Search with no results\n   - Verify search performance with large datasets\n4. Test responsive behavior:\n   - Check layout on mobile devices (320px width)\n   - Verify tablet display (768px width)\n   - Confirm desktop experience (1200px+ width)\n5. Verify all action buttons function correctly:\n   - Create new exam navigation\n   - Bulk action operations\n   - Individual exam actions\n6. Test accessibility:\n   - Run Lighthouse accessibility audit\n   - Test keyboard navigation\n   - Verify screen reader compatibility\n7. Perform cross-browser testing in Chrome, Firefox, Safari, and Edge\n8. Verify the page integrates correctly with the authentication system by testing with:\n   - Authenticated users\n   - Unauthenticated users (should redirect to login)\n9. Test performance metrics:\n   - Initial load time\n   - Time to interactive\n   - Search response time",
+      "status": "pending",
+      "dependencies": [5],
+      "priority": "high",
+      "subtasks": []
     }
   ]
 }
